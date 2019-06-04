@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.ProcessVariableDao">
+	
+	<resultMap type="ProcessVariable" id="ProcessVariableResult">
+		<result property="id" column="id"/>
+		<result property="procdefId" column="procdefId"/>
+		<result property="taskName" column="taskName"/>
+		<result property="variableName" column="variableName"/>
+		<result property="variableValue" column="variableValue"/>
+	</resultMap>
+	
+	
+	<insert id="add" parameterType="ProcessVariable">
+		insert into t_process_variable values(null,#{procdefId},#{taskName},#{variableName},#{variableValue})
+	</insert>
+	
+	<select id="list" parameterType="Map" resultMap="ProcessVariableResult">
+		select * from t_process_variable
+		<where>
+			<if test="procdefId!=null and  procdefId!=''  ">
+				and procdefId = #{procdefId}
+			</if>
+			<if test="taskName!=null and  taskName!=''  ">
+				and taskName = #{taskName}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_process_variable where id=#{id}
+	</delete>
+	
+</mapper> 

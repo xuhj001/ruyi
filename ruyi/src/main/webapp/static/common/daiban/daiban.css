@@ -1,0 +1,137 @@
+			/*选项卡css*/
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-bar~.mui-content .mui-fullscreen {
+				top: 44px;
+				height: auto;
+			}
+			.mui-pull-top-tips {
+				position: absolute;
+				top: -20px;
+				left: 50%;
+				margin-left: -25px;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				z-index: 1;
+			}
+			.mui-bar~.mui-pull-top-tips {
+				top: 24px;
+			}
+			.mui-pull-top-wrapper {
+				width: 42px;
+				height: 42px;
+				display: block;
+				text-align: center;
+				background-color: #efeff4;
+				border: 1px solid #ddd;
+				border-radius: 25px;
+				background-clip: padding-box;
+				box-shadow: 0 4px 10px #bbb;
+				overflow: hidden;
+			}
+			.mui-pull-top-tips.mui-transitioning {
+				-webkit-transition-duration: 200ms;
+				transition-duration: 200ms;
+			}
+			.mui-pull-top-tips .mui-pull-loading {
+				/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+				
+				margin: 0;
+			}
+			.mui-pull-top-wrapper .mui-icon,
+			.mui-pull-top-wrapper .mui-spinner {
+				margin-top: 7px;
+			}
+			.mui-pull-top-wrapper .mui-icon.mui-reverse {
+				/*-webkit-transform: rotate(180deg) translateZ(0);*/
+			}
+			.mui-pull-bottom-tips {
+				text-align: center;
+				background-color: #efeff4;
+				font-size: 15px;
+				line-height: 40px;
+				color: #777;
+			}
+			.mui-pull-top-canvas {
+				overflow: hidden;
+				background-color: #fafafa;
+				border-radius: 40px;
+				box-shadow: 0 4px 10px #bbb;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.mui-pull-top-canvas canvas {
+				width: 40px;
+			}
+			.mui-slider-indicator.mui-segmented-control {
+				background-color: #efeff4;
+			}
+			/*选项卡css*/
+			
+			
+				
+		
+		
+		
+		
+		
+		
+		
+		
+/*任务展示的css*/
+.item{
+overflow: hidden;
+border-bottom: 1px solid #777;
+padding: 10px 0px 10px 0px;
+}
+
+.entity_item {
+	display: flex;
+	display: -webkit-flex;
+	margin-bottom: 5px;
+	color: #777;
+}
+
+
+.entity_item .div_left {
+    width: 70px;
+    text-align: right;
+	overflow: hidden;
+	font-size: 14px;
+	font-family: "Helvitica Neue", Helvitica, Arial, "Hiragino Sans GB",
+		"Microsoft YaHei", "Arial Regular", "Microsoft JhengHei", sans-serif;
+}
+.entity_item .div_right {
+	overflow: hidden;
+	flex: 1;
+	-webkit-flex: 1;
+	font-size: 14px;
+	font-family: "Helvitica Neue", Helvitica, Arial, "Hiragino Sans GB",
+		"Microsoft YaHei", "Arial Regular", "Microsoft JhengHei", sans-serif;
+}
+
+.entity_item .renwu_fenlei {
+	color: #009688;
+    font-weight: bold;
+}
+
+.entity_item .renwu_red {
+	color: #ff0000;
+    font-weight: bold;
+}
+.entity_item .renwu_blue {
+	color: #1E9FFF;
+    font-weight: bold;
+}
+.entity_item .renwu_green {
+	color: #009688;
+    font-weight: bold;
+}
+
+/*任务展示的css*/		

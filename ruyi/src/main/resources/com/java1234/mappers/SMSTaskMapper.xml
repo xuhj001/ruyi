@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java1234.dao.SMSTaskDao">
+	
+	
+	<resultMap type="SMSTask" id="SMSTaskResult">
+		<result property="id" column="id"/>
+		<result property="taskName" column="taskName"/>
+		<result property="smsModel" column="smsModel"/>
+		<result property="procdefId" column="procdefId"/>
+		<result property="groupId" column="groupId"/>
+		<result property="client" column="client"/>
+		<result property="type" column="type"/>
+		<result property="msg" column="msg"/>
+		<result property="wx_sms" column="wx_sms"/>
+		<result property="phone_sms" column="phone_sms"/>
+		<association property="group" column="groupId" select="com.java1234.dao.GroupDao.findById_" />
+	</resultMap>
+	
+	<insert id="add" parameterType="SMSTask">
+		insert into t_sms_task values(null,#{taskName},#{smsModel},#{procdefId},#{groupId},#{client},#{type},#{msg},#{wx_sms},#{phone_sms})
+	</insert>
+	
+	<select id="list" parameterType="Map" resultMap="SMSTaskResult">
+		select * from t_sms_task
+		<where>
+			<if test="procdefId!=null and procdefId!='' ">
+				and procdefId = #{procdefId}
+			</if>
+			<if test="taskName!=null and taskName!='' ">
+				and taskName = #{taskName}
+			</if>
+			<if test="type!=null and type!='' ">
+				and type = #{type}
+			</if>
+			<if test="msg!=null and msg!='' ">
+				and msg = #{msg}
+			</if>
+		</where>
+	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_sms_task where id=#{id}
+	</delete>
+	
+</mapper> 

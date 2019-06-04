@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.RenWuIdentityDao">
+	
+	
+	<resultMap type="RenWuIdentity" id="RenWuIdentityResult">
+		<result property="processDefinitionKey" column="processDefinitionKey"/>
+		<result property="renwuId" column="renwuId"/>
+		<result property="userId" column="userId"/>
+		<result property="renwuCreateDateTime" column="renwuCreateDateTime"/>
+		<result property="fendianId" column="fendianId"/>
+		<association property="user" column="userId" select="com.java1234.dao.UserDao.findById_" />
+		<association property="renwu" column="renwuId" select="com.java1234.dao.RenWuDao.findById" />
+	</resultMap>
+	
+	
+	<insert id="add" parameterType="RenWuIdentity">
+		insert into t_renwu_idtt values(#{renwuId},#{userId},#{renwuCreateDateTime},#{processDefinitionKey},#{fendianId})
+	</insert>
+	
+	
+	<select id="list" parameterType="Map" resultMap="RenWuIdentityResult">
+		select * from t_renwu_idtt
+		<where>
+			<if test="userId!=null and userId!='' ">
+				and userId = #{userId}
+			</if>
+			<if test="fendianId!=null and fendianId!='' ">
+				and fendianId = #{fendianId}
+			</if>
+			<if test="processDefinitionKey!=null and processDefinitionKey!='' ">
+				and processDefinitionKey = #{processDefinitionKey}
+			</if>
+			<if test="renwuId!=null and renwuId!='' ">
+				and renwuId = #{renwuId}
+			</if>
+		</where>
+		GROUP BY renwuId
+		ORDER BY renwuCreateDateTime DESC
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_renwu_idtt where renwuId=#{renwuId}
+	</delete>
+	
+	
+	
+</mapper> 

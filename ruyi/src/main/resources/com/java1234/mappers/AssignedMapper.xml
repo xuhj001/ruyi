@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.AssignedDao">
+	
+	<resultMap type="Assigned" id="AssignedResult">
+		<result property="taskId" column="taskId"/>
+	</resultMap>
+	
+	
+	<insert id="add" parameterType="String">
+		insert into t_assigned values(#{taskId})
+	</insert>
+	
+	
+	<delete id="delete" parameterType="String">
+		delete from t_assigned where taskId=#{taskId}
+	</delete>
+	
+	
+	<select id="find" parameterType="String" resultMap="AssignedResult">
+		select * from t_assigned where taskId = #{taskId}
+	</select>
+	
+	
+</mapper> 

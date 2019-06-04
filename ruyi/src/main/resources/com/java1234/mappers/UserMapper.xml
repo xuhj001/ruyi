@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.UserDao">
+
+	<resultMap type="User" id="UserResult">
+		<result property="id_" column="id_"/>
+		<result property="rev_" column="rev_"/>
+		<result property="first_" column="first_"/>
+		<result property="last_" column="last_"/>
+		<result property="email_" column="email_"/>
+		<result property="pwd_" column="pwd_"/>
+		<result property="picture_id_" column="picture_id_"/>
+		
+		<association property="weiXinUserInfo" column="id_"
+			select="com.java1234.dao.WeiXinUserInfoDao.findByOpenid"></association>
+		
+	</resultMap>
+	
+	
+	<insert id="add" parameterType="User">
+		insert into act_id_user values(#{id_},#{rev_},#{first_},#{last_},#{email_},#{pwd_},#{picture_id_})
+	</insert>
+	
+	
+	<update id="update" parameterType="User">
+		update act_id_user
+		<set>
+			<if test="first_!=null and first_!='' ">
+				first_=#{first_},
+			</if>
+			<if test="last_!=null and last_!='' ">
+				last_=#{last_},
+			</if>
+			<if test="rev_!=null and rev_!='' ">
+				rev_=#{rev_},
+			</if>
+			<if test="email_!=null and email_!='' ">
+				email_=#{email_},
+			</if>
+			<if test="pwd_!=null and pwd_!='' ">
+				pwd_=#{pwd_},
+			</if>
+		</set>
+		where id_=#{id_}
+	</update>
+	
+	
+	
+	<select id="findById_" parameterType="String" resultMap="UserResult">
+		select * from act_id_user where id_=#{id_}
+	</select>
+	
+	
+	<select id="list" parameterType="Map" resultMap="UserResult">
+		select * from act_id_user
+		<where>
+			<if test="rev_!=null ">
+				and rev_ = #{rev_}
+			</if>
+		</where>
+		order by picture_id_ desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from act_id_user
+		<where>
+			<if test="rev_!=null ">
+				and rev_ = #{rev_}
+			</if>
+		</where>
+	</select>
+	
+	
+	<delete id="delete" parameterType="String">
+		delete from act_id_user where id_=#{id_}
+	</delete>
+	
+</mapper> 

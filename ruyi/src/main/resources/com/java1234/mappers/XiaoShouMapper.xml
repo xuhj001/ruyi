@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.XiaoShouDao">
+	
+	<resultMap type="XiaoShou" id="XiaoShouResult">
+		<result property="id" column="id"/>
+		<result property="clientName" column="clientName"/>
+		<result property="clientPhone" column="clientPhone"/>
+		<result property="clientAddress" column="clientAddress"/>
+		<result property="jixingId" column="jixingId"/>
+		<result property="shuiyuanId" column="shuiyuanId"/>
+		<result property="shuiya" column="shuiya"/>
+		<result property="installPosId" column="installPosId"/>
+		<result property="install_" column="install_"/>
+		
+		<result property="ding_jine" column="ding_jine"/>
+		<result property="yu_jine" column="yu_jine"/>
+		
+		<result property="remark" column="remark"/>
+		<result property="renwuId" column="renwuId"/>
+		
+		<result property="baidu_x" column="baidu_x"/>
+		<result property="baidu_y" column="baidu_y"/>
+		
+		<result property="ticheng" column="ticheng"/>
+		<result property="ticheng_jine" column="ticheng_jine"/>
+		
+		<result property="last_change_xin_dataTime" column="last_change_xin_dataTime"/>
+		
+		<association property="installPos" column="installPosId" select="com.java1234.dao.InstallPosDao.findById" />
+		<association property="shuiyuan" column="shuiyuanId" select="com.java1234.dao.ShuiYuanDao.findById" />
+		<association property="jixing" column="jixingId" select="com.java1234.dao.JiXingDao.findById" />
+		
+	</resultMap>
+	
+	
+	<insert id="add" useGeneratedKeys="true" keyProperty="id" parameterType="XiaoShou">
+		insert into t_xiaoshou values(null,#{clientName},#{clientPhone},#{clientAddress},
+		#{jixingId},#{shuiyuanId},#{shuiya},#{installPosId},#{install_},
+		#{ding_jine},#{yu_jine},#{remark},#{renwuId},
+		#{baidu_x},#{baidu_y},#{ticheng},#{ticheng_jine},#{last_change_xin_dataTime})
+	</insert>
+	
+	<update id="update" parameterType="XiaoShou">
+		update t_xiaoshou
+		<set>
+			<if test="clientName!=null">
+				clientName=#{clientName},
+			</if>
+			<if test="clientPhone!=null">
+				clientPhone=#{clientPhone},
+			</if>
+			<if test="clientAddress!=null">
+				clientAddress=#{clientAddress},
+			</if>
+			<if test="jixingId!=null">
+				jixingId=#{jixingId},
+			</if>
+			<if test="shuiyuanId!=null">
+				shuiyuanId=#{shuiyuanId},
+			</if>
+			<if test="shuiya!=null">
+				shuiya=#{shuiya},
+			</if>
+			<if test="installPosId!=null">
+				installPosId=#{installPosId},
+			</if>
+			<if test="install_!=null">
+				install_=#{install_},
+			</if>
+			<if test="ding_jine!=null">
+				ding_jine=#{ding_jine},
+			</if>
+			<if test="yu_jine!=null">
+				yu_jine=#{yu_jine},
+			</if>
+			<if test="remark!=null">
+				remark=#{remark},
+			</if>
+			<if test="renwuId!=null">
+				renwuId=#{renwuId},
+			</if>
+			<if test="baidu_x!=null">
+				baidu_x=#{baidu_x},
+			</if>
+			<if test="baidu_y!=null">
+				baidu_y=#{baidu_y},
+			</if>
+			<if test="ticheng!=null">
+				ticheng=#{ticheng},
+			</if>
+			<if test="ticheng_jine!=null">
+				ticheng_jine=#{ticheng_jine},
+			</if>
+			<if test="last_change_xin_dataTime!=null">
+				last_change_xin_dataTime=#{last_change_xin_dataTime},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<select id="findById" parameterType="Integer" resultMap="XiaoShouResult">
+		select * from t_xiaoshou where id=#{id}
+	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_xiaoshou where id=#{id}
+	</delete>
+	
+	
+	
+</mapper> 

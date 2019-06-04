@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.GroupDao">
+
+	<resultMap type="Group" id="GroupResult">
+		<result property="id_" column="id_"/>
+		<result property="rev_" column="rev_"/>
+		<result property="name_" column="name_"/>
+		<result property="type_" column="type_"/>
+	</resultMap>
+	
+	
+	<insert id="add" parameterType="Group">
+		insert into act_id_group values(#{id_},#{rev_},#{name_},#{type_})
+	</insert>
+	
+	
+	<update id="update" parameterType="Group">
+		update act_id_group
+		<set>
+			<if test="name_!=null and name_!='' ">
+				name_=#{name_},
+			</if>
+			<if test="rev_!=null and rev_!='' ">
+				rev_=#{rev_},
+			</if>
+			<if test="type_!=null and type_!='' ">
+				type_=#{type_},
+			</if>
+		</set>
+		where id_=#{id_}
+	</update>
+	
+	
+	<select id="findById_" parameterType="String" resultMap="GroupResult">
+		select * from  act_id_group where id_=#{id_}
+	</select>
+	
+	
+	<select id="list" parameterType="Map" resultMap="GroupResult">
+		select * from act_id_group
+		<where>
+			<if test="id!=null and id!='' ">
+				and id_ like #{id}
+			</if>
+		</where>
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from act_id_group
+		<where>
+			<if test="id!=null and id!='' ">
+				and id_ like #{id}
+			</if>
+		</where>
+	</select>
+	
+	
+	<delete id="delete" parameterType="String">
+		delete from act_id_group where id_=#{id_}
+	</delete>
+	
+	
+	<select id="listByUserId" parameterType="String" resultMap="GroupResult">
+		SELECT g.ID_ AS id_,g.NAME_ AS name_ FROM act_id_group g LEFT JOIN
+		act_id_membership m ON m.GROUP_ID_=g.ID_ LEFT JOIN act_id_user u ON
+		u.ID_=m.USER_ID_ WHERE u.ID_=#{userId}
+	</select>
+	
+	
+</mapper> 

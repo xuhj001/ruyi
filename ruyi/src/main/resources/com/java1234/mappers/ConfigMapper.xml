@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.ConfigDao">
+
+	
+	<resultMap type="Config" id="ConfigResult">
+		<result property="id" column="id"/>
+		<result property="da_ka_count" column="da_ka_count"/>
+		<result property="web_site_url" column="web_site_url"/>
+		<result property="days" column="days"/>
+	</resultMap>
+	
+	
+	<update id="update" parameterType="Config">
+		update t_config
+		<set>
+			<if test="da_ka_count!=null ">
+				da_ka_count=#{da_ka_count},
+			</if>
+			<if test="web_site_url!=null ">
+				web_site_url=#{web_site_url},
+			</if>
+			<if test="days!=null ">
+				days=#{days},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	
+	<select id="findById" parameterType="Integer" resultMap="ConfigResult">
+		select * from t_config where id = #{id}
+	</select>
+	
+
+	
+	
+</mapper> 

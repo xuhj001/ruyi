@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java1234.dao.ShowPhoneDao">
+	
+	<resultMap type="ShowPhone" id="ShowPhoneResult">
+		<result property="id" column="id"/>
+		<result property="taskName" column="taskName"/>
+		<result property="procdefId" column="procdefId"/>
+		<result property="type" column="type"/>
+		<result property="currentUser" column="currentUser"/>
+		<result property="client" column="client"/>
+	</resultMap>
+	
+	
+	<insert id="add" parameterType="ShowPhone">
+		insert into t_show_phone values(null,#{taskName},#{procdefId},#{type},#{currentUser},#{client})
+	</insert>
+	
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_show_phone where id=#{id}
+	</delete>
+	
+	
+	<select id="list" parameterType="Map" resultMap="ShowPhoneResult">
+		select * from t_show_phone
+		<where>
+			<if test="procdefId!=null and procdefId!='' ">
+				and procdefId = #{procdefId}
+			</if>
+			<if test="taskName!=null and taskName!='' ">
+				and taskName = #{taskName}
+			</if>
+			<if test="type!=null and type!='' ">
+				and type = #{type}
+			</if>
+		</where>
+	</select>
+	
+	
+	
+</mapper> 

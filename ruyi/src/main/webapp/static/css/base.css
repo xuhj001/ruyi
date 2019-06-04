@@ -1,0 +1,142 @@
+html, body {
+	padding: 0px;
+	margin: 0px;
+}
+
+/*head的css */
+.c_head{
+    height: 39px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #e1e1e1;
+    width: 100%;
+}
+.c_head .content{
+	background: #f4f4f4;
+    border-bottom: 1px solid #e1e1e1;
+	width: 1164px;
+	min-width: 1164px;
+    height: 39px;
+    margin:0 auto;
+    font-family: "Helvitica Neue",Helvitica,Arial,"Hiragino Sans GB","Microsoft YaHei","Arial Regular","Microsoft JhengHei",sans-serif;
+	line-height: 39px;
+	font-size: 14px;
+}
+/*
+background: url(/static/images/base/log_small.png) left center no-repeat;
+center 是指上下居中
+*/
+.c_head .content .log{
+	display: inline-block;
+    vertical-align: middle;
+    width: 127px;
+    height: 39px;
+    background: url(/static/images/base/log_small.png) left center no-repeat;
+}
+.c_head .content .tip{
+	display: inline-block;
+    vertical-align: middle;
+    width: 127px;
+    height: 39px;
+    font-style: italic;
+    color: #85909A;
+}
+.c_head .content .path_list{
+	display: inline-block;
+    vertical-align: middle;
+    height: 39px;
+}
+.c_head .content .path_list a{
+	padding: 0px 5px 0px  5px;
+	color: #333;
+	text-decoration: none;
+}
+.c_head .content .path_list a:hover{
+	color: #dd1a10;
+	text-decoration: underline ;
+}
+/*
+a 标签  选中 保持这个样式  不变
+*/
+.head_path_list_a_this{
+	color: #dd1a10;
+	text-decoration: underline ;
+}
+/*head的css */
+
+
+
+
+
+
+/*脚部  的css */
+.foot{
+	padding:20px 0px 20px 0px ;
+	background-color: black;
+	overflow:hidden;
+}
+.foot .content{
+	overflow:hidden;
+	width: 1164px;
+    margin:0 auto;
+}
+
+
+
+/*脚部---友情连接  的css */
+.foot .content .link{
+	    border-bottom: 1px solid #333;
+	    border-top: 1px solid #333;
+	    display: flex;
+	    display: -webkit-flex;
+	    font-family: "Helvitica Neue",Helvitica,Arial,"Hiragino Sans GB","Microsoft YaHei","Arial Regular","Microsoft JhengHei",sans-serif;
+		font-size: 14px;
+}
+.foot .content .link .left{
+	padding:10px 0px 10px 0px;
+	border-top:1px solid #FFF;
+	width: 76px;
+	text-align:center;
+	overflow: hidden;
+	color: white;
+}
+.foot .content .link .right{
+		padding:10px 0px 10px 100px;
+	   flex:1;
+	   -webkit-flex:1;
+	   overflow: hidden;
+}
+.foot .content .link .right a{
+	line-height:30px;
+	margin: 10px 50px 10px 0;
+	color: #666;
+	text-decoration: none;
+}
+.foot .content .link .right a:hover{
+	text-decoration: underline ;
+}
+/*脚部---友情连接  的css */
+
+
+
+
+/*脚部---备案  的css */
+.foot .content .beian{
+	padding:20px 10px 20px 0px;
+	overflow:hidden;
+	float: right;
+}
+.foot .content .beian a{
+	font-family: "Helvitica Neue",Helvitica,Arial,"Hiragino Sans GB","Microsoft YaHei","Arial Regular","Microsoft JhengHei",sans-serif;
+	font-size: 13px;
+	color: #666;
+	text-decoration: none;
+}
+/*脚部---备案  的css */
+
+
+
+
+/*脚部  的css */
+
+
+
