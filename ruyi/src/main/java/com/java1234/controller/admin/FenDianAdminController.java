@@ -55,10 +55,10 @@ public class FenDianAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("Ìí¼Ó³É¹¦");
+			result.setMsg("æ·»åŠ æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("Ìí¼ÓÊ§°Ü");
+			result.setMsg("æ·»åŠ å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
@@ -74,10 +74,10 @@ public class FenDianAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("ĞŞ¸Ä³É¹¦");
+			result.setMsg("ä¿®æ”¹æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("ĞŞ¸ÄÊ§°Ü");
+			result.setMsg("ä¿®æ”¹å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;

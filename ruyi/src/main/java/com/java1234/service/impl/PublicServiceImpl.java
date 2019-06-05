@@ -72,7 +72,7 @@ public class PublicServiceImpl implements PublicService {
 		map.put("ids", ids);
 		if(ids.size()>0){
 		}else{
-			//Èç¹ûÊÇnull  ÎÒÃÇ¾ÍÉèÖÃÒ»¸önull
+			//å¦‚æœæ˜¯null  æˆ‘ä»¬å°±è®¾ç½®ä¸€ä¸ªnull
 			List<Tree> treeList = new ArrayList<Tree>();
 			mav.addObject("treeList", treeList);
 			return ;
@@ -88,18 +88,18 @@ public class PublicServiceImpl implements PublicService {
 	
 	
 	/**
-	 * ÄÃ²Ëµ¥
+	 * æ‹¿èœå•
 	 */
 	public List<Tree> getTreesByParentId(Map<String,Object> map) throws Exception {
 		//String parentId,String ids  = map
 		List<Tree> list = treeService.getTreesByFatherOrIds(map);
 		for(Tree tree : list){
-			//Èç¹û ÊÇ¸´Ñ¡¿ò  ¿ÉÒÔÔÚÕâÀïÅĞ¶Ï   
+			//å¦‚æœ æ˜¯å¤é€‰æ¡†  å¯ä»¥åœ¨è¿™é‡Œåˆ¤æ–­   
 			//tree.setChecked(true);
 			if("open".equals(tree.getState())){
 				continue;
 			}else{
-				map.put("father", tree.getId()+"");//¸ü»»id²»»»ids¼ÌĞø²é
+				map.put("father", tree.getId()+"");//æ›´æ¢idä¸æ¢idsç»§ç»­æŸ¥
 				tree.setChildren(getTreesByParentId(map));
 			}
 		}
@@ -123,8 +123,8 @@ public class PublicServiceImpl implements PublicService {
 					userTask.setTaskId(e.getId());
 					userTask.setTaskName(e.getName());
 					list.add(userTask);
-					// System.out.println("ÈÎÎñid:" + e.getId() +
-					// " ÈÎÎñÃû³Æ:" + e.getName() + " ¶ÔÓ¦µÄclass:" +
+					// System.out.println("ä»»åŠ¡id:" + e.getId() +
+					// " ä»»åŠ¡åç§°:" + e.getName() + " å¯¹åº”çš„class:" +
 					// e.getClass().toString());
 				}
 			}
@@ -133,13 +133,13 @@ public class PublicServiceImpl implements PublicService {
 	}
 
 
-	/**  ÓÃµ½Õâ¸öµØ·½¡£
-	 * Õâ¸ötaskName ÊÇÕâÑùÊ¹ÓÃµÄ 001[´´½¨ÊÛºó]
+	/**  ç”¨åˆ°è¿™ä¸ªåœ°æ–¹ã€‚
+	 * è¿™ä¸ªtaskName æ˜¯è¿™æ ·ä½¿ç”¨çš„ 001[åˆ›å»ºå”®å]
 	 */
 	public Integer addComment(String taskId, User user, String comment, String taskName) {
 		HistoricTaskInstance hti=historyService.createHistoricTaskInstanceQuery().taskId(taskId).singleResult();
-		Authentication.setAuthenticatedUserId(user.getFirst_()+"["+taskName+"]"); // ÉèÖÃÓÃ»§id
-		taskService.addComment(taskId, hti.getProcessInstanceId(), comment); // Ìí¼ÓÅú×¢ĞÅÏ¢
+		Authentication.setAuthenticatedUserId(user.getFirst_()+"["+taskName+"]"); // è®¾ç½®ç”¨æˆ·id
+		taskService.addComment(taskId, hti.getProcessInstanceId(), comment); // æ·»åŠ æ‰¹æ³¨ä¿¡æ¯
 		return 1;
 	}
 
@@ -158,10 +158,10 @@ public class PublicServiceImpl implements PublicService {
 	
 	
 	public List<Comment> listCommentByTaskId(String taskId) {
-		// ¸ù¾İÈÎÎñid ÕÒÀúÊ·Åú×¢
+		// æ ¹æ®ä»»åŠ¡id æ‰¾å†å²æ‰¹æ³¨
 		HistoricTaskInstance hti = historyService.createHistoricTaskInstanceQuery().taskId(taskId).singleResult();
 		List<Comment> commentList = taskService.getProcessInstanceComments(hti.getProcessInstanceId());
-		Collections.reverse(commentList); // ¼¯ºÏÔªËØ·´×ª
+		Collections.reverse(commentList); // é›†åˆå…ƒç´ åè½¬
 		return commentList;
 	}
 	

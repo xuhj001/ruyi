@@ -52,8 +52,8 @@ public class TaskAdminController {
 	private RenWuService renwuService ;
 	
 	/**
-	 * Õâ¸öÊÇ¡¾´ı°ìÈÎÎñ¡¿£¬Ã»ÓĞÈË°ìÀíµÄÈÎÎñ
-	 * ÁíÍâ»¹ÓĞ¡¾ÒÑ·ÖÅä¡¿£¬ÒÑ¾­ÓĞÈËÔÚ°ìÀíµÄÈÎÎñ
+	 * è¿™ä¸ªæ˜¯ã€å¾…åŠä»»åŠ¡ã€‘ï¼Œæ²¡æœ‰äººåŠç†çš„ä»»åŠ¡
+	 * å¦å¤–è¿˜æœ‰ã€å·²åˆ†é…ã€‘ï¼Œå·²ç»æœ‰äººåœ¨åŠç†çš„ä»»åŠ¡
 	 */
 	@RequestMapping("/weifenpei")
 	public String weifenpei(@RequestParam(value="page",required=false)String page,
@@ -69,26 +69,26 @@ public class TaskAdminController {
 		
 		PageBean pageBean=new PageBean(Integer.parseInt(page),Integer.parseInt(rows));
 		
-		//¸öÈË´ı°ì
-		List<Task> singleList=taskService.createTaskQuery() // ´´½¨ÈÎÎñ²éÑ¯
-				.orderByTaskCreateTime().desc()//ÅÅĞò
-				.taskAssignee(currentUser.getId_())//Ö¸¶¨ÈË£¬Ò»¸öÈË
-				//.taskCandidateUser(currentUser.getId_()) // ¸ù¾İÓÃ»§id²éÑ¯ ¶àÓÃ»§ÓÃÕâ¸ö¡£
-				.processDefinitionKey(prodefkey)//¸ù¾İÁ÷³Ì²é
-				.taskNameLike("%"+s_name+"%") // ¸ù¾İÈÎÎñÃû³Æ²éÑ¯
-				.listPage(pageBean.getStart(), pageBean.getPageSize()); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
+		//ä¸ªäººå¾…åŠ
+		List<Task> singleList=taskService.createTaskQuery() // åˆ›å»ºä»»åŠ¡æŸ¥è¯¢
+				.orderByTaskCreateTime().desc()//æ’åº
+				.taskAssignee(currentUser.getId_())//æŒ‡å®šäººï¼Œä¸€ä¸ªäºº
+				//.taskCandidateUser(currentUser.getId_()) // æ ¹æ®ç”¨æˆ·idæŸ¥è¯¢ å¤šç”¨æˆ·ç”¨è¿™ä¸ªã€‚
+				.processDefinitionKey(prodefkey)//æ ¹æ®æµç¨‹æŸ¥
+				.taskNameLike("%"+s_name+"%") // æ ¹æ®ä»»åŠ¡åç§°æŸ¥è¯¢
+				.listPage(pageBean.getStart(), pageBean.getPageSize()); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
 		
-		//×é´ı°ì
-		List<Task> groupList=taskService.createTaskQuery() // ´´½¨ÈÎÎñ²éÑ¯
-				.orderByTaskCreateTime().desc()//ÅÅĞò
-				//.taskAssignee(currentUser.getId_())//Ö¸¶¨ÈË£¬Ò»¸öÈË
-				.taskCandidateUser(currentUser.getId_()) // ¸ù¾İÓÃ»§id²éÑ¯ ¶àÓÃ»§ÓÃÕâ¸ö¡£
-				.processDefinitionKey(prodefkey)//¸ù¾İÁ÷³Ì²é
-				.taskNameLike("%"+s_name+"%") // ¸ù¾İÈÎÎñÃû³Æ²éÑ¯
-				.listPage(pageBean.getStart(), pageBean.getPageSize()); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
+		//ç»„å¾…åŠ
+		List<Task> groupList=taskService.createTaskQuery() // åˆ›å»ºä»»åŠ¡æŸ¥è¯¢
+				.orderByTaskCreateTime().desc()//æ’åº
+				//.taskAssignee(currentUser.getId_())//æŒ‡å®šäººï¼Œä¸€ä¸ªäºº
+				.taskCandidateUser(currentUser.getId_()) // æ ¹æ®ç”¨æˆ·idæŸ¥è¯¢ å¤šç”¨æˆ·ç”¨è¿™ä¸ªã€‚
+				.processDefinitionKey(prodefkey)//æ ¹æ®æµç¨‹æŸ¥
+				.taskNameLike("%"+s_name+"%") // æ ¹æ®ä»»åŠ¡åç§°æŸ¥è¯¢
+				.listPage(pageBean.getStart(), pageBean.getPageSize()); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
 		
 		
-		//´ı·ÖÅä¡¾Ã»ÓĞÈË°ìÀí¡¿Î´·ÖÅä 
+		//å¾…åˆ†é…ã€æ²¡æœ‰äººåŠç†ã€‘æœªåˆ†é… 
 		List<MyTask> weifenpeiList=new ArrayList<MyTask>();
 		
 		
@@ -98,7 +98,7 @@ public class TaskAdminController {
 		for(Task task:singleList){
 			yifenpei = assignedService.find(task.getId());
 			if(yifenpei==null){
-				//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿  
+				//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡  
 				Integer renwuId = (Integer) taskService.getVariable(task.getId(), "renwuId");
 				renwu  = renwuService.findById(renwuId);
 				MyTask myTask=new MyTask();
@@ -106,8 +106,8 @@ public class TaskAdminController {
 				myTask.setId(task.getId());
 				myTask.setTaskName(task.getName());
 				myTask.setTaskCreateTime(task.getCreateTime());
-				myTask.setBanliren("ÎŞ");
-				myTask.setRenwuFenlei("¸öÈËÈÎÎñ");
+				myTask.setBanliren("æ— ");
+				myTask.setRenwuFenlei("ä¸ªäººä»»åŠ¡");
 				weifenpeiList.add(myTask);
 			}
 		}
@@ -115,7 +115,7 @@ public class TaskAdminController {
 		for(Task task:groupList){
 			yifenpei = assignedService.find(task.getId());
 			if(yifenpei==null){
-				//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿  
+				//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡  
 				Integer renwuId = (Integer) taskService.getVariable(task.getId(), "renwuId");
 				renwu  = renwuService.findById(renwuId);
 				MyTask myTask=new MyTask();
@@ -123,8 +123,8 @@ public class TaskAdminController {
 				myTask.setId(task.getId());
 				myTask.setTaskName(task.getName());
 				myTask.setTaskCreateTime(task.getCreateTime());
-				myTask.setBanliren("ÎŞ");
-				myTask.setRenwuFenlei("²¿ÃÅÈÎÎñ");
+				myTask.setBanliren("æ— ");
+				myTask.setRenwuFenlei("éƒ¨é—¨ä»»åŠ¡");
 				weifenpeiList.add(myTask);
 			}
 		}
@@ -142,7 +142,7 @@ public class TaskAdminController {
 	
 	
 	/**
-	 * Õâ¸öÊÇ¡¾ÒÑ·ÖÅäÈÎÎñ¡¿£¬ÓĞÈË°ìÀíÖĞµÄÈÎÎñ
+	 * è¿™ä¸ªæ˜¯ã€å·²åˆ†é…ä»»åŠ¡ã€‘ï¼Œæœ‰äººåŠç†ä¸­çš„ä»»åŠ¡
 	 * 
 	 */
 	@RequestMapping("/yifenpei")
@@ -158,28 +158,28 @@ public class TaskAdminController {
 		
 		PageBean pageBean=new PageBean(Integer.parseInt(page),Integer.parseInt(rows));
 		
-		//¸öÈË´ı°ì
-		List<Task> singleList=taskService.createTaskQuery() // ´´½¨ÈÎÎñ²éÑ¯
-				.orderByTaskCreateTime().desc()//ÅÅĞò
-				.taskAssignee(currentUser.getId_())//Ö¸¶¨ÈË£¬Ò»¸öÈË
-				//.taskCandidateUser(currentUser.getId_()) // ¸ù¾İÓÃ»§id²éÑ¯ ¶àÓÃ»§ÓÃÕâ¸ö¡£
-				.processDefinitionKey(prodefkey)//¸ù¾İÁ÷³Ì²é
-				.taskNameLike("%"+s_name+"%") // ¸ù¾İÈÎÎñÃû³Æ²éÑ¯
-				.listPage(pageBean.getStart(), pageBean.getPageSize()); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
+		//ä¸ªäººå¾…åŠ
+		List<Task> singleList=taskService.createTaskQuery() // åˆ›å»ºä»»åŠ¡æŸ¥è¯¢
+				.orderByTaskCreateTime().desc()//æ’åº
+				.taskAssignee(currentUser.getId_())//æŒ‡å®šäººï¼Œä¸€ä¸ªäºº
+				//.taskCandidateUser(currentUser.getId_()) // æ ¹æ®ç”¨æˆ·idæŸ¥è¯¢ å¤šç”¨æˆ·ç”¨è¿™ä¸ªã€‚
+				.processDefinitionKey(prodefkey)//æ ¹æ®æµç¨‹æŸ¥
+				.taskNameLike("%"+s_name+"%") // æ ¹æ®ä»»åŠ¡åç§°æŸ¥è¯¢
+				.listPage(pageBean.getStart(), pageBean.getPageSize()); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
 		
 		
-		//×é´ı°ì
-		List<Task> groupList=taskService.createTaskQuery() // ´´½¨ÈÎÎñ²éÑ¯
-				.orderByTaskCreateTime().desc()//ÅÅĞò
-				//.taskAssignee(currentUser.getId_())//Ö¸¶¨ÈË£¬Ò»¸öÈË
-				.taskCandidateUser(currentUser.getId_()) // ¸ù¾İÓÃ»§id²éÑ¯ ¶àÓÃ»§ÓÃÕâ¸ö¡£
-				.processDefinitionKey(prodefkey)//¸ù¾İÁ÷³Ì²é
-				.taskNameLike("%"+s_name+"%") // ¸ù¾İÈÎÎñÃû³Æ²éÑ¯
-				.listPage(pageBean.getStart(), pageBean.getPageSize()); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
+		//ç»„å¾…åŠ
+		List<Task> groupList=taskService.createTaskQuery() // åˆ›å»ºä»»åŠ¡æŸ¥è¯¢
+				.orderByTaskCreateTime().desc()//æ’åº
+				//.taskAssignee(currentUser.getId_())//æŒ‡å®šäººï¼Œä¸€ä¸ªäºº
+				.taskCandidateUser(currentUser.getId_()) // æ ¹æ®ç”¨æˆ·idæŸ¥è¯¢ å¤šç”¨æˆ·ç”¨è¿™ä¸ªã€‚
+				.processDefinitionKey(prodefkey)//æ ¹æ®æµç¨‹æŸ¥
+				.taskNameLike("%"+s_name+"%") // æ ¹æ®ä»»åŠ¡åç§°æŸ¥è¯¢
+				.listPage(pageBean.getStart(), pageBean.getPageSize()); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
 		
 
 		
-		//ÒÑ·ÖÅä¡¾ÕıÔÚ°ìÀí¡¿µÄÈÎÎñ
+		//å·²åˆ†é…ã€æ­£åœ¨åŠç†ã€‘çš„ä»»åŠ¡
 		List<MyTask> yifenpeiList=new ArrayList<MyTask>();
 		
 		Assigned yifenpei = null;
@@ -187,16 +187,16 @@ public class TaskAdminController {
 		for(Task task:singleList){
 			yifenpei = assignedService.find(task.getId());
 			if(yifenpei!=null){
-				//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿  
+				//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡  
 				Integer renwuId = (Integer) taskService.getVariable(task.getId(), "renwuId");
 				renwu  = renwuService.findById(renwuId);
 				MyTask myTask=new MyTask();
 				myTask.setRenwu(renwu);
 				myTask.setId(task.getId());
 				myTask.setTaskName(task.getName());
-				myTask.setTaskCreateTime(task.getCreateTime());//ÕâÊÇÈÎÎñµÄ´´½¨Ê±¼ä
+				myTask.setTaskCreateTime(task.getCreateTime());//è¿™æ˜¯ä»»åŠ¡çš„åˆ›å»ºæ—¶é—´
 				myTask.setBanliren(renwu.getAcceptUser().getFirst_());
-				myTask.setRenwuFenlei("¸öÈËÈÎÎñ");
+				myTask.setRenwuFenlei("ä¸ªäººä»»åŠ¡");
 				yifenpeiList.add(myTask);
 			}
 		}
@@ -204,16 +204,16 @@ public class TaskAdminController {
 		for(Task task:groupList){
 			yifenpei = assignedService.find(task.getId());
 			if(yifenpei!=null){
-				//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿  
+				//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡  
 				Integer renwuId = (Integer) taskService.getVariable(task.getId(), "renwuId");
 				renwu  = renwuService.findById(renwuId);
 				MyTask myTask=new MyTask();
 				myTask.setRenwu(renwu);
 				myTask.setId(task.getId());
 				myTask.setTaskName(task.getName());
-				myTask.setTaskCreateTime(task.getCreateTime());//ÕâÊÇÈÎÎñµÄ´´½¨Ê±¼ä
+				myTask.setTaskCreateTime(task.getCreateTime());//è¿™æ˜¯ä»»åŠ¡çš„åˆ›å»ºæ—¶é—´
 				myTask.setBanliren(renwu.getAcceptUser().getFirst_());
-				myTask.setRenwuFenlei("²¿ÃÅÈÎÎñ");
+				myTask.setRenwuFenlei("éƒ¨é—¨ä»»åŠ¡");
 				yifenpeiList.add(myTask);
 			}
 		}

@@ -5,18 +5,18 @@ package com.java1234.entity;
 public class SMSTask {
 	
 	private Integer id;
-	private String taskName;//ÈÎÎñÃû³Æ
-	private String smsModel ;//¶ÌĞÅÄ£°æ
-	private String procdefId;//Á÷³Ì¶¨Òåid
+	private String taskName;//ä»»åŠ¡åç§°
+	private String smsModel ;//çŸ­ä¿¡æ¨¡ç‰ˆ
+	private String procdefId;//æµç¨‹å®šä¹‰id
 	
-	//¶ÌĞÅ·¢ËÍµÄ²¿ÃÅ  ×é
+	//çŸ­ä¿¡å‘é€çš„éƒ¨é—¨  ç»„
 	private String groupId;       private Group group;
-	private String client ;//¿Í»§      1·¢ËÍ 0²»·¢
+	private String client ;//å®¢æˆ·      1å‘é€ 0ä¸å‘
 	
-	private Integer type;//1ÈÎÎñ½Úµã   2Õ¼µ¥½Úµã
+	private Integer type;//1ä»»åŠ¡èŠ‚ç‚¹   2å å•èŠ‚ç‚¹
 	
-	//ÈÎÎñµã½Ú  Çø·ÖµÄ
-	//ÕâÀïÒªÇø·Ömsg    Í¨¹ı   ²µ»Ø    ¹Ø±Õ
+	//ä»»åŠ¡ç‚¹èŠ‚  åŒºåˆ†çš„
+	//è¿™é‡Œè¦åŒºåˆ†msg    é€šè¿‡   é©³å›    å…³é—­
 	private String msg;
 	
 	private String wx_sms;

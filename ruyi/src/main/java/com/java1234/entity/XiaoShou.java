@@ -10,31 +10,31 @@ public class XiaoShou {
 	private String clientPhone;
 	private String clientAddress;
 	
-	private Integer jixingId;//»úĞÍ
+	private Integer jixingId;//æœºå‹
 	private JiXing jixing;
 	
-	private Integer shuiyuanId;//Ë®Ô´
+	private Integer shuiyuanId;//æ°´æº
 	private ShuiYuan shuiyuan;
 	
-	private String shuiya;//Ë®Ñ¹
+	private String shuiya;//æ°´å‹
 	
-	private Integer installPosId;//°²×°Î»ÖÃ
+	private Integer installPosId;//å®‰è£…ä½ç½®
 	private InstallPos installPos;
 	
-	private String install_ ;//°²×°  ²»°²×° 
+	private String install_ ;//å®‰è£…  ä¸å®‰è£… 
 	
-	private BigDecimal ding_jine;//¶¨½ğ
+	private BigDecimal ding_jine;//å®šé‡‘
 	
-	private BigDecimal yu_jine;//Óà¿î
-	private String remark;//±¸×¢
+	private BigDecimal yu_jine;//ä½™æ¬¾
+	private String remark;//å¤‡æ³¨
 	private Integer renwuId;
-	//Åª¸ö×´Ì¬¼ÇÂ¼  ÊÇÕıÔÚ½»Íù»¹ÊÇÒÑ×ªÎªÁ÷³Ì
+	//å¼„ä¸ªçŠ¶æ€è®°å½•  æ˜¯æ­£åœ¨äº¤å¾€è¿˜æ˜¯å·²è½¬ä¸ºæµç¨‹
 	private String baidu_x;
 	private String baidu_y;
-	private String  ticheng;//Ìá³É ²»Ìá³É    Ä¬ÈÏ²»Ìá³É
-	private BigDecimal ticheng_jine;//Ìá³É½ğ¶î    Ä¬ÈÏ0
+	private String  ticheng;//ææˆ ä¸ææˆ    é»˜è®¤ä¸ææˆ
+	private BigDecimal ticheng_jine;//ææˆé‡‘é¢    é»˜è®¤0
 	
-	//×îºóÒ»´Î»»Ğ¾Ê±¼ä  Èç¹ûÊÇĞÂ½¨µÄ¿Í»§  Ä¬ÈÏÊÇ´´½¨Ê±¼ä
+	//æœ€åä¸€æ¬¡æ¢èŠ¯æ—¶é—´  å¦‚æœæ˜¯æ–°å»ºçš„å®¢æˆ·  é»˜è®¤æ˜¯åˆ›å»ºæ—¶é—´
 	private Date last_change_xin_dataTime;
 	
  

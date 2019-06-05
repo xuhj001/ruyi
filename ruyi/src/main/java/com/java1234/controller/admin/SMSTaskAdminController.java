@@ -28,7 +28,7 @@ public class SMSTaskAdminController {
 	 * @param page
 	 * @param rows
 	 * @param type 
-	 * @param procdefId 流程定义id
+	 * @param procdefId 娴佺▼瀹氫箟id
 	 * @return
 	 * @throws Exception
 	 */
@@ -70,17 +70,17 @@ public class SMSTaskAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("添加成功");
+			result.setMsg("娣诲姞鎴愬姛");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("添加失败");
+			result.setMsg("娣诲姞澶辫触");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
 	}
 	
 	/**
-	 * 删除
+	 * 鍒犻櫎
 	 */
 	@RequestMapping("/delete")
 	public String delete(String id,HttpServletResponse response)throws Exception{
@@ -88,7 +88,7 @@ public class SMSTaskAdminController {
 		Gson g = new Gson();
 		Result result=new Result();
 		result.setSuccess(true);
-		result.setMsg("删除成功.");
+		result.setMsg("鍒犻櫎鎴愬姛.");
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
 	}

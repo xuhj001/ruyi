@@ -4,18 +4,18 @@ import java.util.Date;
 
 
 public class RenWuIdentity {
-	//ÕâÀïÎŞ·¨Ö±½Ó²é·Öµê£¬ÏúÊÛµ¥¡£
+	//è¿™é‡Œæ— æ³•ç›´æ¥æŸ¥åˆ†åº—ï¼Œé”€å”®å•ã€‚
 	
 	private Integer renwuId;                 private RenWu renwu;
 	private String userId;                   private User user;
-	//Õâ¸öuserÊÇ ²Ù×÷ÈËµÄuserid
+	//è¿™ä¸ªuseræ˜¯ æ“ä½œäººçš„userid
 	
 	private String processDefinitionKey;//shouhou   weixiu   caiwushenpi
 	private Date  renwuCreateDateTime;
 	
 	
-	//ÎªÊ²Ã´Òª°Ñ·Öµêid ÉèÖÃµ½ÕâÀï£¬ÆäÊµ²»ÉèÖÃµ½ÕâÀïÒ²ÄÜÊµÏÖ£¬·Öµê²éÑ¯£¬¡¾select id from renwu where fendianid =${} ¡¿
-	//µ«ÊÇÕâÑù²éÓĞ¸ö±×¶Ë¡£Èç¹ûÒÔºó£¬Êı¾İÁ¿´óÁË¡£ÕâÑù²é»áºÄÊ±
+	//ä¸ºä»€ä¹ˆè¦æŠŠåˆ†åº—id è®¾ç½®åˆ°è¿™é‡Œï¼Œå…¶å®ä¸è®¾ç½®åˆ°è¿™é‡Œä¹Ÿèƒ½å®ç°ï¼Œåˆ†åº—æŸ¥è¯¢ï¼Œã€select id from renwu where fendianid =${} ã€‘
+	//ä½†æ˜¯è¿™æ ·æŸ¥æœ‰ä¸ªå¼Šç«¯ã€‚å¦‚æœä»¥åï¼Œæ•°æ®é‡å¤§äº†ã€‚è¿™æ ·æŸ¥ä¼šè€—æ—¶
 	private Integer fendianId;
 	
 	

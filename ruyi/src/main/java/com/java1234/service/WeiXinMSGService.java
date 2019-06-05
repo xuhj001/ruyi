@@ -17,14 +17,14 @@ public interface WeiXinMSGService {
 	public void completeAfterSendWXmsg(String taskName, String msg, String procdefId, String type, RenWu renwu,	User currentUser);
 	
 	/**
-	 * ÍÆËÍÏûÏ¢
-	 * @param openid ½ÓÊÜopenid  rw_name  first=±êÌâÄÚÈİ£¬Ïà¹ØÈË about
+	 * æ¨é€æ¶ˆæ¯
+	 * @param openid æ¥å—openid  rw_name  first=æ ‡é¢˜å†…å®¹ï¼Œç›¸å…³äºº about
 	 */
 	public void push_sms(String openid,String first,String rw_name ,String about);
 	
 	
 	/**
-	 * ¿ªÆôÏß³ÌÍÆËÍÏûÏ¢
+	 * å¼€å¯çº¿ç¨‹æ¨é€æ¶ˆæ¯
 	 */
 	public void start_thread_push_msm(List<JSONObject> push_list);
 	

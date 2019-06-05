@@ -30,7 +30,7 @@ public class WeiXin_WAP_Controller {
 	
 	/**
 	 * /wx/wap/set_openid
-	 * @param Õâ¸ö½Ó¿ÚÊÇÈÃÄÚ²¿ÓÃ»§Ê¹ÓÃµÄ£¬ÈÃËûÃÇ×Ô¼ºÉèÖÃ×Ô¼ºµÄopenid
+	 * @param è¿™ä¸ªæ¥å£æ˜¯è®©å†…éƒ¨ç”¨æˆ·ä½¿ç”¨çš„ï¼Œè®©ä»–ä»¬è‡ªå·±è®¾ç½®è‡ªå·±çš„openid
 	 * @param state
 	 * @param response
 	 * @return
@@ -39,7 +39,7 @@ public class WeiXin_WAP_Controller {
 	@RequestMapping("/set_openid")
 	public ModelAndView set_openid(
 			@RequestParam(value="code",required=false)String code,
-			@RequestParam(value="state",required=false)String state,//Õâ¸östateÅª³ÉÍÆ¼öÈËµÄid
+			@RequestParam(value="state",required=false)String state,//è¿™ä¸ªstateå¼„æˆæ¨èäººçš„id
 			HttpServletResponse response)throws Exception{
 			
 			ModelAndView mav = new ModelAndView();
@@ -50,7 +50,7 @@ public class WeiXin_WAP_Controller {
 			if(StringUtil.isNotEmpty(code)){
 				accessToken_openid_json = HttpClient.get(WeiXinUtil.getOpenidUrl(code));
 			}else{
-				//Ìø×ªµ½´íÎóÒ³Ãæ   Òıµ¼ÓÃ»§Ìø×ª ÕæÕıµÄÊÚÈ¨Ò³Ãæ
+				//è·³è½¬åˆ°é”™è¯¯é¡µé¢   å¼•å¯¼ç”¨æˆ·è·³è½¬ çœŸæ­£çš„æˆæƒé¡µé¢
 				return null;
 			}
 			
@@ -59,19 +59,19 @@ public class WeiXin_WAP_Controller {
 			
 			
 			if(accessToken_openid_obj.getString("access_token")==null){
-				//Ìø×ªÕæÒ³µÄÒ³Ãæ ÊÚÈ¨
+				//è·³è½¬çœŸé¡µçš„é¡µé¢ æˆæƒ
 			}
 			
 			
 			WeiXinUserInfo wxuserinfo = null;
-			//Ê¹ÓÃaccess_tokenºÍopenid ÄÃÓÃ»§×ÊÁÏ
+			//ä½¿ç”¨access_tokenå’Œopenid æ‹¿ç”¨æˆ·èµ„æ–™
 			String WXUserInfo_json  = HttpClient.get(WeiXinUtil.getWXUserInfoUrl(accessToken_openid_obj));
 			wxuserinfo = gson.fromJson(WXUserInfo_json, WeiXinUserInfo.class);
-			//ÕâÀïÈç¹ûÊÇbaseÊÚÈ¨µÄ»°£¬wxuserinfoµÄÄÚÈİ»áÊÇnull 
+			//è¿™é‡Œå¦‚æœæ˜¯baseæˆæƒçš„è¯ï¼Œwxuserinfoçš„å†…å®¹ä¼šæ˜¯null 
 			
 			
-			mav.addObject("title","°ó¶¨openid");
-			mav.addObject("mui_title","°ó¶¨openid");
+			mav.addObject("title","ç»‘å®šopenid");
+			mav.addObject("mui_title","ç»‘å®šopenid");
 			
 			mav.addObject("wxuserinfo",wxuserinfo);
 			mav.setViewName("/foreground/user/set_openid");

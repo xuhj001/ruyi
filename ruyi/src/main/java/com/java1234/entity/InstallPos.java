@@ -2,7 +2,7 @@ package com.java1234.entity;
 
 
 /**
- * °²×°Î»ÖÃ Êı¾İ¿â
+ * å®‰è£…ä½ç½® æ•°æ®åº“
  * @author Administrator
  *
  */

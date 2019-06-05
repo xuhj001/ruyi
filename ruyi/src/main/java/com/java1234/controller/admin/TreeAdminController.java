@@ -27,8 +27,8 @@ public class TreeAdminController {
 	
 	
 	/**
-	 * ÓÃ»§µÄid¡¾openid¡¿  ¸üĞÂ²Ëµ¥
-	 * ¸üĞÂ ÓÃ»§µÄÊ÷
+	 * ç”¨æˆ·çš„idã€openidã€‘  æ›´æ–°èœå•
+	 * æ›´æ–° ç”¨æˆ·çš„æ ‘
 	 */
 	@RequestMapping("/update")
 	public String update(

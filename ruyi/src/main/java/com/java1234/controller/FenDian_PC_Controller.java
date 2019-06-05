@@ -24,8 +24,8 @@ public class FenDian_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "分店管理");
-		mav.addObject("title", "分店管理");
+		mav.addObject("pageTitle", "鍒嗗簵绠＄悊");
+		mav.addObject("title", "鍒嗗簵绠＄悊");
 		
 		mav.setViewName("/admin/page/fendian/fendian_manage");
 		return mav;
@@ -35,7 +35,7 @@ public class FenDian_PC_Controller {
 	@RequestMapping("/add")
 	public ModelAndView add() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("btn_text", "添加");
+		mav.addObject("btn_text", "娣诲姞");
 		mav.addObject("save_url", "/admin/fendian/add");
 		mav.setViewName("/admin/page/fendian/add_or_update");
 		return mav;
@@ -52,7 +52,7 @@ public class FenDian_PC_Controller {
 		
 		mav.addObject("fendian", fendian);
 		
-		mav.addObject("btn_text", "修改");
+		mav.addObject("btn_text", "淇敼");
 		mav.addObject("save_url", "/admin/fendian/update?id="+id);
 		
 		mav.setViewName("/admin/page/fendian/add_or_update");

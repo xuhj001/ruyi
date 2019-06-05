@@ -20,16 +20,16 @@ public class YunPianUtil {
 	}
 	
 	/**
-	 * ¡¾ÂìÒÏ¿Æ¼¼¡¿#time#,ĞÂ¼ÓÈÎÎñ,¿Í»§:#clientName#,ÁªÏµÈË:#connName#,µç»°:#phone#,±êÌâ:#title#
-	 * ¡¾ÂìÒÏ¿Æ¼¼¡¿#time#,ĞÂ¼ÓÈÎÎñ,¿Í»§:#clientName#,µç»°:#phone#,±êÌâ:#title#	
+	 * ã€èš‚èšç§‘æŠ€ã€‘#time#,æ–°åŠ ä»»åŠ¡,å®¢æˆ·:#clientName#,è”ç³»äºº:#connName#,ç”µè¯:#phone#,æ ‡é¢˜:#title#
+	 * ã€èš‚èšç§‘æŠ€ã€‘#time#,æ–°åŠ ä»»åŠ¡,å®¢æˆ·:#clientName#,ç”µè¯:#phone#,æ ‡é¢˜:#title#	
 	 */
 	public static String sendMsg(String text,String mobile) throws Exception{
 		String apikey = "1542bac06a68f196e803000291ee2bfe";
 		String url = "https://sms.yunpian.com/v2/sms/single_send.json";
-		//String text = "¡¾ÂìÒÏ¿Æ¼¼¡¿"+time+",ĞÂ¼ÓÈÎÎñ,¿Í»§:"+clientName+",µç»°:"+phone+",±êÌâ:"+title+"";
+		//String text = "ã€èš‚èšç§‘æŠ€ã€‘"+time+",æ–°åŠ ä»»åŠ¡,å®¢æˆ·:"+clientName+",ç”µè¯:"+phone+",æ ‡é¢˜:"+title+"";
 		return post(apikey, text, mobile, url);
-		//{"http_status_code":400,"code":4,"msg":"¹Ø¼ü´ÊÆÁ±Î","detail":"¹Ø¼ü´Ê ¸ÉÄãÄï ÎªÆÁ±Î´Ê£¬²»ÔÊĞí·¢ËÍ"}
-		//{"code":0,"msg":"·¢ËÍ³É¹¦","count":1,"fee":0.05,"unit":"RMB","mobile":"18337537525","sid":15065268376}
+		//{"http_status_code":400,"code":4,"msg":"å…³é”®è¯å±è”½","detail":"å…³é”®è¯ å¹²ä½ å¨˜ ä¸ºå±è”½è¯ï¼Œä¸å…è®¸å‘é€"}
+		//{"code":0,"msg":"å‘é€æˆåŠŸ","count":1,"fee":0.05,"unit":"RMB","mobile":"18337537525","sid":15065268376}
 	}
 	
 	
@@ -39,37 +39,37 @@ public class YunPianUtil {
 	 * @param url
 	 *            http://admin.sms9.net/houtai/sms.php
 	 * @param cpid
-	 *            cpid ÓÃ»§id£º5326
+	 *            cpid ç”¨æˆ·idï¼š5326
 	 * @param password
-	 *            Md5¼ÓÃÜºóµÄ×Ö·û´®£ºmd5(password_timestamp_topsky)
-	 *            Ôò½«×Ö·û´®¡°123456_1493287129_topsky¡±
-	 *            ½øĞĞmd5¼ÓÃÜµÃµ½ÃÜÂë16a66d6cdc584e9cb7ac96e018df7f99
+	 *            Md5åŠ å¯†åçš„å­—ç¬¦ä¸²ï¼šmd5(password_timestamp_topsky)
+	 *            åˆ™å°†å­—ç¬¦ä¸²â€œ123456_1493287129_topskyâ€
+	 *            è¿›è¡Œmd5åŠ å¯†å¾—åˆ°å¯†ç 16a66d6cdc584e9cb7ac96e018df7f99
 	 * @param timestamp
-	 *            µ±Ç°µÄ UNIX Ê±¼ä´Á
+	 *            å½“å‰çš„ UNIX æ—¶é—´æˆ³
 	 * @param channelid
-	 *            Í¨µÀid£º3501 Ãû³Æ£ºÈ«ÍøÍ¨µÀ ¼Û¸ñ£º10.00·Ö
+	 *            é€šé“idï¼š3501 åç§°ï¼šå…¨ç½‘é€šé“ ä»·æ ¼ï¼š10.00åˆ†
 	 * @param msg
-	 *            ĞÅÏ¢ÄÚÈİ
+	 *            ä¿¡æ¯å†…å®¹
 	 * @param tele
-	 *            ¶à¸öºÅÂëÓÃ°ë½Ç¶ººÅ·Ö¿ª£¬×î¶à500¸öºÅÂë
+	 *            å¤šä¸ªå·ç ç”¨åŠè§’é€—å·åˆ†å¼€ï¼Œæœ€å¤š500ä¸ªå·ç 
 	 * @param sendtime
-	 *            ·¢ËÍÊ±¼ä£¬Èç¹ûÎŞ¸Ã±äÁ¿£¬±íÊ¾Á¢¼´·¢ËÍ
-	 * @return ·µ»Ø½á¹û£º Èç¹û·¢ËÍ³É¹¦£¬Ôò·µ»Ø£ºsuccess:±¾´Î·¢ËÍ¶ÌĞÅ±àºÅ Èç¹û·¢ËÍÊ§°Ü£¬Ôò·µ»Ø£ºerror:´íÎóÃèÊö
-	 *         ´íÎóÃèÊö:´«µİ²ÎÊı´íÎó=-1 ÓÃ»§id»òÃÜÂë´íÎó=-2 Í¨µÀid´íÎó=-3 ÊÖ»úºÅÂë´íÎó=-4 ¶ÌĞÅÄÚÈİ´íÎó=-5
-	 *         Óà¶î²»×ã´íÎó=-6 °ó¶¨ip´íÎó=-7 Î´´øÇ©Ãû=-8 Ç©Ãû×ÖÊı²»¶Ô=-9 Í¨µÀÔİÍ£=-10 ¸ÃÊ±¼ä½ûÖ¹·¢ËÍ=-11
-	 *         Ê±¼ä´Á´íÎó=-12 ±àÂëÒì³£=-13
-	 *         ·¢ËÍ±»ÏŞÖÆ=-14(ÓÉÓÚÍø¹ØÏŞÖÆ£¬Í¬Ò»¸öÊÖ»úºÅ²»ÄÜ·´¸´·¢ËÍ¹ı¶à¶ÌĞÅ£¬ÑéÖ¤ÂëÒ»·ÖÖÓÖ»ÄÜÏÂ·¢Ò»ÌõÒ»¸öĞ¡Ê±ÈıÌõ)
-	 *         ¶ÌĞÅÄÚÈİ²»ÕıÈ·=-15(ÓïÒôÑéÖ¤Âë±ØĞëÎª4-8Î»µÄÊı×Ö)
+	 *            å‘é€æ—¶é—´ï¼Œå¦‚æœæ— è¯¥å˜é‡ï¼Œè¡¨ç¤ºç«‹å³å‘é€
+	 * @return è¿”å›ç»“æœï¼š å¦‚æœå‘é€æˆåŠŸï¼Œåˆ™è¿”å›ï¼šsuccess:æœ¬æ¬¡å‘é€çŸ­ä¿¡ç¼–å· å¦‚æœå‘é€å¤±è´¥ï¼Œåˆ™è¿”å›ï¼šerror:é”™è¯¯æè¿°
+	 *         é”™è¯¯æè¿°:ä¼ é€’å‚æ•°é”™è¯¯=-1 ç”¨æˆ·idæˆ–å¯†ç é”™è¯¯=-2 é€šé“idé”™è¯¯=-3 æ‰‹æœºå·ç é”™è¯¯=-4 çŸ­ä¿¡å†…å®¹é”™è¯¯=-5
+	 *         ä½™é¢ä¸è¶³é”™è¯¯=-6 ç»‘å®šipé”™è¯¯=-7 æœªå¸¦ç­¾å=-8 ç­¾åå­—æ•°ä¸å¯¹=-9 é€šé“æš‚åœ=-10 è¯¥æ—¶é—´ç¦æ­¢å‘é€=-11
+	 *         æ—¶é—´æˆ³é”™è¯¯=-12 ç¼–ç å¼‚å¸¸=-13
+	 *         å‘é€è¢«é™åˆ¶=-14(ç”±äºç½‘å…³é™åˆ¶ï¼ŒåŒä¸€ä¸ªæ‰‹æœºå·ä¸èƒ½åå¤å‘é€è¿‡å¤šçŸ­ä¿¡ï¼ŒéªŒè¯ç ä¸€åˆ†é’Ÿåªèƒ½ä¸‹å‘ä¸€æ¡ä¸€ä¸ªå°æ—¶ä¸‰æ¡)
+	 *         çŸ­ä¿¡å†…å®¹ä¸æ­£ç¡®=-15(è¯­éŸ³éªŒè¯ç å¿…é¡»ä¸º4-8ä½çš„æ•°å­—)
 	 * 
 	 * @throws Exception
 	 */
 	public static String post(String apikey, String text, String mobile, String url) throws Exception {
-		// ´´½¨Ä¬ÈÏµÄhttpClientÊµÀı.
+		// åˆ›å»ºé»˜è®¤çš„httpClientå®ä¾‹.
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		// ´´½¨httppost
+		// åˆ›å»ºhttppost
 		HttpPost httppost = new HttpPost(url);
 		
-		// ´´½¨²ÎÊı¶ÓÁĞ
+		// åˆ›å»ºå‚æ•°é˜Ÿåˆ—
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		
 		formparams.add(new BasicNameValuePair("apikey", apikey));

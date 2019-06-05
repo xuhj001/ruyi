@@ -16,7 +16,7 @@ import org.jdom.input.SAXBuilder;
 public class XMLUtil {
 	
 	/**
-	 *°Ñxml×ª³ÉmapÊ¹ÓÃ
+	 *æŠŠxmlè½¬æˆmapä½¿ç”¨
 	 */
 	public static Map doXMLParse(String strxml) throws JDOMException,
 			IOException {
@@ -44,13 +44,13 @@ public class XMLUtil {
 
 			m.put(k, v);
 		}
-		// ¹Ø±ÕÁ÷
+		// å…³é—­æµ
 		in.close();
 		return m;
 	}
 
 	/**
-	 * »ñÈ¡×Ó½áµãµÄxml
+	 * è·å–å­ç»“ç‚¹çš„xml
 	 * @param children
 	 * @return String
 	 */

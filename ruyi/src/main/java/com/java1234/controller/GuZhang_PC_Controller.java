@@ -23,8 +23,8 @@ public class GuZhang_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "故障管理");
-		mav.addObject("title", "故障管理");
+		mav.addObject("pageTitle", "鏁呴殰绠＄悊");
+		mav.addObject("title", "鏁呴殰绠＄悊");
 		
 		mav.setViewName("/admin/page/guzhang/guzhang_manage");
 		return mav;
@@ -34,7 +34,7 @@ public class GuZhang_PC_Controller {
 	@RequestMapping("/add")
 	public ModelAndView add() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("btn_text", "添加");
+		mav.addObject("btn_text", "娣诲姞");
 		mav.addObject("save_url", "/admin/guzhang/add");
 		mav.setViewName("/admin/page/guzhang/add_or_update");
 		return mav;
@@ -51,7 +51,7 @@ public class GuZhang_PC_Controller {
 		
 		mav.addObject("guzhang", guzhang);
 		
-		mav.addObject("btn_text", "修改");
+		mav.addObject("btn_text", "淇敼");
 		mav.addObject("save_url", "/admin/guzhang/update?id="+id);
 		
 		mav.setViewName("/admin/page/guzhang/add_or_update");

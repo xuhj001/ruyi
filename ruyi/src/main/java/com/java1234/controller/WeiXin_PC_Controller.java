@@ -19,8 +19,8 @@ public class WeiXin_PC_Controller {
 	@RequestMapping("/refresh_token")
 	public ModelAndView refresh_token() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "强制刷新token");
-		mav.addObject("title", "强制刷新token");
+		mav.addObject("pageTitle", "寮哄埗鍒锋柊token");
+		mav.addObject("title", "寮哄埗鍒锋柊token");
 		publicService.addLeftMenu(mav);
 		
 		mav.addObject("page", "/admin/page/weixin/refresh_token.jsp");

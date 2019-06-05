@@ -1,10 +1,10 @@
 package com.java1234.entity;
 
 
-//´ËÈÎÎñ  ÓĞÃ»ÓĞ·ÖÅäÈË Èç¹û·ÖÅäÈË¡£ÔòÌí¼Ó Õâ¸öÈÎÎñid
+//æ­¤ä»»åŠ¡  æœ‰æ²¡æœ‰åˆ†é…äºº å¦‚æœåˆ†é…äººã€‚åˆ™æ·»åŠ  è¿™ä¸ªä»»åŠ¡id
 public class Assigned {
 
-	private String taskId;//ÈÎÎñid
+	private String taskId;//ä»»åŠ¡id
 	
 	
 	public String getTaskId() {

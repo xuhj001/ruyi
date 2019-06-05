@@ -40,7 +40,7 @@ public class XiaoShou_WAP_Controller {
 	public ModelAndView create(HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("title", "´´½¨ÏúÊÛ");
+		mav.addObject("title", "åˆ›å»ºé”€å”®");
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("isUse", 1);

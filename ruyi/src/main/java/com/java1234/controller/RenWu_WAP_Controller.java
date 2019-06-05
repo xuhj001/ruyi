@@ -63,7 +63,7 @@ public class RenWu_WAP_Controller {
 	
 	
 	/**
-	 * ÎÒĞèÒª ½ÓÊÜÒ»¸ötaskId
+	 * æˆ‘éœ€è¦ æ¥å—ä¸€ä¸ªtaskId
 	 * 
 	 * @param response
 	 * @param request
@@ -75,23 +75,23 @@ public class RenWu_WAP_Controller {
 			throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		//Èç¹û´«À´¿´ÈÎÎñid  ÊÇ´íÎóµÄ ÕâÀïÖ±½Ó±¨´í¡£
+		//å¦‚æœä¼ æ¥çœ‹ä»»åŠ¡id  æ˜¯é”™è¯¯çš„ è¿™é‡Œç›´æ¥æŠ¥é”™ã€‚
 		Integer renwuId = (Integer) taskService.getVariable(taskId, "renwuId");
 		
 		RenWu renwu = renWuService.findById(renwuId);
 		mav.addObject("renwu", renwu);
 		
 		
-		// ¸ù¾İÈÎÎñid ²éÕÒ ÀúÊ·Åú×¢
+		// æ ¹æ®ä»»åŠ¡id æŸ¥æ‰¾ å†å²æ‰¹æ³¨
 		List<Comment> commentList = publicService.listCommentByTaskId(taskId);
-		Collections.reverse(commentList); // ¼¯ºÏÔªËØ·´×ª
+		Collections.reverse(commentList); // é›†åˆå…ƒç´ åè½¬
 		List<MyComment> myCommentList = new ArrayList<MyComment>();
 		
 		MyComment mc = null;
 		
-		// °ÑÀúÊ·Åú×¢ ×°µ½ÎÒÃÇ×Ô¼º·â×°µÄÊµÌåÖĞ
+		// æŠŠå†å²æ‰¹æ³¨ è£…åˆ°æˆ‘ä»¬è‡ªå·±å°è£…çš„å®ä½“ä¸­
 		for (Comment comment : commentList) {
-			// È¡³östrÖĞµÄimg ±êÇ©
+			// å–å‡ºsträ¸­çš„img æ ‡ç­¾
 			mc = new MyComment();
 			mc.setMessage(HtmlUtil.removeImg(comment.getFullMessage()));
 			mc.setTime(comment.getTime());
@@ -99,10 +99,10 @@ public class RenWu_WAP_Controller {
 			mc.setImageList(HtmlUtil.getImgUrls(comment.getFullMessage()));
 			myCommentList.add(mc);
 		}
-		mav.addObject("myCommentList", myCommentList);//Ö´ĞĞÃ÷Ï¸
+		mav.addObject("myCommentList", myCommentList);//æ‰§è¡Œæ˜ç»†
 		
 		
-		// ¸ù¾İÊµÀıid²é»» Á÷³ÌÖ´ĞĞ¹ı³Ì  Ìí¼ÓÅÅĞò
+		// æ ¹æ®å®ä¾‹idæŸ¥æ¢ æµç¨‹æ‰§è¡Œè¿‡ç¨‹  æ·»åŠ æ’åº
 		List<HistoricActivityInstance> haiList=historyService.createHistoricActivityInstanceQuery()
 				.orderByHistoricActivityInstanceStartTime().asc()
 				.executionId(renwu.getProcessInstanceId())
@@ -112,9 +112,9 @@ public class RenWu_WAP_Controller {
 		
 		Config config = configService.findById(1);
 		mav.addObject("config", config);
-		mav.addObject("haiList", haiList);//Ö´ĞĞÁĞ±í
-		mav.addObject("pageTitle", taskName+"´¦Àí");
-		mav.addObject("title", taskName+"´¦Àí");
+		mav.addObject("haiList", haiList);//æ‰§è¡Œåˆ—è¡¨
+		mav.addObject("pageTitle", taskName+"å¤„ç†");
+		mav.addObject("title", taskName+"å¤„ç†");
 		mav.addObject("taskName", taskName);
 		
 		
@@ -123,7 +123,7 @@ public class RenWu_WAP_Controller {
 		}
 		
 		mav.addObject("acceptPage","/foreground/renwu/accept.jsp");
-		//pizhuPage  =  Ö´ĞĞ-Ã÷Ï¸   ºÍ  Ö´ĞĞ-ÁĞ±í
+		//pizhuPage  =  æ‰§è¡Œ-æ˜ç»†   å’Œ  æ‰§è¡Œ-åˆ—è¡¨
 		mav.addObject("pizhuPage","/foreground/renwu/pizhu.jsp");
 		mav.addObject("addPizhuPage","/foreground/renwu/addPizhu.jsp");
 		mav.addObject("banliPage","/foreground/renwu/banli.jsp");
@@ -143,23 +143,23 @@ public class RenWu_WAP_Controller {
 			throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		//Èç¹û´«À´¿´ÈÎÎñid  ÊÇ´íÎóµÄ ÕâÀïÖ±½Ó±¨´í¡£
+		//å¦‚æœä¼ æ¥çœ‹ä»»åŠ¡id  æ˜¯é”™è¯¯çš„ è¿™é‡Œç›´æ¥æŠ¥é”™ã€‚
 		Integer renwuId = (Integer) taskService.getVariable(taskId, "renwuId");
 		
 		RenWu renwu = renWuService.findById(renwuId);
 		mav.addObject("renwu", renwu);
 		
 		
-		// ¸ù¾İÈÎÎñid ²éÕÒ ÀúÊ·Åú×¢
+		// æ ¹æ®ä»»åŠ¡id æŸ¥æ‰¾ å†å²æ‰¹æ³¨
 		List<Comment> commentList = publicService.listCommentByTaskId(taskId);
-		Collections.reverse(commentList); // ¼¯ºÏÔªËØ·´×ª
+		Collections.reverse(commentList); // é›†åˆå…ƒç´ åè½¬
 		List<MyComment> myCommentList = new ArrayList<MyComment>();
 		
 		MyComment mc = null;
 		
-		// °ÑÀúÊ·Åú×¢ ×°µ½ÎÒÃÇ×Ô¼º·â×°µÄÊµÌåÖĞ
+		// æŠŠå†å²æ‰¹æ³¨ è£…åˆ°æˆ‘ä»¬è‡ªå·±å°è£…çš„å®ä½“ä¸­
 		for (Comment comment : commentList) {
-			// È¡³östrÖĞµÄimg ±êÇ©
+			// å–å‡ºsträ¸­çš„img æ ‡ç­¾
 			mc = new MyComment();
 			mc.setMessage(HtmlUtil.removeImg(comment.getFullMessage()));
 			mc.setTime(comment.getTime());
@@ -167,10 +167,10 @@ public class RenWu_WAP_Controller {
 			mc.setImageList(HtmlUtil.getImgUrls(comment.getFullMessage()));
 			myCommentList.add(mc);
 		}
-		mav.addObject("myCommentList", myCommentList);//Ö´ĞĞÃ÷Ï¸
+		mav.addObject("myCommentList", myCommentList);//æ‰§è¡Œæ˜ç»†
 		
 		
-		// ¸ù¾İÊµÀıid²é»» Á÷³ÌÖ´ĞĞ¹ı³Ì  Ìí¼ÓÅÅĞò
+		// æ ¹æ®å®ä¾‹idæŸ¥æ¢ æµç¨‹æ‰§è¡Œè¿‡ç¨‹  æ·»åŠ æ’åº
 		List<HistoricActivityInstance> haiList=historyService.createHistoricActivityInstanceQuery()
 				.orderByHistoricActivityInstanceStartTime().asc()
 				.executionId(renwu.getProcessInstanceId())
@@ -180,9 +180,9 @@ public class RenWu_WAP_Controller {
 		
 		Config config = configService.findById(1);
 		mav.addObject("config", config);
-		mav.addObject("haiList", haiList);//Ö´ĞĞÁĞ±í
-		mav.addObject("pageTitle", taskName+"´¦Àí");
-		mav.addObject("title", taskName+"´¦Àí");
+		mav.addObject("haiList", haiList);//æ‰§è¡Œåˆ—è¡¨
+		mav.addObject("pageTitle", taskName+"å¤„ç†");
+		mav.addObject("title", taskName+"å¤„ç†");
 		mav.addObject("taskName", taskName);
 		
 		
@@ -191,7 +191,7 @@ public class RenWu_WAP_Controller {
 		}
 		
 		mav.addObject("acceptPage","/foreground/renwu/accept.jsp");
-		//pizhuPage  =  Ö´ĞĞ-Ã÷Ï¸   ºÍ  Ö´ĞĞ-ÁĞ±í
+		//pizhuPage  =  æ‰§è¡Œ-æ˜ç»†   å’Œ  æ‰§è¡Œ-åˆ—è¡¨
 		mav.addObject("pizhuPage","/foreground/renwu/pizhu.jsp");
 		mav.addObject("addPizhuPage","/foreground/renwu/addPizhu.jsp");
 		
@@ -212,12 +212,12 @@ public class RenWu_WAP_Controller {
 	public ModelAndView my_banli(HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("pageTitle", "ÎÒ°ìÀíµÄ");
-		mav.addObject("title", "ÎÒ°ìÀíµÄ");
+		mav.addObject("pageTitle", "æˆ‘åŠç†çš„");
+		mav.addObject("title", "æˆ‘åŠç†çš„");
 		/**
-		 * ÎªÊ²Ã´Òª°ÑÎÒ°ìÀíµÄÒ³Ãæ·Åµ½commonÀïÃæ£¬
-		 * ÎÒÊÇÕâÑùÏëµÄ£¬ÎÒ°ìÀíµÄÒÔºó»á¿Ï¶¨»áÉè¼Æ³É Ñ¡Ïî¿¨Ê½µÄ¡£ ±È½Ï¡¾ÊÛºó£¬ÏúÊÛ£¬·µĞŞ¡¿
-		 * ·ÅÔÚÕâÀï£¬ÊÇÎªÒÔºó¿¼ÂÇ¡£
+		 * ä¸ºä»€ä¹ˆè¦æŠŠæˆ‘åŠç†çš„é¡µé¢æ”¾åˆ°commoné‡Œé¢ï¼Œ
+		 * æˆ‘æ˜¯è¿™æ ·æƒ³çš„ï¼Œæˆ‘åŠç†çš„ä»¥åä¼šè‚¯å®šä¼šè®¾è®¡æˆ é€‰é¡¹å¡å¼çš„ã€‚ æ¯”è¾ƒã€å”®åï¼Œé”€å”®ï¼Œè¿”ä¿®ã€‘
+		 * æ”¾åœ¨è¿™é‡Œï¼Œæ˜¯ä¸ºä»¥åè€ƒè™‘ã€‚
 		 */
 		
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
@@ -231,12 +231,12 @@ public class RenWu_WAP_Controller {
 	
 	/**
 	 * 
-	 * ÎÒµÄÏúÊÛµ¥
-	 * ·ÖµêÏúÊÛµ¥
-	 * È«²¿ÏúÊÛµ¥
+	 * æˆ‘çš„é”€å”®å•
+	 * åˆ†åº—é”€å”®å•
+	 * å…¨éƒ¨é”€å”®å•
 	 * 
-	 * ¶¼ÊÇÕâ¸ö½Ó¿Ú
-	 * ½ÓÊÜ²ÎÊı²»Í¬
+	 * éƒ½æ˜¯è¿™ä¸ªæ¥å£
+	 * æ¥å—å‚æ•°ä¸åŒ
 	 * /renwu/wap/all_dingdan
 	 * @param request
 	 * @return
@@ -253,9 +253,9 @@ public class RenWu_WAP_Controller {
 		
 		mav.addObject("title", title);
 		/**
-		 * ÎªÊ²Ã´Òª°ÑÎÒ°ìÀíµÄÒ³Ãæ·Åµ½commonÀïÃæ£¬
-		 * ÎÒÊÇÕâÑùÏëµÄ£¬ÎÒ°ìÀíµÄÒÔºó»á¿Ï¶¨»áÉè¼Æ³É Ñ¡Ïî¿¨Ê½µÄ¡£ ±È½Ï¡¾ÊÛºó£¬ÏúÊÛ£¬·µĞŞ¡¿
-		 * ·ÅÔÚÕâÀï£¬ÊÇÎªÒÔºó¿¼ÂÇ¡£
+		 * ä¸ºä»€ä¹ˆè¦æŠŠæˆ‘åŠç†çš„é¡µé¢æ”¾åˆ°commoné‡Œé¢ï¼Œ
+		 * æˆ‘æ˜¯è¿™æ ·æƒ³çš„ï¼Œæˆ‘åŠç†çš„ä»¥åä¼šè‚¯å®šä¼šè®¾è®¡æˆ é€‰é¡¹å¡å¼çš„ã€‚ æ¯”è¾ƒã€å”®åï¼Œé”€å”®ï¼Œè¿”ä¿®ã€‘
+		 * æ”¾åœ¨è¿™é‡Œï¼Œæ˜¯ä¸ºä»¥åè€ƒè™‘ã€‚
 		 */
 		
 		mav.addObject("currentUserId",currentUserId);
@@ -281,13 +281,13 @@ public class RenWu_WAP_Controller {
 		mav.addObject("renwu", renwu);
 		
 		
-		//¸ù¾İÊµÀıid²éµÄ ÀúÊ·Åú×¢
+		//æ ¹æ®å®ä¾‹idæŸ¥çš„ å†å²æ‰¹æ³¨
 		List<Comment> commentList = taskService.getProcessInstanceComments(renwu.getProcessInstanceId());
 		List<MyComment> myCommentList = new ArrayList<MyComment>();
 		MyComment mc = null;
-		// °ÑÀúÊ·Åú×¢ ×°µ½ÎÒÃÇ×Ô¼º·â×°µÄÊµÌåÖĞ
+		// æŠŠå†å²æ‰¹æ³¨ è£…åˆ°æˆ‘ä»¬è‡ªå·±å°è£…çš„å®ä½“ä¸­
 		for (Comment comment : commentList) {
-			// È¡³östrÖĞµÄimg ±êÇ©
+			// å–å‡ºsträ¸­çš„img æ ‡ç­¾
 			mc = new MyComment();
 			mc.setMessage(HtmlUtil.removeImg(comment.getFullMessage()));
 			mc.setTime(comment.getTime());
@@ -297,7 +297,7 @@ public class RenWu_WAP_Controller {
 		}
 		mav.addObject("myCommentList", myCommentList);
 		
-		// ¸ù¾İÊµÀıid²é»» Á÷³ÌÖ´ĞĞ¹ı³Ì  Ìí¼ÓÅÅĞò
+		// æ ¹æ®å®ä¾‹idæŸ¥æ¢ æµç¨‹æ‰§è¡Œè¿‡ç¨‹  æ·»åŠ æ’åº
 		List<HistoricActivityInstance> haiList=historyService.createHistoricActivityInstanceQuery()
 				.orderByHistoricActivityInstanceStartTime().asc()
 				.executionId(renwu.getProcessInstanceId())

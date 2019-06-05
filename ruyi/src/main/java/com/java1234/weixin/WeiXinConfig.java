@@ -3,78 +3,78 @@ package com.java1234.weixin;
 
 public class WeiXinConfig {
 		
-		// Õâ¸ö¾ÍÊÇ×Ô¼ºÒª±£¹ÜºÃµÄË½ÓĞKeyÁË£¨ÇĞ¼ÇÖ»ÄÜ·ÅÔÚ×Ô¼ºµÄºóÌ¨´úÂëÀï£¬²»ÄÜ·ÅÔÚÈÎºÎ¿ÉÄÜ±»¿´µ½Ô´´úÂëµÄ¿Í»§¶Ë³ÌĞòÖĞ£©
-		// Ã¿´Î×Ô¼ºPostÊı¾İ¸øAPIµÄÊ±ºò¶¼ÒªÓÃÕâ¸ökeyÀ´¶ÔËùÓĞ×Ö¶Î½øĞĞÇ©Ãû£¬Éú³ÉµÄÇ©Ãû»á·ÅÔÚSignÕâ¸ö×Ö¶Î£¬APIÊÕµ½PostÊı¾İµÄÊ±ºòÒ²»áÓÃÍ¬ÑùµÄÇ©ÃûËã·¨¶ÔPost¹ıÀ´µÄÊı¾İ½øĞĞÇ©ÃûºÍÑéÖ¤
-		// ÊÕµ½APIµÄ·µ»ØµÄÊ±ºòÒ²ÒªÓÃÕâ¸ökeyÀ´¶Ô·µ»ØµÄÊı¾İËãÏÂÇ©Ãû£¬¸úAPIµÄSignÊı¾İ½øĞĞ±È½Ï£¬Èç¹ûÖµ²»Ò»ÖÂ£¬ÓĞ¿ÉÄÜÊı¾İ±»µÚÈı·½¸ø´Û¸Ä
+		// è¿™ä¸ªå°±æ˜¯è‡ªå·±è¦ä¿ç®¡å¥½çš„ç§æœ‰Keyäº†ï¼ˆåˆ‡è®°åªèƒ½æ”¾åœ¨è‡ªå·±çš„åå°ä»£ç é‡Œï¼Œä¸èƒ½æ”¾åœ¨ä»»ä½•å¯èƒ½è¢«çœ‹åˆ°æºä»£ç çš„å®¢æˆ·ç«¯ç¨‹åºä¸­ï¼‰
+		// æ¯æ¬¡è‡ªå·±Postæ•°æ®ç»™APIçš„æ—¶å€™éƒ½è¦ç”¨è¿™ä¸ªkeyæ¥å¯¹æ‰€æœ‰å­—æ®µè¿›è¡Œç­¾åï¼Œç”Ÿæˆçš„ç­¾åä¼šæ”¾åœ¨Signè¿™ä¸ªå­—æ®µï¼ŒAPIæ”¶åˆ°Postæ•°æ®çš„æ—¶å€™ä¹Ÿä¼šç”¨åŒæ ·çš„ç­¾åç®—æ³•å¯¹Postè¿‡æ¥çš„æ•°æ®è¿›è¡Œç­¾åå’ŒéªŒè¯
+		// æ”¶åˆ°APIçš„è¿”å›çš„æ—¶å€™ä¹Ÿè¦ç”¨è¿™ä¸ªkeyæ¥å¯¹è¿”å›çš„æ•°æ®ç®—ä¸‹ç­¾åï¼Œè·ŸAPIçš„Signæ•°æ®è¿›è¡Œæ¯”è¾ƒï¼Œå¦‚æœå€¼ä¸ä¸€è‡´ï¼Œæœ‰å¯èƒ½æ•°æ®è¢«ç¬¬ä¸‰æ–¹ç»™ç¯¡æ”¹
 		
 		public final static String trade_type = "JSAPI";
-		public final static String SIGN_TYPE = "MD5";//Ç©Ãû¼ÓÃÜ·½Ê½
+		public final static String SIGN_TYPE = "MD5";//ç­¾ååŠ å¯†æ–¹å¼
 		
 		
 		
-		//£¨ÂìÒÏ¿Æ¼¼Token£©sisstoken
+		//ï¼ˆèš‚èšç§‘æŠ€Tokenï¼‰sisstoken
 		public final static String Token = "sisstoken";
 		
 		
-		//£¨ÂìÒÏ¿Æ¼¼-EncodingAESKey£©GmULUeNedGYUMlNSQslwakSYCLdAVrGpljRKYTwpFcg
+		//ï¼ˆèš‚èšç§‘æŠ€-EncodingAESKeyï¼‰GmULUeNedGYUMlNSQslwakSYCLdAVrGpljRKYTwpFcg
 		
 		public final static String key = "GmULUeNedGYUMlNSQslwakSYCLdAVrGpljRKYTwpFcg";
 		
 		
 		
 		
-		//ÂìÒÏ Ó¦ÓÃÃÜÔ¿ AppSecret¡¾cf741142af236e96a01db58dd0ac586f¡¿
-		//²âÊÔ¡¾2fe93114d0d7d20b375ada90f9e54b3f¡¿
-		//(Ö¾»¯)¡¾49803df50be4f35741032a424deeaf32¡¿ Ö¾»ªÊµÒµ rzzhmy@163.com zhmy3699 13064458882
+		//èš‚èš åº”ç”¨å¯†é’¥ AppSecretã€cf741142af236e96a01db58dd0ac586fã€‘
+		//æµ‹è¯•ã€2fe93114d0d7d20b375ada90f9e54b3fã€‘
+		//(å¿—åŒ–)ã€49803df50be4f35741032a424deeaf32ã€‘ å¿—åå®ä¸š rzzhmy@163.com zhmy3699 13064458882
 		public final static String appsecret = "49803df50be4f35741032a424deeaf32";
-		// ÂìÒÏ¿Æ¼¼=¡¾wx2d7b8f851e2b4d2c¡¿ 
-		// ²âÊÔ  = ¡¾wxa01f7fee886b54e9¡¿
-		//(Ö¾»ªÃÅ)¡¾wx83508396d0515fc7¡¿
+		// èš‚èšç§‘æŠ€=ã€wx2d7b8f851e2b4d2cã€‘ 
+		// æµ‹è¯•  = ã€wxa01f7fee886b54e9ã€‘
+		//(å¿—åé—¨)ã€wx83508396d0515fc7ã€‘
 		public  final static String appID = "wx83508396d0515fc7";
 		
 		
 		
 		
-		//Î¢ĞÅ·¢ËÍ¿Í·şÏûÏ¢µÄ½Ó¿ÚURLÈçÏÂ
+		//å¾®ä¿¡å‘é€å®¢æœæ¶ˆæ¯çš„æ¥å£URLå¦‚ä¸‹
 		String client_message_url = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=#ACCESS_TOKEN#";
 		
 		
 		
 		
 		
-		// Î¢ĞÅÖ§¸¶·ÖÅäµÄÉÌ»§ºÅID£¨¿ªÍ¨¹«ÖÚºÅµÄÎ¢ĞÅÖ§¸¶¹¦ÄÜÖ®ºó¿ÉÒÔ»ñÈ¡µ½£©
+		// å¾®ä¿¡æ”¯ä»˜åˆ†é…çš„å•†æˆ·å·IDï¼ˆå¼€é€šå…¬ä¼—å·çš„å¾®ä¿¡æ”¯ä»˜åŠŸèƒ½ä¹‹åå¯ä»¥è·å–åˆ°ï¼‰
 		public  final static String mchID = "1253076501";
 
-		// ÊÜÀíÄ£Ê½ÏÂ¸ø×ÓÉÌ»§·ÖÅäµÄ×ÓÉÌ»§ºÅ
+		// å—ç†æ¨¡å¼ä¸‹ç»™å­å•†æˆ·åˆ†é…çš„å­å•†æˆ·å·
 		private final static String subMchID = "";
 
-		// HTTPSÖ¤ÊéµÄ±¾µØÂ·¾¶
+		// HTTPSè¯ä¹¦çš„æœ¬åœ°è·¯å¾„
 		private static String certLocalPath = "";
 
-		// HTTPSÖ¤ÊéÃÜÂë£¬Ä¬ÈÏÃÜÂëµÈÓÚÉÌ»§ºÅMCHID
+		// HTTPSè¯ä¹¦å¯†ç ï¼Œé»˜è®¤å¯†ç ç­‰äºå•†æˆ·å·MCHID
 		private static String certPassword = "1253076501";
 
-		// ÊÇ·ñÊ¹ÓÃÒì²½Ïß³ÌµÄ·½Ê½À´ÉÏ±¨API²âËÙ£¬Ä¬ÈÏÎªÒì²½Ä£Ê½
+		// æ˜¯å¦ä½¿ç”¨å¼‚æ­¥çº¿ç¨‹çš„æ–¹å¼æ¥ä¸ŠæŠ¥APIæµ‹é€Ÿï¼Œé»˜è®¤ä¸ºå¼‚æ­¥æ¨¡å¼
 		private static boolean useThreadToDoReport = true;
 
-		// »úÆ÷IP
+		// æœºå™¨IP
 		private static String ip = "27.54.227.50";
 
-		// ½Ó¿ÚÁ´½Ó
-		// URLµØÖ·£ºhttps://api.mch.weixin.qq.com/pay/unifiedorder
+		// æ¥å£é“¾æ¥
+		// URLåœ°å€ï¼šhttps://api.mch.weixin.qq.com/pay/unifiedorder
 		public final static String pay_ok_url = "http://hjdv.v050.10000net.cn/3.jsp";
 		
-		//Ìá½»postµ½Õâ¸öµØÖ·£¬¿ÉÒÔÄÃµ½prepay id
+		//æäº¤poståˆ°è¿™ä¸ªåœ°å€ï¼Œå¯ä»¥æ‹¿åˆ°prepay id
 		public  static final String PREPAY_ID_URL = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 		
-		//¸¶¿îurl  ¸¶µ½ÓÃ»§µÄÁãÇ®
+		//ä»˜æ¬¾url  ä»˜åˆ°ç”¨æˆ·çš„é›¶é’±
 		public  static final String fukuan_URL = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers";
 		
-		//ºì°üurl   ¹«ÖÚºÅ¸øÓÃ»§·¢ºì°ü
+		//çº¢åŒ…url   å…¬ä¼—å·ç»™ç”¨æˆ·å‘çº¢åŒ…
 		public  static final String hongbao_URL = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack";
 
-		//Î¢ĞÅ¶şÎ¬Âë url »ù´¡Ö§³Ö: »ñÈ¡access_token½Ó¿Ú /token
-		//ÇëÇóµØÖ·ticket ·½·¨get
+		//å¾®ä¿¡äºŒç»´ç  url åŸºç¡€æ”¯æŒ: è·å–access_tokenæ¥å£ /token
+		//è¯·æ±‚åœ°å€ticket æ–¹æ³•get
 		public  static final String ticket = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxab3d090e1d6f4f9d&secret=91d925477990157e7d9466c8c0f513fa";
 
 	

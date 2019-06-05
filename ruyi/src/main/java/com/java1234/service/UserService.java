@@ -6,7 +6,7 @@ import java.util.Map;
 import com.java1234.entity.User;
 
 /**
- * ÓÃ»§Service
+ * ç”¨æˆ·Service
  * @author user
  *
  */
@@ -23,9 +23,9 @@ public interface UserService {
 	
 	public User findById_(String id_);
 	/**
-	 * É¾³ıÓÃ»§  
+	 * åˆ é™¤ç”¨æˆ·  
 	 * @param id
-	 * ÕâÀïÓĞ¸öĞ¡bug  É¾³ıÓÃ»§ÒªÏÈÉ¾³ı  membershipÈ»ºó²Å¿ÉÒÔÉ¾³ıÓÃ»§±í¡£  ÒòÎªËûÃÇÊÇ¹Ø¼ü¹ØÏµ¡£  
+	 * è¿™é‡Œæœ‰ä¸ªå°bug  åˆ é™¤ç”¨æˆ·è¦å…ˆåˆ é™¤  membershipç„¶åæ‰å¯ä»¥åˆ é™¤ç”¨æˆ·è¡¨ã€‚  å› ä¸ºä»–ä»¬æ˜¯å…³é”®å…³ç³»ã€‚  
 	 */
 	public int delete(String id_);
 	

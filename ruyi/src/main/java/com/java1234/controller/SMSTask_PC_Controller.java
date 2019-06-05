@@ -38,7 +38,7 @@ public class SMSTask_PC_Controller {
 	
 	
 	/**
-	 * 根据  流程定义id 拿到所有的任务节点   type 代表  任务点节 还是占单节点
+	 * 鏍规嵁  娴佺▼瀹氫箟id 鎷垮埌鎵�鏈夌殑浠诲姟鑺傜偣   type 浠ｈ〃  浠诲姟鐐硅妭 杩樻槸鍗犲崟鑺傜偣
 	 * @return
 	 * @throws Exception
 	 */
@@ -59,12 +59,12 @@ public class SMSTask_PC_Controller {
 			throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		//根据流程定义id，拿全部任务
+		//鏍规嵁娴佺▼瀹氫箟id锛屾嬁鍏ㄩ儴浠诲姟
 		Map<String, Object> map = new HashMap<String ,Object>();
 		map.put("procdefId", procdefId);
 		List<UserTask> list = publicService.getAllUserTaskByProcdefId(map);
 		
-		//拿到 部门分组  
+		//鎷垮埌 閮ㄩ棬鍒嗙粍  
 		map.clear();
 		List<Group> groups = groupService.list(map);
 		

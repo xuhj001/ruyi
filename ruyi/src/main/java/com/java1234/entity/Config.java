@@ -3,9 +3,9 @@ package com.java1234.entity;
 public class Config {
 
 	private Integer id;
-	private Integer da_ka_count;//´ò¿¨´ÎÊı
-	private String web_site_url;//ÍøÕ¾   http://weiweizhe.com  ÉÏ´«×é¼ş¿ÉÄÜÓÃµ½Õâ¸öÅäÖÃ 
-	private Integer days;//»»Ğ¾µÄÖÜÆÚÌìÊı
+	private Integer da_ka_count;//æ‰“å¡æ¬¡æ•°
+	private String web_site_url;//ç½‘ç«™   http://weiweizhe.com  ä¸Šä¼ ç»„ä»¶å¯èƒ½ç”¨åˆ°è¿™ä¸ªé…ç½® 
+	private Integer days;//æ¢èŠ¯çš„å‘¨æœŸå¤©æ•°
 	
 	
 	

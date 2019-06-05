@@ -51,8 +51,8 @@ public class Task_WAP_Controller {
 	/**
 	 * 
 	 *      /task/wap/daiban
-	 * ÆäÊµ ¾ÍÊÇ¸ù¾İ-->>ÓÃ»§µÄid---ÕÒµ½×é--¸ù¾İ×é---²éËûµÄ´ı°ì
-	 * ´ıÈÎÎñÆäÊµ·Ö2ÖÖ 1=Ã»ÓĞÈË°ìÀíµÄ£¬2=ÒÑÓĞÈËÕıÔÚ°ìÀíµÄ
+	 * å…¶å® å°±æ˜¯æ ¹æ®-->>ç”¨æˆ·çš„id---æ‰¾åˆ°ç»„--æ ¹æ®ç»„---æŸ¥ä»–çš„å¾…åŠ
+	 * å¾…ä»»åŠ¡å…¶å®åˆ†2ç§ 1=æ²¡æœ‰äººåŠç†çš„ï¼Œ2=å·²æœ‰äººæ­£åœ¨åŠç†çš„
 	 */
 	@RequestMapping("/daiban")
 	public ModelAndView daiban(@RequestParam(value="title",required=false)String title,
@@ -70,8 +70,8 @@ public class Task_WAP_Controller {
 	
 	
 	/**
-	 * ¸ù¾İÈÎÎñµÄid  ²éÕÒÈÎÎñ½Úµã´æµÄformData  =¿ØÖÆÆ÷µÄurl /shouhou/shouhou_banli.html
-	 * js¶ËÊä³ö result.url
+	 * æ ¹æ®ä»»åŠ¡çš„id  æŸ¥æ‰¾ä»»åŠ¡èŠ‚ç‚¹å­˜çš„formData  =æ§åˆ¶å™¨çš„url /shouhou/shouhou_banli.html
+	 * jsç«¯è¾“å‡º result.url
 	 */
 	@RequestMapping("/getFormDataByTaskId")
 	public String getFormDataByTaskId(String taskId,HttpServletResponse response)throws Exception{

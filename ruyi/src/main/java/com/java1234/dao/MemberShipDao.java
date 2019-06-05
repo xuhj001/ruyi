@@ -6,29 +6,29 @@ import java.util.Map;
 import com.java1234.entity.MemberShip;
 
 /**
- * ÓÃ»§½ÇÉ«¹ØÏµDao
+ * ç”¨æˆ·è§’è‰²å…³ç³»Dao
  * @author user
  *
  */
 public interface MemberShipDao {
 
 	/**
-	 * ÓÃ»§µÇÂ¼
-	 * µÇÂ½³É¹¦ºó·µ»Ømembership  ÕâÀïÃæ¾Íº¬ÓĞ user ºÍgroup
+	 * ç”¨æˆ·ç™»å½•
+	 * ç™»é™†æˆåŠŸåè¿”å›membership  è¿™é‡Œé¢å°±å«æœ‰ user å’Œgroup
 	 */
 	public MemberShip login(Map<String,Object> map);
 	
 	/**
-	 * É¾³ıÖ¸¶¨ÓÃ»§ËùÓĞ½ÇÉ«
+	 * åˆ é™¤æŒ‡å®šç”¨æˆ·æ‰€æœ‰è§’è‰²
 	 */
 	public int  deleteAllGroupsByUserId(String userId);
 	
 	/**
-	 * Ìí¼ÓÓÃ»§È¨ÏŞ
+	 * æ·»åŠ ç”¨æˆ·æƒé™
 	 */
 	public int add(MemberShip memberShip);
 	
-	//¸üĞÂÓÃ»§µÄÈ¨ÏŞ 
+	//æ›´æ–°ç”¨æˆ·çš„æƒé™ 
 	public int  update(String userId,String groupsIds);
 	
 	

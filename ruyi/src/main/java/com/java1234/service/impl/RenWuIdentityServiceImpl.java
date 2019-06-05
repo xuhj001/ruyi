@@ -33,17 +33,17 @@ public class RenWuIdentityServiceImpl implements RenWuIdentityService {
 	
 	
 	/**
-	 * Ìí¼ÓÉí·İÁªÏµÈË£¬  Ìí¼ÓÖ®Ç°ÅĞ¶ÏÏÂÓĞÃ»ÓĞ£¬Ã»ÓĞ¾Í¼Ó¡£ ÓĞ¾Í²»¼Ó
+	 * æ·»åŠ èº«ä»½è”ç³»äººï¼Œ  æ·»åŠ ä¹‹å‰åˆ¤æ–­ä¸‹æœ‰æ²¡æœ‰ï¼Œæ²¡æœ‰å°±åŠ ã€‚ æœ‰å°±ä¸åŠ 
 	 */
 	public void add_idt(User currentUser,RenWu renwu) {
 		
-		//¸ù¾İuserid ºÍrenwuid ²é²éÕâ¸öÈËÓĞÃ»ÓĞ¼ÇÂ¼
+		//æ ¹æ®userid å’Œrenwuid æŸ¥æŸ¥è¿™ä¸ªäººæœ‰æ²¡æœ‰è®°å½•
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("userId", currentUser.getId_());
 		map.put("renwuId", renwu.getId());
 		List<RenWuIdentity> list = this.list(map);
 		if(list.size()>0){
-			//Èç¹ûÓĞ¼ÇÂ¼  Ö±½Ó·µ»Ø
+			//å¦‚æœæœ‰è®°å½•  ç›´æ¥è¿”å›
 			return ; 
 		}
 		

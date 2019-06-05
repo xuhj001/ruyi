@@ -6,14 +6,14 @@ import java.util.Map;
 import com.java1234.entity.MemberShip;
 
 /**
- * ÓÃ»§½ÇÉ«¹ØÏµService
+ * ç”¨æˆ·è§’è‰²å…³ç³»Service
  * @author user
  *
  */
 public interface MemberShipService {
 
 	/**
-	 * ÓÃ»§µÇÂ¼
+	 * ç”¨æˆ·ç™»å½•
 	 * @param user
 	 * @return
 	 */
@@ -21,14 +21,14 @@ public interface MemberShipService {
 	
 	
 	/**
-	 * É¾³ıÖ¸¶¨ÓÃ»§ËùÓĞ½ÇÉ«
+	 * åˆ é™¤æŒ‡å®šç”¨æˆ·æ‰€æœ‰è§’è‰²
 	 * @param userId
 	 * @return
 	 */
 	public int  deleteAllGroupsByUserId(String userId);
 	
 	/**
-	 * Ìí¼ÓÓÃ»§È¨ÏŞ
+	 * æ·»åŠ ç”¨æˆ·æƒé™
 	 * @param userRole
 	 * @return
 	 */

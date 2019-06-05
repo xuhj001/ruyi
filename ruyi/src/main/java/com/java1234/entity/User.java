@@ -1,21 +1,21 @@
 package com.java1234.entity;
 
 /**
- * ÓÃ»§À©Õ¹ÊµÌå
+ * ç”¨æˆ·æ‰©å±•å®ä½“
  * @author user
  *
  */
 public class User {
 	
-	private String id_; // Ö÷¼ü ÓÃ»§Ãû  openid
-	private Integer rev_;//Êı×Ö  ÓÃÓÚÇø±ğ ÊÇ¿Í»§»¹ÊÇÄÚ²¿ÈËÔ±   1ÊÇÎ¢ĞÅ ÓÃ»§    2ÊÇÄÚ²¿ÈËÔ±
-	private String first_  ; //ÕæÊµĞÕÃû
-	private String last_  ; //  µç»°
-	private String email_  ; // ÓÊÏä ÏÖÔÚÓÃÓÚÇø±ğÕÊºÅÄÜ·ñµçÄÔµÇÂ½  1ÄÜ¡£null 0 ²»ÄÜ¡£
-	private String  pwd_  ; // ÃÜÂë
-	private String  picture_id_; //´´½¨Ê±¼ä
-	private String groups; // ÓÃ»§ÓµÓĞµÄ½ÇÉ«¼¯ºÏ ÒÔ¶ººÅ¸ô¿ª
-	private WeiXinUserInfo weiXinUserInfo ; //À©Õ¹µÄÄÚÈİ 
+	private String id_; // ä¸»é”® ç”¨æˆ·å  openid
+	private Integer rev_;//æ•°å­—  ç”¨äºåŒºåˆ« æ˜¯å®¢æˆ·è¿˜æ˜¯å†…éƒ¨äººå‘˜   1æ˜¯å¾®ä¿¡ ç”¨æˆ·    2æ˜¯å†…éƒ¨äººå‘˜
+	private String first_  ; //çœŸå®å§“å
+	private String last_  ; //  ç”µè¯
+	private String email_  ; // é‚®ç®± ç°åœ¨ç”¨äºåŒºåˆ«å¸å·èƒ½å¦ç”µè„‘ç™»é™†  1èƒ½ã€‚null 0 ä¸èƒ½ã€‚
+	private String  pwd_  ; // å¯†ç 
+	private String  picture_id_; //åˆ›å»ºæ—¶é—´
+	private String groups; // ç”¨æˆ·æ‹¥æœ‰çš„è§’è‰²é›†åˆ ä»¥é€—å·éš”å¼€
+	private WeiXinUserInfo weiXinUserInfo ; //æ‰©å±•çš„å†…å®¹ 
 	
 	
 	

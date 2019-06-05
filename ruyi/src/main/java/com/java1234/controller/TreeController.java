@@ -33,19 +33,19 @@ public class TreeController {
 	
 	/**
 	 * 
-	 * Õâ¸ö·½·¨ÊÇÉèÖÃÈ¨ÏŞÓÃµÄ /tree/getCheckedTreeMenu.do?userId=11
+	 * è¿™ä¸ªæ–¹æ³•æ˜¯è®¾ç½®æƒé™ç”¨çš„ /tree/getCheckedTreeMenu.do?userId=11
 	 * 
 	 */
 	@RequestMapping("/getCheckedTreeMenu")
 	public String getCheckedTreeMenu(@RequestParam(value = "userId", required = false) String userId,
 			HttpServletRequest requset, HttpServletResponse response) throws Exception {
-		// ÏÈÕÒparentÊÇ-1µÄ¶¥¼¶²Ëµ¥
+		// å…ˆæ‰¾parentæ˜¯-1çš„é¡¶çº§èœå•
 		User user = userService.findById_(userId);
 		
 		String treeIds = user.getWeiXinUserInfo().getTreeIds();
 		
 		if(treeIds==null){
-			treeIds="";//²»ÄÜÕânull   »á±¨´í¡£ Ç¿ÖÆÉèÖÃÒ»¸ö¿Õstr
+			treeIds="";//ä¸èƒ½è¿™null   ä¼šæŠ¥é”™ã€‚ å¼ºåˆ¶è®¾ç½®ä¸€ä¸ªç©ºstr
 		}
 		
 		List<Tree> list = getCheckTreesByParentId(-1, treeIds);
@@ -55,7 +55,7 @@ public class TreeController {
 	}
 	
 	/**
-	 * Õâ¸ö·½·¨ÊÇÉèÖÃÈ¨ÏŞÓÃµÄ   ¸ø²Ëµ¥Ìí¼Ócheck Ñ¡Ïî
+	 * è¿™ä¸ªæ–¹æ³•æ˜¯è®¾ç½®æƒé™ç”¨çš„   ç»™èœå•æ·»åŠ check é€‰é¡¹
 	 */
 	public List<Tree> getCheckTreesByParentId(Integer father, String treeIds) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -64,11 +64,11 @@ public class TreeController {
 		List<Tree> list = treeService.getTreesByFatherOrIds(map);//
 		
 		for (Tree tree : list) {
-			// Èç¹û ÊÇ¸´Ñ¡¿ò ¿ÉÒÔÔÚÕâÀïÅĞ¶Ï
+			// å¦‚æœ æ˜¯å¤é€‰æ¡† å¯ä»¥åœ¨è¿™é‡Œåˆ¤æ–­
 			// tree.setChecked(true);
-			if (MyUtil.existStrArr(tree.getId() + "", treeIds.split(","))) {// ÅĞ¶Ïid
-																			// ÓĞÃ»ÓĞÔÚidsÖ®ÄÚ£¬Èç¹û·µ»Øtrue
-																			// ²»ÔÚfalse
+			if (MyUtil.existStrArr(tree.getId() + "", treeIds.split(","))) {// åˆ¤æ–­id
+																			// æœ‰æ²¡æœ‰åœ¨idsä¹‹å†…ï¼Œå¦‚æœè¿”å›true
+																			// ä¸åœ¨false
 				tree.setChecked(true);
 			}
 			if ("open".equals(tree.getState())) {
@@ -83,7 +83,7 @@ public class TreeController {
 	
 	
 	/**
-	 *  ÄÃ²Ëµ¥
+	 *  æ‹¿èœå•
 	 *  
 	 *  
 	 */
@@ -111,18 +111,18 @@ public class TreeController {
 	
 	
 	/**
-	 * ÄÃ²Ëµ¥
+	 * æ‹¿èœå•
 	 */
 	public List<Tree> getTreesByParentId(Map<String,Object> map) throws Exception {
 		//String parentId,String ids  = map
 		List<Tree> list = treeService.getTreesByFatherOrIds(map);
 		for(Tree tree : list){
-			//Èç¹û ÊÇ¸´Ñ¡¿ò  ¿ÉÒÔÔÚÕâÀïÅĞ¶Ï   
+			//å¦‚æœ æ˜¯å¤é€‰æ¡†  å¯ä»¥åœ¨è¿™é‡Œåˆ¤æ–­   
 			//tree.setChecked(true);
 			if("open".equals(tree.getState())){
 				continue;
 			}else{
-				map.put("father", tree.getId()+"");//¸ü»»id²»»»ids¼ÌĞø²é
+				map.put("father", tree.getId()+"");//æ›´æ¢idä¸æ¢idsç»§ç»­æŸ¥
 				tree.setChildren(getTreesByParentId(map));
 			}
 		}

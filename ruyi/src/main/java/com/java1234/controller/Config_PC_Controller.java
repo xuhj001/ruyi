@@ -28,8 +28,8 @@ public class Config_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "配置管理");
-		mav.addObject("title", "配置管理");
+		mav.addObject("pageTitle", "閰嶇疆绠＄悊");
+		mav.addObject("title", "閰嶇疆绠＄悊");
 		mav.setViewName("/admin/page/config/config_manage");
 		return mav;
 	}
@@ -45,7 +45,7 @@ public class Config_PC_Controller {
 		Config config = configService.findById(Integer.parseInt(id));
 		
 		mav.addObject("config", config);
-		mav.addObject("btn_text", "修改");
+		mav.addObject("btn_text", "淇敼");
 		mav.addObject("save_url", "/admin/config/update");
 		
 		mav.setViewName("/admin/page/config/edit");

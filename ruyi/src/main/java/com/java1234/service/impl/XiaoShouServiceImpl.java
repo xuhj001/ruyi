@@ -65,20 +65,20 @@ public class XiaoShouServiceImpl implements XiaoShouService {
 	public Integer add(XiaoShou xiaoShou) {
 		xiaoShouDao.add(xiaoShou);
 		
-		//²éÑ¯Á÷³ÌÕâ¸ö¶¨ÒåÔÚÍâÃæ
-		//²éÑ¯ÏúÊÛÁ÷³Ì
-		List<ProcessDefinition> processDefinitions=repositoryService.createProcessDefinitionQuery() // ´´½¨Á÷³ÌÁ÷³Ì¶¨Òå²éÑ¯
-				.orderByProcessDefinitionId().desc() // ¸ù¾İÁ÷³Ì¶¨Òåid½µĞòÅÅÁĞ
-				.processDefinitionNameLike("%ÏúÊÛ%") // ¸ù¾İÁ÷³Ì¶¨ÒåÃû³ÆÄ£ºı²éÑ¯
-				.listPage(0, 100); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
+		//æŸ¥è¯¢æµç¨‹è¿™ä¸ªå®šä¹‰åœ¨å¤–é¢
+		//æŸ¥è¯¢é”€å”®æµç¨‹
+		List<ProcessDefinition> processDefinitions=repositoryService.createProcessDefinitionQuery() // åˆ›å»ºæµç¨‹æµç¨‹å®šä¹‰æŸ¥è¯¢
+				.orderByProcessDefinitionId().desc() // æ ¹æ®æµç¨‹å®šä¹‰idé™åºæ’åˆ—
+				.processDefinitionNameLike("%é”€å”®%") // æ ¹æ®æµç¨‹å®šä¹‰åç§°æ¨¡ç³ŠæŸ¥è¯¢
+				.listPage(0, 100); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
 		
 		ProcessDefinition pdef = processDefinitions.get(0);
 		
 		
-		//²úÉúÒ»¸ö¶©µ¥ºÅ   ¶ÔÓÚ ÊÛºóÀ´ËµÃ»ÓĞ±ØÒª
+		//äº§ç”Ÿä¸€ä¸ªè®¢å•å·   å¯¹äº å”®åæ¥è¯´æ²¡æœ‰å¿…è¦
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		RenWu renwu = new  RenWu();
-		//Ìí¼ÓÈÎÎñÊµÌå
+		//æ·»åŠ ä»»åŠ¡å®ä½“
 		renwu.setCreateDateTime(new Date());
 		renwu.setCreateUserId(currentUser.getId_());
 		renwu.setProcessDefinitionId(pdef.getId());
@@ -95,56 +95,56 @@ public class XiaoShouServiceImpl implements XiaoShouService {
 		xiaoShouDao.update(xiaoShou);
 		
 		
-		//Ìí¼ÓÁ÷³Ì±äÁ¿ renwuId
+		//æ·»åŠ æµç¨‹å˜é‡ renwuId
 		Map<String,Object> variables=new HashMap<String,Object>();
 		variables.put("renwuId", renwu.getId());
 		
 		
-		//Æô¶¯Á÷³Ì   ²¢ÉèÖÃÁ÷³Ì ±äÁ¿
+		//å¯åŠ¨æµç¨‹   å¹¶è®¾ç½®æµç¨‹ å˜é‡
 		ProcessInstance pi= runtimeService.startProcessInstanceByKey(renwu.getProcessDefinitionKey(),variables);  
-		//¸ù¾İÁ÷³ÌÊµÀıId²éÑ¯ÈÎÎñ Õâ¸öÈÎÎñ¾ÍÊÇµÚÒ»¸ö½ÚµãµÄÃû×Ó£¬´´½¨ÈÎÎñ
+		//æ ¹æ®æµç¨‹å®ä¾‹IdæŸ¥è¯¢ä»»åŠ¡ è¿™ä¸ªä»»åŠ¡å°±æ˜¯ç¬¬ä¸€ä¸ªèŠ‚ç‚¹çš„åå­ï¼Œåˆ›å»ºä»»åŠ¡
 		Task task=taskService.createTaskQuery().processInstanceId(pi.getProcessInstanceId()).singleResult();
 		
-		//ÉèÖÃtaskName ÄÃµ½µÚÒ»¸ö½ÚµãÃû×Ó   ´´½¨ÈÎÎñ
+		//è®¾ç½®taskName æ‹¿åˆ°ç¬¬ä¸€ä¸ªèŠ‚ç‚¹åå­   åˆ›å»ºä»»åŠ¡
 		String taskName = task.getName();
 		
-		//ÖØĞÂÄÃÒ»±ßrenwuÊµÌå
+		//é‡æ–°æ‹¿ä¸€è¾¹renwuå®ä½“
 		renwu = renWuDao.findById(renwu.getId());
 		
 		
-		//¸ù¾İtaskname Á÷³Ì¶¨Òåid  ºÍtype  1Íê³É   2½ÓÊÜ    È¡µÃÊÇ·ñÏÔÊ¾ºÅÂë
+		//æ ¹æ®taskname æµç¨‹å®šä¹‰id  å’Œtype  1å®Œæˆ   2æ¥å—    å–å¾—æ˜¯å¦æ˜¾ç¤ºå·ç 
 		String phoneText = showPhoneService.getPhone(taskName,"1", renwu, currentUser);
 		
 		
-		//Ìí¼ÓÒ»¸öÅú×¢
-		String comment = currentUser.getFirst_()+":Ìá½»ÏúÊÛ";
+		//æ·»åŠ ä¸€ä¸ªæ‰¹æ³¨
+		String comment = currentUser.getFirst_()+":æäº¤é”€å”®";
 		publicService.addComment(task.getId(), currentUser, comment+phoneText,taskName);
 		
 		
-		//´«Ò»¸öÁ÷³Ì±äÁ¿
+		//ä¼ ä¸€ä¸ªæµç¨‹å˜é‡
 		variables.clear();
-		variables.put("msg", "Í¨¹ı");
+		variables.put("msg", "é€šè¿‡");
 		
 		
-		//ÕâÀï²éÑ¯ĞèÒª²»ĞèÒª Ìí¼Ó¶îÍâµÄÁ÷³Ì±äÁ¿  ¸ù¾İÁ÷³Ì¶¨Òåid renwu.getProcessDefinitionId()   ÈÎÎñÃû³ÆtaskName
+		//è¿™é‡ŒæŸ¥è¯¢éœ€è¦ä¸éœ€è¦ æ·»åŠ é¢å¤–çš„æµç¨‹å˜é‡  æ ¹æ®æµç¨‹å®šä¹‰id renwu.getProcessDefinitionId()   ä»»åŠ¡åç§°taskName
 		processVariableService.setProceVar(variables, renwu.getProcessDefinitionId(), taskName, renwu, currentUser);
 		
 		
-		//Íê³ÉµÚÒ»¸öÈÎÎñ    ÉèÖÃÁ÷³Ì±äÁ¿
+		//å®Œæˆç¬¬ä¸€ä¸ªä»»åŠ¡    è®¾ç½®æµç¨‹å˜é‡
 		taskService.complete(task.getId(), variables);
 		
 		
-		//Ìí¼ÓÈÎÎñµÄÉí·İÁªÏµÈË
+		//æ·»åŠ ä»»åŠ¡çš„èº«ä»½è”ç³»äºº
 		rwidttService.add_idt(currentUser,renwu);
 		
 		
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ  1ÈÎÎñ½Úµã
-		sMSTaskService.completeAfterSendSMS(taskName,"Í¨¹ı", renwu.getProcessDefinitionId(), "1", renwu, currentUser);
-		weiXinMSGService.completeAfterSendWXmsg(taskName, "Í¨¹ı", renwu.getProcessDefinitionId(), "1", renwu, currentUser);
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡  1ä»»åŠ¡èŠ‚ç‚¹
+		sMSTaskService.completeAfterSendSMS(taskName,"é€šè¿‡", renwu.getProcessDefinitionId(), "1", renwu, currentUser);
+		weiXinMSGService.completeAfterSendWXmsg(taskName, "é€šè¿‡", renwu.getProcessDefinitionId(), "1", renwu, currentUser);
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡
 		
 		
-		renwu.setState(1);//1´¦ÀíÖĞ
+		renwu.setState(1);//1å¤„ç†ä¸­
 		renwu.setProcessInstanceId(pi.getProcessInstanceId());
 		renWuDao.update(renwu);
 		

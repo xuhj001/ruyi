@@ -36,10 +36,10 @@ public class WXUserAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("资料修改成功");
+			result.setMsg("璧勬枡淇敼鎴愬姛");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("资料修改失败");
+			result.setMsg("璧勬枡淇敼澶辫触");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;

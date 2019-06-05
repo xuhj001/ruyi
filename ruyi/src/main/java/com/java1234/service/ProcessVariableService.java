@@ -15,7 +15,7 @@ public interface ProcessVariableService {
 	
 	public Integer delete(Integer id);
 	
-	//¸ù¾İÁ÷³Ì¶¨Òåid ºÍÈÎÎñÃû³Æ  ÉèÖÃĞèÒª´«µİµÄ±äÁ¿
+	//æ ¹æ®æµç¨‹å®šä¹‰id å’Œä»»åŠ¡åç§°  è®¾ç½®éœ€è¦ä¼ é€’çš„å˜é‡
 	public void setProceVar(Map<String,Object> variables ,String processDefinitionId,String taskName,RenWu renwu,User currentUser);
 	
 	

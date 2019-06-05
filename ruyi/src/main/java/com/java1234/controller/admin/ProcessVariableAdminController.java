@@ -36,10 +36,10 @@ public class ProcessVariableAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("Ìí¼Ó³É¹¦");
+			result.setMsg("æ·»åŠ æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("Ìí¼ÓÊ§°Ü");
+			result.setMsg("æ·»åŠ å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
@@ -66,7 +66,7 @@ public class ProcessVariableAdminController {
 	
 	
 	/**
-	 * É¾³ı
+	 * åˆ é™¤
 	 */
 	@RequestMapping("/delete")
 	public String delete(String id,HttpServletResponse response)throws Exception{
@@ -74,7 +74,7 @@ public class ProcessVariableAdminController {
 		Gson g = new Gson();
 		Result result=new Result();
 		result.setSuccess(true);
-		result.setMsg("É¾³ı³É¹¦.");
+		result.setMsg("åˆ é™¤æˆåŠŸ.");
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
 	}

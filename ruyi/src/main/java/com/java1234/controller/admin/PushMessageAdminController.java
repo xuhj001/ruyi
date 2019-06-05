@@ -54,7 +54,7 @@ public class PushMessageAdminController {
 		Gson g = new Gson();
 		Result result=new Result();
 		result.setSuccess(true);
-		result.setMsg("ÍÆËÍ³É¹¦.");
+		result.setMsg("æ¨é€æˆåŠŸ.");
 		ResponseUtil.write(response, g.toJson(result));
 		
 		return null;

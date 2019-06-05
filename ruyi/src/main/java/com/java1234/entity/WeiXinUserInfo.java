@@ -4,24 +4,24 @@ import java.util.Date;
 
 public class WeiXinUserInfo {
 	
-	private String openid;//Õâ¸öopenid Óë  user±íµÄid  Ò»ÖÂ   ÊÇÖ÷¼ü
-	private String nickname;//êÇ³Æ
-	private String sex;// ĞÔ±ğ1ÄĞ2Å®
-	private String language;//  ¼òÌåÖĞÎÄ
-	private String city;// ³ÇÊĞ ÉîÛÚ
-	private String province;// Ê¡  ¹ã¶«
-	private String country;// ¹ú¼ÒÖĞ¹ú
-	private String headimgurl;// Í·Ïñurl
+	private String openid;//è¿™ä¸ªopenid ä¸  userè¡¨çš„id  ä¸€è‡´   æ˜¯ä¸»é”®
+	private String nickname;//æ˜µç§°
+	private String sex;// æ€§åˆ«1ç”·2å¥³
+	private String language;//  ç®€ä½“ä¸­æ–‡
+	private String city;// åŸå¸‚ æ·±åœ³
+	private String province;// çœ  å¹¿ä¸œ
+	private String country;// å›½å®¶ä¸­å›½
+	private String headimgurl;// å¤´åƒurl
 	//////////////////////////////////////
 	/////////////////////////////////////
 	
-	private Date createDateTime; //´´½¨Ê±¼ä 
-	private Integer daka_count ; //½ñÌì ´ò¿¨µÄ´ÎÊı  ÍíÉÏ24µã¶¨Ê±Çå0
-	private String treeIds ; //´æÈ¨ÏŞ²Ëµ¥
-	private String trueOpenid;//ÕâÊÇÕæÊµµÄopenid  ÒòÎªÓÃ»§±¾±íÖĞµÄopenid²»ÊÇ£¬ÕæÊµµÄopenid
+	private Date createDateTime; //åˆ›å»ºæ—¶é—´ 
+	private Integer daka_count ; //ä»Šå¤© æ‰“å¡çš„æ¬¡æ•°  æ™šä¸Š24ç‚¹å®šæ—¶æ¸…0
+	private String treeIds ; //å­˜æƒé™èœå•
+	private String trueOpenid;//è¿™æ˜¯çœŸå®çš„openid  å› ä¸ºç”¨æˆ·æœ¬è¡¨ä¸­çš„openidä¸æ˜¯ï¼ŒçœŸå®çš„openid
 	
 	
-	//·Öµê
+	//åˆ†åº—
 	private Integer fendianId;
 	private FenDian fendian;
 	

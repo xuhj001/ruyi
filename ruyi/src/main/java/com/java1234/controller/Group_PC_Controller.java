@@ -33,8 +33,8 @@ public class Group_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "²¿ÃÅ&×é ¹ÜÀí");
-		mav.addObject("title", "²¿ÃÅ&×é ¹ÜÀí");
+		mav.addObject("pageTitle", "éƒ¨é—¨&ç»„ ç®¡ç†");
+		mav.addObject("title", "éƒ¨é—¨&ç»„ ç®¡ç†");
 		
 		mav.setViewName("/admin/page/group/group_manage");
 		return mav;
@@ -46,7 +46,7 @@ public class Group_PC_Controller {
 	public ModelAndView add() throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("btn_text", "Ìí¼Ó");
+		mav.addObject("btn_text", "æ·»åŠ ");
 		mav.addObject("save_url", "/admin/group/add");
 		
 		mav.setViewName("/admin/page/group/add_or_update");
@@ -64,7 +64,7 @@ public class Group_PC_Controller {
 		Group group = groupService.findById_(id);
 		
 		mav.addObject("group", group);
-		mav.addObject("btn_text", "ĞŞ¸Ä");
+		mav.addObject("btn_text", "ä¿®æ”¹");
 		mav.addObject("save_url", "/admin/group/update");
 		
 		mav.setViewName("/admin/page/group/add_or_update");

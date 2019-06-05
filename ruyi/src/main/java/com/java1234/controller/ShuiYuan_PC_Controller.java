@@ -24,8 +24,8 @@ public class ShuiYuan_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "水源管理");
-		mav.addObject("title", "水源管理");
+		mav.addObject("pageTitle", "姘存簮绠＄悊");
+		mav.addObject("title", "姘存簮绠＄悊");
 		mav.setViewName("/admin/page/shuiyuan/shuiyuan_manage");
 		return mav;
 	}
@@ -34,7 +34,7 @@ public class ShuiYuan_PC_Controller {
 	@RequestMapping("/add")
 	public ModelAndView add() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("btn_text", "添加");
+		mav.addObject("btn_text", "娣诲姞");
 		mav.addObject("save_url", "/admin/shuiyuan/add");
 		mav.setViewName("/admin/page/shuiyuan/add_or_update");
 		return mav;
@@ -51,7 +51,7 @@ public class ShuiYuan_PC_Controller {
 		
 		mav.addObject("shuiyuan", shuiyuan);
 		
-		mav.addObject("btn_text", "修改");
+		mav.addObject("btn_text", "淇敼");
 		mav.addObject("save_url", "/admin/shuiyuan/update?id="+id);
 		
 		mav.setViewName("/admin/page/shuiyuan/add_or_update");

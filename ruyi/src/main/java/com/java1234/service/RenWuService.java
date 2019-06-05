@@ -19,24 +19,24 @@ public interface RenWuService {
 	public RenWu findByDingdan_num(String dingdan_num);
 	
 	/**
-	 * É¾³ırenwu±íºÍrwidtt±í
+	 * åˆ é™¤renwuè¡¨å’Œrwidttè¡¨
 	 */
 	public Integer delete(Integer id);
 	
 	
 	/**
-	 * Õâ¸ö½Ó¿ÚÊÇ¸øÓÃ»§ÓÃµÄ   ´´½¨ÈËor°ó¶¨ÈË 
+	 * è¿™ä¸ªæ¥å£æ˜¯ç»™ç”¨æˆ·ç”¨çš„   åˆ›å»ºäººorç»‘å®šäºº 
 	 * @param map
 	 * @return
 	 */
 	public List<RenWu> list2(Map<String, Object> map);
 
 	
-	//ÈÎÎñµÄÕ¼µ¥  service
+	//ä»»åŠ¡çš„å å•  service
 	public void update_accept(String taskId, String taskName);
 
 	
-	//Íê³ÉÈÎÎñ
+	//å®Œæˆä»»åŠ¡
 	public void done(String taskId, String taskName, String comment, String msg);
 
 	public void last_done(String taskId, String taskName, String comment, String msg, RenWu renwu);

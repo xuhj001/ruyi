@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class MyTask {
 	
-	private String id; // ÈÎÎñid
-	private String taskName; // ÈÎÎñÃû³Æ
-	private Date taskCreateTime; // ÈÎÎñµ½Õâ¸ö½ÚµãµÄÊ±¼ä   ÉÏ¸ö½ÚµãµÄ½áÊøÊ±¼ä ¾ÍÊÇËüµÄÊ±¼ä
-	private String banliren;//°ìÀíÈË
-	private String renwuFenlei;//×éÈÎÎñ  ¸öÈËÈÎÎñ
+	private String id; // ä»»åŠ¡id
+	private String taskName; // ä»»åŠ¡åç§°
+	private Date taskCreateTime; // ä»»åŠ¡åˆ°è¿™ä¸ªèŠ‚ç‚¹çš„æ—¶é—´   ä¸Šä¸ªèŠ‚ç‚¹çš„ç»“æŸæ—¶é—´ å°±æ˜¯å®ƒçš„æ—¶é—´
+	private String banliren;//åŠç†äºº
+	private String renwuFenlei;//ç»„ä»»åŠ¡  ä¸ªäººä»»åŠ¡
 	private RenWu renwu;
 	
 	

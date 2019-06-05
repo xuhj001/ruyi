@@ -18,9 +18,9 @@ public interface SMSTaskService {
 	
 	
 	/**
-	 * 完成任务  驳回  关闭  发短信的服务
-	 * 参数taskName
-	 * @说明   这个短信任务  还涵盖了  占单短信
+	 * 瀹屾垚浠诲姟  椹冲洖  鍏抽棴  鍙戠煭淇＄殑鏈嶅姟
+	 * 鍙傛暟taskName
+	 * @璇存槑   杩欎釜鐭俊浠诲姟  杩樻兜鐩栦簡  鍗犲崟鐭俊
 	 * 
 	 */
 	public void completeAfterSendSMS(String taskName,String msg,String procdefId,String  type,RenWu renwu,User currentUser  );

@@ -1,15 +1,15 @@
 package com.java1234.entity;
 
 /**
- * ÓÃ»§  Óë  ½ÇÉ«  µÄ¹ØÁª
+ * ç”¨æˆ·  ä¸  è§’è‰²  çš„å…³è”
  * @author user
  */
 
 public class MemberShip {
 
 	
-	private User user; // ÓÃ»§   ÕÅÈı
-	private Group group; // ½ÇÉ«     Ñ§Éú
+	private User user; // ç”¨æˆ·   å¼ ä¸‰
+	private Group group; // è§’è‰²     å­¦ç”Ÿ
 	
 	public User getUser() {
 		return user;

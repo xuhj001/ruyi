@@ -29,7 +29,7 @@ public class WeiXinAdminController {
 		Result result=new Result();
 		Gson g = new Gson();
 		result.setSuccess(true); 
-		result.setMsg("ˢ�³ɹ�");
+		result.setMsg("刷新成功");
 		
 		ResponseUtil.write(response, g.toJson(result));
 		return null;

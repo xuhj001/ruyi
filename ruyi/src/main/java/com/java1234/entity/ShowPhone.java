@@ -5,13 +5,13 @@ package com.java1234.entity;
 public class ShowPhone {
 	
 	private Integer id;
-	private String taskName;//ÈÎÎñÃû³Æ
-	private String procdefId;//Á÷³Ì¶¨Òåid
-	private String type; //ÒÀ¸½ÓÚÄÄÀï£¬£¨Íê³É1£¬½ÓÊÜ2£©
+	private String taskName;//ä»»åŠ¡åç§°
+	private String procdefId;//æµç¨‹å®šä¹‰id
+	private String type; //ä¾é™„äºå“ªé‡Œï¼Œï¼ˆå®Œæˆ1ï¼Œæ¥å—2ï¼‰
 	
-	//ÏÔÊ¾Ë­µÄºÅÂë
-	private  String  currentUser;//µ±Ç°ÓÃ»§
-	private String client;//¿Í»§
+	//æ˜¾ç¤ºè°çš„å·ç 
+	private  String  currentUser;//å½“å‰ç”¨æˆ·
+	private String client;//å®¢æˆ·
 	
 	
 	

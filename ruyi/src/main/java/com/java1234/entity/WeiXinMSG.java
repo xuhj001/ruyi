@@ -3,18 +3,18 @@ package com.java1234.entity;
 public class WeiXinMSG {
 	
 	private Integer id;
-	private String taskName;//ÈÎÎñÃû³Æ
-	private String procdefId;//Á÷³Ì¶¨Òåid
+	private String taskName;//ä»»åŠ¡åç§°
+	private String procdefId;//æµç¨‹å®šä¹‰id
 	
-	//¶ÌĞÅ·¢ËÍµÄ²¿ÃÅ  ×é  Èç¹ûÉèÖÃÁË²¿ÃÅ  
-	//¾ÍÊÇ²¿ÃÅµÄÖ÷¼ü£¬Èç¹ûÃ»ÓĞÉèÖÃ¾ÍÊÇ-1
+	//çŸ­ä¿¡å‘é€çš„éƒ¨é—¨  ç»„  å¦‚æœè®¾ç½®äº†éƒ¨é—¨  
+	//å°±æ˜¯éƒ¨é—¨çš„ä¸»é”®ï¼Œå¦‚æœæ²¡æœ‰è®¾ç½®å°±æ˜¯-1
 	private String groupId;       private Group group;
-	private String createUser;//´´½¨ÈË   1·¢ËÍ    0²»·¢  
+	private String createUser;//åˆ›å»ºäºº   1å‘é€    0ä¸å‘  
 	
-	private Integer type;//1ÈÎÎñ½Úµã   2Õ¼µ¥½Úµã
+	private Integer type;//1ä»»åŠ¡èŠ‚ç‚¹   2å å•èŠ‚ç‚¹
 	
-	//ÈÎÎñµã½Ú  Çø·ÖµÄ
-	//ÕâÀïÒªÇø·Ömsg    Í¨¹ı   ²µ»Ø    ¹Ø±Õ
+	//ä»»åŠ¡ç‚¹èŠ‚  åŒºåˆ†çš„
+	//è¿™é‡Œè¦åŒºåˆ†msg    é€šè¿‡   é©³å›    å…³é—­
 	private String msg;
 	
 	

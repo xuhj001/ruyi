@@ -6,7 +6,7 @@ public class FileUtil {
 	
 	
 	/**
-	 * ´´½¨Ò»¸öÎÄ¼ş¼Ğ
+	 * åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹
 	 * @param filePath
 	 * @return
 	 */
@@ -17,25 +17,25 @@ public class FileUtil {
 	
 
 	/**
-     * É¾³ıµ¥¸öÎÄ¼ş
+     * åˆ é™¤å•ä¸ªæ–‡ä»¶
      *
      * @param fileName
-     *            ÒªÉ¾³ıµÄÎÄ¼şµÄÎÄ¼şÃû
-     * @return µ¥¸öÎÄ¼şÉ¾³ı³É¹¦·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     *            è¦åˆ é™¤çš„æ–‡ä»¶çš„æ–‡ä»¶å
+     * @return å•ä¸ªæ–‡ä»¶åˆ é™¤æˆåŠŸè¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean deleteFile(String fileName) {
         File file = new File(fileName);
-        // Èç¹ûÎÄ¼şÂ·¾¶Ëù¶ÔÓ¦µÄÎÄ¼ş´æÔÚ£¬²¢ÇÒÊÇÒ»¸öÎÄ¼ş£¬ÔòÖ±½ÓÉ¾³ı
+        // å¦‚æœæ–‡ä»¶è·¯å¾„æ‰€å¯¹åº”çš„æ–‡ä»¶å­˜åœ¨ï¼Œå¹¶ä¸”æ˜¯ä¸€ä¸ªæ–‡ä»¶ï¼Œåˆ™ç›´æ¥åˆ é™¤
         if (file.exists() && file.isFile()) {
             if (file.delete()) {
-                System.out.println("É¾³ıµ¥¸öÎÄ¼ş" + fileName + "³É¹¦£¡");
+                System.out.println("åˆ é™¤å•ä¸ªæ–‡ä»¶" + fileName + "æˆåŠŸï¼");
                 return true;
             } else {
-                System.out.println("É¾³ıµ¥¸öÎÄ¼ş" + fileName + "Ê§°Ü£¡");
+                System.out.println("åˆ é™¤å•ä¸ªæ–‡ä»¶" + fileName + "å¤±è´¥ï¼");
                 return false;
             }
         } else {
-            System.out.println("É¾³ıµ¥¸öÎÄ¼şÊ§°Ü£º" + fileName + "²»´æÔÚ£¡");
+            System.out.println("åˆ é™¤å•ä¸ªæ–‡ä»¶å¤±è´¥ï¼š" + fileName + "ä¸å­˜åœ¨ï¼");
             return false;
         }
     }

@@ -26,7 +26,7 @@ public class ShowPhoneAdminController {
 	
 	/**
 	 * 
-	 * @param type £¨Íê³É1£¬½ÓÊÜ2£©
+	 * @param type ï¼ˆå®Œæˆ1ï¼Œæ¥å—2ï¼‰
 	 * @param procdefId
 	 * @return
 	 * @throws Exception
@@ -64,10 +64,10 @@ public class ShowPhoneAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("Ìí¼Ó³É¹¦");
+			result.setMsg("æ·»åŠ æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("Ìí¼ÓÊ§°Ü");
+			result.setMsg("æ·»åŠ å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
@@ -76,7 +76,7 @@ public class ShowPhoneAdminController {
 	
 	
 	/**
-	 * É¾³ı
+	 * åˆ é™¤
 	 */
 	@RequestMapping("/delete")
 	public String delete(String id,HttpServletResponse response)throws Exception{
@@ -84,7 +84,7 @@ public class ShowPhoneAdminController {
 		Gson g = new Gson();
 		Result result=new Result();
 		result.setSuccess(true);
-		result.setMsg("É¾³ı³É¹¦.");
+		result.setMsg("åˆ é™¤æˆåŠŸ.");
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
 	}

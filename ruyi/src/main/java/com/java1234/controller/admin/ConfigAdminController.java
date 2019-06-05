@@ -29,10 +29,10 @@ public class ConfigAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("�޸ĳɹ�.");
+			result.setMsg("修改成功.");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("�޸�ʧ��.");
+			result.setMsg("修改失败.");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;

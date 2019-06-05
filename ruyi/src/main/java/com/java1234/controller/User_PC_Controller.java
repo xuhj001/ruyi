@@ -40,10 +40,10 @@ public class User_PC_Controller {
 	@Resource
 	private FenDianService fenDianService;
 	/**
-	 * /user/pc/login  ÑéÖ¤ÓÃ»§µÇÂ½
+	 * /user/pc/login  éªŒè¯ç”¨æˆ·ç™»é™†
 	 * @param err_url 
-	 * @param bj ±ê¼Ç  ÓÃ»§¼ÇÂ¼ pc »¹ÊÇios android
-	 * @return return err_url;//Õâ¸ö·µ»ØµÄÊÇlogin  ÕâÊÇÖ±½Ó·µ»ØµÄÊÓÍ¼ login.jsp
+	 * @param bj æ ‡è®°  ç”¨æˆ·è®°å½• pc è¿˜æ˜¯ios android
+	 * @return return err_url;//è¿™ä¸ªè¿”å›çš„æ˜¯login  è¿™æ˜¯ç›´æ¥è¿”å›çš„è§†å›¾ login.jsp
 	 * @throws Exception
 	 */
 	@RequestMapping("/login")
@@ -52,27 +52,27 @@ public class User_PC_Controller {
 	        
 	        
 		Subject subject=SecurityUtils.getSubject();
-		subject.getSession().setAttribute("login_type", "wx");//ÊÇ¸öwxÊÇÓÃÓÚrealmµÇÂ½ÄÄÀï¡£
-		subject.getSession().setAttribute("bj", bj);//ÉèÖÃµÇÂ½µÄ±êÊ¶  ÓÃÓÚÇø·ÖandroidºÍios pc  weixin
+		subject.getSession().setAttribute("login_type", "wx");//æ˜¯ä¸ªwxæ˜¯ç”¨äºrealmç™»é™†å“ªé‡Œã€‚
+		subject.getSession().setAttribute("bj", bj);//è®¾ç½®ç™»é™†çš„æ ‡è¯†  ç”¨äºåŒºåˆ†androidå’Œios pc  weixin
 		UsernamePasswordToken token=new UsernamePasswordToken(user.getId_(), CryptographyUtil.md5(user.getPwd_(), "chenhao"));
 		
-		//ÅĞ¶Ï ÊÇ·ñÖ§³ÖµçÄÔµÇÂ½
+		//åˆ¤æ–­ æ˜¯å¦æ”¯æŒç”µè„‘ç™»é™†
 		User t_User = userService.findById_(user.getId_());
 		if(t_User==null){
-			attr.addAttribute("errorInfo", "ÓÃ»§Ãû»òÕßÃÜÂë´íÎó£¡");  
+			attr.addAttribute("errorInfo", "ç”¨æˆ·åæˆ–è€…å¯†ç é”™è¯¯ï¼");  
 			return "redirect:/login";
 		}
 		
 		if(t_User.getEmail_().equals("1")){
-			//Ö§³ÖµçÄÔµÇÂ½
+			//æ”¯æŒç”µè„‘ç™»é™†
 		}else{
-			//²»Ö§³ÖµçÄÔµÇÂ½
-			attr.addAttribute("errorInfo", "²»Ö§³ÖµçÄÔµÇÂ½");  
+			//ä¸æ”¯æŒç”µè„‘ç™»é™†
+			attr.addAttribute("errorInfo", "ä¸æ”¯æŒç”µè„‘ç™»é™†");  
 			return "redirect:/login";
 		}
 		
 		try{
-			subject.login(token); // µÇÂ¼ÑéÖ¤
+			subject.login(token); // ç™»å½•éªŒè¯
 			user = userService.findById_(user.getId_());
 			userService.setGroups(user);
 			
@@ -81,27 +81,27 @@ public class User_PC_Controller {
 			//return "go_home";
 			return "redirect:/admin/main";
 			
-			//Èç¹ûµÇÂ½³É¹¦ ¾Í²»»á±¨´í  ±¨´í¾ÍÊÇµÇÂ½Ê§°ÜÁË
-			//return "redirect:/admin/main.jsp";//µØÖ·À¸·¢Éú±ä»¯ÁË
+			//å¦‚æœç™»é™†æˆåŠŸ å°±ä¸ä¼šæŠ¥é”™  æŠ¥é”™å°±æ˜¯ç™»é™†å¤±è´¥äº†
+			//return "redirect:/admin/main.jsp";//åœ°å€æ å‘ç”Ÿå˜åŒ–äº†
 		}catch(Exception e){
 			e.printStackTrace();
 			
-			attr.addAttribute("errorInfo", "ÓÃ»§Ãû»òÕßÃÜÂë´íÎó£¡");  
+			attr.addAttribute("errorInfo", "ç”¨æˆ·åæˆ–è€…å¯†ç é”™è¯¯ï¼");  
 			return "redirect:/login";
 		}
 	}
 	
 	
 	/**
-	 * ÓÃ»§¹ÜÀíÒ³Ãæ
+	 * ç”¨æˆ·ç®¡ç†é¡µé¢
 	 * @return
 	 * @throws Exception
 	 */
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "ÓÃ»§¹ÜÀí");
-		mav.addObject("title", "ÓÃ»§¹ÜÀí");
+		mav.addObject("pageTitle", "ç”¨æˆ·ç®¡ç†");
+		mav.addObject("title", "ç”¨æˆ·ç®¡ç†");
 		mav.setViewName("admin/page/user/user_manage");
 		return mav;
 	}
@@ -112,7 +112,7 @@ public class User_PC_Controller {
 	public ModelAndView add() throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("btn_text", "Ìí¼Ó");
+		mav.addObject("btn_text", "æ·»åŠ ");
 		mav.addObject("save_url", "/admin/user/add");
 		
 		mav.setViewName("/admin/page/user/add_or_update");
@@ -137,7 +137,7 @@ public class User_PC_Controller {
 		User user = userService.findById_(id);
 		
 		mav.addObject("user", user);
-		mav.addObject("btn_text", "ĞŞ¸Ä");
+		mav.addObject("btn_text", "ä¿®æ”¹");
 		mav.addObject("save_url", "/admin/user/update");
 		
 		mav.setViewName("/admin/page/user/add_or_update");
@@ -151,7 +151,7 @@ public class User_PC_Controller {
 	public ModelAndView setPersm(@RequestParam(value = "id", required = false) String id,
 			HttpServletResponse response, HttpServletRequest request) throws Exception {
 		
-		//Èç¹ûidÓĞÖµ¾ÍÊÇ ¸üĞÂ Èç¹ûÃ»ÓĞÖµ  ¾ÍÊÇÌí¼Ó
+		//å¦‚æœidæœ‰å€¼å°±æ˜¯ æ›´æ–° å¦‚æœæ²¡æœ‰å€¼  å°±æ˜¯æ·»åŠ 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("userId", id);
 		mav.setViewName("admin/page/user/set_persm");
@@ -164,13 +164,13 @@ public class User_PC_Controller {
 	@RequestMapping("/setGroup")
 	public ModelAndView setGroup(@RequestParam(value = "id", required = false) String id,HttpServletResponse response, HttpServletRequest request) throws Exception {
 		
-		//Èç¹ûidÓĞÖµ¾ÍÊÇ ¸üĞÂ Èç¹ûÃ»ÓĞÖµ  ¾ÍÊÇÌí¼Ó
+		//å¦‚æœidæœ‰å€¼å°±æ˜¯ æ›´æ–° å¦‚æœæ²¡æœ‰å€¼  å°±æ˜¯æ·»åŠ 
 		ModelAndView mav = new ModelAndView();
 		Map<String, Object> map = new HashMap<String, Object>();
 		List<Group> groupList = groupService.list(map );
 		mav.addObject("groupList", groupList);
 		
-		//ÓÃ»§ÒÑÓµÓĞµÄÈ¨ÏŞ
+		//ç”¨æˆ·å·²æ‹¥æœ‰çš„æƒé™
 		List<Group> groupSelectedList = groupService.listByUserId(id);
 		
 		StringBuffer groups=new StringBuffer();
@@ -191,7 +191,7 @@ public class User_PC_Controller {
 		}
 		
 		mav.addObject("url", "/admin/ms/update");
-		mav.addObject("btn_text", "±£´æ");
+		mav.addObject("btn_text", "ä¿å­˜");
 		mav.setViewName("admin/page/user/set_group");
 		return mav;
 	}
@@ -203,13 +203,13 @@ public class User_PC_Controller {
 	 */
 	@RequestMapping("/logout")
 	public String logout()throws Exception{
-		SecurityUtils.getSubject().logout(); //shiroµÄÍË³ö
+		SecurityUtils.getSubject().logout(); //shiroçš„é€€å‡º
 		return "redirect:/login";
 	}
 	
 	
 	/**
-	 * /user/pc/modify_ps?id=1  ĞŞ¸ÄÃÜÂëµÄ¿ØÖÆÆ÷
+	 * /user/pc/modify_ps?id=1  ä¿®æ”¹å¯†ç çš„æ§åˆ¶å™¨
 	 * @param id
 	 * @param response
 	 * @param request
@@ -219,7 +219,7 @@ public class User_PC_Controller {
 	@RequestMapping("/modify_ps")
 	public ModelAndView modify_ps(String id,HttpServletResponse response, HttpServletRequest request) throws Exception {
 		
-		//Èç¹ûidÓĞÖµ¾ÍÊÇ ¸üĞÂ Èç¹ûÃ»ÓĞÖµ  ¾ÍÊÇÌí¼Ó
+		//å¦‚æœidæœ‰å€¼å°±æ˜¯ æ›´æ–° å¦‚æœæ²¡æœ‰å€¼  å°±æ˜¯æ·»åŠ 
 		ModelAndView mav = new ModelAndView();
 		
 		User user  =  userService.findById_(id);
@@ -232,7 +232,7 @@ public class User_PC_Controller {
 	
 	/**
 	 * 
-	 * @param idÎªuserid
+	 * @param idä¸ºuserid
 	 * @param response
 	 * @param request
 	 * @return

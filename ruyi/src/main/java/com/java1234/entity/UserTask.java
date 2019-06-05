@@ -4,7 +4,7 @@ package com.java1234.entity;
 /**
  * 
  * 
- * ÈÎÎñ½Úµã
+ * ä»»åŠ¡èŠ‚ç‚¹
  * 
  * 
  * 
@@ -16,7 +16,7 @@ package com.java1234.entity;
 public class UserTask{
 	
 	private String taskId;//task1 task2 task3
-	private String taskName ; //´´½¨ÏúÊÛÈÎÎñ   ÊÕÒø´¦  ²Ö¿â  ËÍ»õ²¿
+	private String taskName ; //åˆ›å»ºé”€å”®ä»»åŠ¡   æ”¶é“¶å¤„  ä»“åº“  é€è´§éƒ¨
 	
 	
 	
@@ -37,8 +37,8 @@ public class UserTask{
 
 	
 	
-	//ÄÚÈİ Ìæ»»²ÎÊı   
-	//·¢ËÍ¶ÌĞÅµÄ×é   ºÍ  ´´½¨ÈË      ¿Í»§  
+	//å†…å®¹ æ›¿æ¢å‚æ•°   
+	//å‘é€çŸ­ä¿¡çš„ç»„   å’Œ  åˆ›å»ºäºº      å®¢æˆ·  
 	
 	
 	

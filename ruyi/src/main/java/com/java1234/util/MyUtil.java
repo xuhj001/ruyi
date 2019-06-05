@@ -14,7 +14,7 @@ import sun.misc.BASE64Decoder;
 public class MyUtil {
 
 	/**
-	 * È¡µÃÓÃ»§ip
+	 * å–å¾—ç”¨æˆ·ip
 	 */
 	public static String getRemoteAddress(HttpServletRequest request) {
 		String ip = request.getHeader("x-forwarded-for");
@@ -32,14 +32,14 @@ public class MyUtil {
 	
 	
 	/**
-	 * °Ñ´«À´µÄstring ids ±ä³É List<Integer> ids = new ArrayList<Integer>() ·µ»Ø
-	 * ÒòÎªmybatis²é·¶Î§,ÒªÓÃµÄµü´ú
+	 * æŠŠä¼ æ¥çš„string ids å˜æˆ List<Integer> ids = new ArrayList<Integer>() è¿”å›
+	 * å› ä¸ºmybatisæŸ¥èŒƒå›´,è¦ç”¨çš„è¿­ä»£
 	 */
 	public static List<Integer> Str_ids_To_ListInteger_ids(String ids) {
 		List<Integer> ListInteger_ids = new ArrayList<Integer>();
 		String[] arr = ids.split(",");
 		for (String i : arr) {
-			//ÑéÖ¤ÊÇ²»ÊÇÊı×Ö
+			//éªŒè¯æ˜¯ä¸æ˜¯æ•°å­—
 			if(i.matches("\\d+")){
 				ListInteger_ids.add(Integer.parseInt(i));
 			}
@@ -48,7 +48,7 @@ public class MyUtil {
 	}
 
 	/**
-	 * Õâ¸ö·½·¨ÊÇÄÃ ¸´Ñ¡¿ò Ê±ÓÃµÄ ÅĞ¶ÏidÔÚ²»ÔÚidsÖ®ÄÚ¡£Èç¹ûÔÚ·µ»Øtrue
+	 * è¿™ä¸ªæ–¹æ³•æ˜¯æ‹¿ å¤é€‰æ¡† æ—¶ç”¨çš„ åˆ¤æ–­idåœ¨ä¸åœ¨idsä¹‹å†…ã€‚å¦‚æœåœ¨è¿”å›true
 	 */
 	public static boolean existStrArr(String id, String[] ids) {
 		for (int i = 0; i < ids.length; i++) {
@@ -61,7 +61,7 @@ public class MyUtil {
 
 	
 	/**
-	 * °ÑÓÃ»§µÄmenus¹ıÂÇÒ»±ß£¬¹ıÂÇµôÒ»Ğ©ÌØÊâµÄ²Ëµ¥
+	 * æŠŠç”¨æˆ·çš„menusè¿‡è™‘ä¸€è¾¹ï¼Œè¿‡è™‘æ‰ä¸€äº›ç‰¹æ®Šçš„èœå•
 	 */
 	public static String filterMenuIds(String[] ids) {
 		String subids = "500";
@@ -70,49 +70,49 @@ public class MyUtil {
 	}
 
 	/**
-	 * ÒÔarr1Îª »ù×¼ °Ñarr2µÄÄÚÈİ´ÓarrÖĞ¹ıÂÇµô¡£É¾³ı ·µ»ØĞÂµÄarr
+	 * ä»¥arr1ä¸º åŸºå‡† æŠŠarr2çš„å†…å®¹ä»arrä¸­è¿‡è™‘æ‰ã€‚åˆ é™¤ è¿”å›æ–°çš„arr
 	 */
 	private static String[] arrContrast(String[] arr1, String[] arr2) {
 		List<String> list = new LinkedList<String>();
-		for (String str : arr1) { // ´¦ÀíµÚÒ»¸öÊı×é,listÀïÃæµÄÖµÎª1,2,3,4
+		for (String str : arr1) { // å¤„ç†ç¬¬ä¸€ä¸ªæ•°ç»„,listé‡Œé¢çš„å€¼ä¸º1,2,3,4
 			if (!list.contains(str)) {
 				list.add(str);
 			}
 		}
-		for (String str : arr2) { // Èç¹ûµÚ¶ş¸öÊı×é´æÔÚºÍµÚÒ»¸öÊı×éÏàÍ¬µÄÖµ£¬¾ÍÉ¾³ı
+		for (String str : arr2) { // å¦‚æœç¬¬äºŒä¸ªæ•°ç»„å­˜åœ¨å’Œç¬¬ä¸€ä¸ªæ•°ç»„ç›¸åŒçš„å€¼ï¼Œå°±åˆ é™¤
 			if (list.contains(str)) {
 				list.remove(str);
 			}
 		}
-		String[] result = {}; // ´´½¨¿ÕÊı×é
+		String[] result = {}; // åˆ›å»ºç©ºæ•°ç»„
 		return list.toArray(result); // List to Array
 	}
 
 	/**
-	 * °Ñ¶ÔÏó»òÕß Êı×é×ª³Éstring
+	 * æŠŠå¯¹è±¡æˆ–è€… æ•°ç»„è½¬æˆstring
 	 */
 	public static String listToString(List list, char separator) {
 		return org.apache.commons.lang.StringUtils.join(list.toArray(), separator);
 	}
 
-	// ½«image str ×ª³ÉÍ¼Æ¬ ´æÆğÀ´¡£
-	public static boolean GenerateImage(String imgStr, String Folder, String imgFilePath) {// ¶Ô×Ö½ÚÊı×é×Ö·û´®
-		if (imgStr == null) // Í¼ÏñÊı¾İÎª¿Õ
+	// å°†image str è½¬æˆå›¾ç‰‡ å­˜èµ·æ¥ã€‚
+	public static boolean GenerateImage(String imgStr, String Folder, String imgFilePath) {// å¯¹å­—èŠ‚æ•°ç»„å­—ç¬¦ä¸²
+		if (imgStr == null) // å›¾åƒæ•°æ®ä¸ºç©º
 			return false;
 		BASE64Decoder decoder = new BASE64Decoder();
 		try {
-			// Base64½âÂë
+			// Base64è§£ç 
 			byte[] bytes = decoder.decodeBuffer(imgStr);
 			for (int i = 0; i < bytes.length; ++i) {
 				if (bytes[i] < 0) {
-					// µ÷ÕûÒì³£Êı¾İ
+					// è°ƒæ•´å¼‚å¸¸æ•°æ®
 					bytes[i] += 256;
 				}
 			}
 
-			// ´´½¨ÎÄ¼ş¼Ğ
+			// åˆ›å»ºæ–‡ä»¶å¤¹
 			makeDirs(Folder);
-			// Éú³ÉjpegÍ¼Æ¬
+			// ç”Ÿæˆjpegå›¾ç‰‡
 			OutputStream out = new FileOutputStream(Folder+"\\"+imgFilePath);
 
 			out.write(bytes);
@@ -131,7 +131,7 @@ public class MyUtil {
 			return false;
 		}
 		File folder = new File(filePath);
-		if(folder.exists()){//IsDirectory( ) ÅĞ¶ÏÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+		if(folder.exists()){//IsDirectory( ) åˆ¤æ–­æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
 			return true; 
 		}else{
 			return folder.mkdirs();

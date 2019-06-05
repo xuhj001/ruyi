@@ -6,21 +6,21 @@ import java.util.List;
 public class Tree {
 	
 	private Integer id ; 
-	private String text ; //ÏÔÊ¾µÄÃû×Ó
-	private Integer father;//¸¸½Úµã
-	private List<Tree> children;//×Ó½Úµã
-	private Tree attributes;//ÆäÊµÒ²ÊÇnote
-	private boolean checked ; //ÊÚÈ¨Ê±»áÓÃµ½Õâ¸ö
-	private String state ;//open¾ÍÊÇ´úÂëµ½ÁËÒ¶×Ó½Úµã¡£  close¾ÍÊÇÖ§¸É  ÏÂÃæÓĞ¿ÉÄÜÓĞ½Úµã 
-	private String url;//¶ÔÓ¦µÄÒ³Ãæ  home.jsp
-	private String iconCls;//¶ÔÓ¦µÄÍ¼±ê
-	private String permissions;//¶ÔÓ¦µÄÈ¨ÏŞ
+	private String text ; //æ˜¾ç¤ºçš„åå­
+	private Integer father;//çˆ¶èŠ‚ç‚¹
+	private List<Tree> children;//å­èŠ‚ç‚¹
+	private Tree attributes;//å…¶å®ä¹Ÿæ˜¯note
+	private boolean checked ; //æˆæƒæ—¶ä¼šç”¨åˆ°è¿™ä¸ª
+	private String state ;//openå°±æ˜¯ä»£ç åˆ°äº†å¶å­èŠ‚ç‚¹ã€‚  closeå°±æ˜¯æ”¯å¹²  ä¸‹é¢æœ‰å¯èƒ½æœ‰èŠ‚ç‚¹ 
+	private String url;//å¯¹åº”çš„é¡µé¢  home.jsp
+	private String iconCls;//å¯¹åº”çš„å›¾æ ‡
+	private String permissions;//å¯¹åº”çš„æƒé™
 	
 	
 	/**
-	 * Õâ¸öÕâÊÇ¼ÇÂ¼ idµÄ ÒòÎªÔÚmanageÒ³ÃæÖĞ£¬
-	 * ÓĞÕâÑùÒ»¸ö¶«Î÷¡£$("#user").addClass("layui-this");  
-	 * Ñ¡ÔñÄÄ¸öÑ¡ÏîÎªÑ¡ÖĞ  ÕâÊÇ¸ù¾İidÀ´µÄ¡£
+	 * è¿™ä¸ªè¿™æ˜¯è®°å½• idçš„ å› ä¸ºåœ¨manageé¡µé¢ä¸­ï¼Œ
+	 * æœ‰è¿™æ ·ä¸€ä¸ªä¸œè¥¿ã€‚$("#user").addClass("layui-this");  
+	 * é€‰æ‹©å“ªä¸ªé€‰é¡¹ä¸ºé€‰ä¸­  è¿™æ˜¯æ ¹æ®idæ¥çš„ã€‚
 	 */
 	private String dd_id;
 	

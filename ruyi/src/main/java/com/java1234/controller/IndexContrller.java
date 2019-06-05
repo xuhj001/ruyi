@@ -43,7 +43,7 @@ import net.sf.json.JSONObject;
 
 
 /**
- * Ö÷Ò³Contrller
+ * ä¸»é¡µContrller
  * 
  * @author Administrator
  */
@@ -61,13 +61,13 @@ public class IndexContrller {
 	
 	
 	/**
-	 * ÇëÇóÖ÷Ò³
+	 * è¯·æ±‚ä¸»é¡µ
 	 */
 	@RequestMapping("/index")
 	public ModelAndView index(HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "Ê×Ò³");
-		mav.addObject("title", "Ê×Ò³");
+		mav.addObject("pageTitle", "é¦–é¡µ");
+		mav.addObject("title", "é¦–é¡µ");
 		
 		
 		mav.setViewName("PC_index");
@@ -77,21 +77,21 @@ public class IndexContrller {
 	
 	
 	/**
-	 * ÇëÇóÖ÷Ò³
+	 * è¯·æ±‚ä¸»é¡µ
 	 */
 	@RequestMapping("/wap_index")
 	public ModelAndView wap_index(HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		
-		mav.addObject("pageTitle", "Ê×Ò³");
-		mav.addObject("title", "Ê×Ò³");
+		mav.addObject("pageTitle", "é¦–é¡µ");
+		mav.addObject("title", "é¦–é¡µ");
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
 		String s_name = "";
-		//×éÈÎÎñÊıÁ¿ 
-		long total=taskService.createTaskQuery().taskCandidateUser(currentUser.getId_()).taskNameLike("%"+s_name +"%").count(); // »ñÈ¡×Ü¼ÇÂ¼Êı
-		//¸öÈËÈÎÎñÊıÁ¿ 
-		long total2 =taskService.createTaskQuery().taskAssignee(currentUser.getId_()).taskNameLike("%"+s_name +"%").count(); // »ñÈ¡×Ü¼ÇÂ¼Êı
+		//ç»„ä»»åŠ¡æ•°é‡ 
+		long total=taskService.createTaskQuery().taskCandidateUser(currentUser.getId_()).taskNameLike("%"+s_name +"%").count(); // è·å–æ€»è®°å½•æ•°
+		//ä¸ªäººä»»åŠ¡æ•°é‡ 
+		long total2 =taskService.createTaskQuery().taskAssignee(currentUser.getId_()).taskNameLike("%"+s_name +"%").count(); // è·å–æ€»è®°å½•æ•°
 		mav.addObject("daibanTotal", total+total2);
 		
 		mav.addObject("page", "foreground/common/mobile_index.jsp");
@@ -102,7 +102,7 @@ public class IndexContrller {
 	
 	
 	/**
-	 *  µçÄÔµÇÂ½Ò³Ãæ
+	 *  ç”µè„‘ç™»é™†é¡µé¢
 	 * @param request
 	 * @return
 	 * @throws Exception
@@ -116,7 +116,7 @@ public class IndexContrller {
 	
 	
 	/**
-	 *  iosµÇÂ½Ò³Ãæ
+	 *  iosç™»é™†é¡µé¢
 	 * @param request
 	 * @return
 	 * @throws Exception
@@ -130,7 +130,7 @@ public class IndexContrller {
 	
 	
 	/**
-	 *  androidµÇÂ½Ò³Ãæ
+	 *  androidç™»é™†é¡µé¢
 	 * @param request
 	 * @return
 	 * @throws Exception
@@ -144,13 +144,13 @@ public class IndexContrller {
 	
 	
 	/**
-	 * ºóÌ¨Ö÷Ò³
+	 * åå°ä¸»é¡µ
 	 */
 	@RequestMapping("/admin/main")
 	public ModelAndView admin_main() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "ÈêÒ»¾»Ë®  ºóÌ¨");
-		mav.addObject("title", "ÈêÒ»¾»Ë®  ºóÌ¨");
+		mav.addObject("pageTitle", "æ±ä¸€å‡€æ°´  åå°");
+		mav.addObject("title", "æ±ä¸€å‡€æ°´  åå°");
 		publicService.addLeftMenu(mav);
 		
 		mav.setViewName("/admin/main");
@@ -162,8 +162,8 @@ public class IndexContrller {
 	@RequestMapping("/fail")
 	public ModelAndView fail() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "ÎŞÈ¨²é¿´");
-		mav.addObject("title", "ÎŞÈ¨²é¿´");
+		mav.addObject("pageTitle", "æ— æƒæŸ¥çœ‹");
+		mav.addObject("title", "æ— æƒæŸ¥çœ‹");
 		mav.addObject("page", "foreground/common/fail.jsp");
 		mav.setViewName("mobile_main");
 		return mav;
@@ -190,7 +190,7 @@ public class IndexContrller {
 		Access_token token = (Access_token)  servletContext.getAttribute("access_token");
 		//https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN
 		
-		//ÇëÇóÁÙÊ±¶şÎ¬Âëurl  ÓÀ¾ÃºÍÁÙÊ±urlÒ»Ñù
+		//è¯·æ±‚ä¸´æ—¶äºŒç»´ç url  æ°¸ä¹…å’Œä¸´æ—¶urlä¸€æ ·
 		String ticket_post_url = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="+token.getAccess_token();
 		String temp_ticket_data = WeiXinUtil.getTempTicketData();
 		//String ticket_data = WeiXinUtil.getTicketData();
@@ -198,14 +198,14 @@ public class IndexContrller {
 		
 		
 		/**
-		 * result_jsonÈçÏÂ
+		 * result_jsonå¦‚ä¸‹
 		 * {"ticket":"gQFW7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAycjlpaE55VzVlWGsxb3J5Wk5wMXUAAgQTm31ZAwQIBwAA"
 		 * ,"expire_seconds":1800,"url":"http:\/\/weixin.qq.com\/q\/02r9ihNyW5eXk1oryZNp1u"}
 		 */
 		JSONObject result = JSONObject.fromObject(temp_ticket_result_json);
 		
 		/**
-		 * GETÇëÇóËµÃ÷£¨TICKET±ØĞèUrlEncode£©
+		 * GETè¯·æ±‚è¯´æ˜ï¼ˆTICKETå¿…éœ€UrlEncodeï¼‰
 		 * https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQFW7zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAycjlpaE55VzVlWGsxb3J5Wk5wMXUAAgQTm31ZAwQIBwAA
 		 */
 

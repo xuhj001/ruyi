@@ -25,7 +25,7 @@ import net.sf.json.JsonConfig;
  
 
 /**
- * Á÷³Ì¶¨Òå¹ÜÀíController
+ * æµç¨‹å®šä¹‰ç®¡ç†Controller
  * @author user
  *
  */
@@ -40,7 +40,7 @@ public class ProcessDefinitionAdminController {
 	private HistoryService historyService;
 	
 	/**
-	 * Á÷³Ì¶¨Òå²éÑ¯
+	 * æµç¨‹å®šä¹‰æŸ¥è¯¢
 	 * @param page
 	 * @param rows
 	 * @param s_name
@@ -55,11 +55,11 @@ public class ProcessDefinitionAdminController {
 		}
 		PageBean pageBean=new PageBean(Integer.parseInt(page),Integer.parseInt(rows));
 		
-		List<ProcessDefinition> processDefinition=repositoryService.createProcessDefinitionQuery() // ´´½¨Á÷³ÌÁ÷³Ì¶¨Òå²éÑ¯
-					.orderByProcessDefinitionId().desc() // ¸ù¾İÁ÷³Ì¶¨Òåid½µĞòÅÅÁĞ
-					.processDefinitionNameLike("%"+s_name+"%") // ¸ù¾İÁ÷³Ì¶¨ÒåÃû³ÆÄ£ºı²éÑ¯
-					.listPage(pageBean.getStart(), pageBean.getPageSize()); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
-		long total=repositoryService.createProcessDefinitionQuery().processDefinitionNameLike("%"+s_name+"%").count(); // »ñÈ¡×Ü¼ÇÂ¼Êı
+		List<ProcessDefinition> processDefinition=repositoryService.createProcessDefinitionQuery() // åˆ›å»ºæµç¨‹æµç¨‹å®šä¹‰æŸ¥è¯¢
+					.orderByProcessDefinitionId().desc() // æ ¹æ®æµç¨‹å®šä¹‰idé™åºæ’åˆ—
+					.processDefinitionNameLike("%"+s_name+"%") // æ ¹æ®æµç¨‹å®šä¹‰åç§°æ¨¡ç³ŠæŸ¥è¯¢
+					.listPage(pageBean.getStart(), pageBean.getPageSize()); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
+		long total=repositoryService.createProcessDefinitionQuery().processDefinitionNameLike("%"+s_name+"%").count(); // è·å–æ€»è®°å½•æ•°
 		
 		
 		JsonConfig jsonConfig=new JsonConfig();
@@ -74,7 +74,7 @@ public class ProcessDefinitionAdminController {
 	}
 	
 	/**
-	 * ²é¿´Á÷³ÌÍ¼
+	 * æŸ¥çœ‹æµç¨‹å›¾
 	 * @param deploymentId
 	 * @param diagramResourceName
 	 * @param response
@@ -96,7 +96,7 @@ public class ProcessDefinitionAdminController {
 	
 	
 	/**
-	 * ²é¿´Á÷³ÌÍ¼
+	 * æŸ¥çœ‹æµç¨‹å›¾
 	 * @param deploymentId
 	 * @param diagramResourceName
 	 * @param response
@@ -106,7 +106,7 @@ public class ProcessDefinitionAdminController {
 	@RequestMapping("/showViewByTaskId")
 	public String showViewByTaskId(String taskId,HttpServletResponse response)throws Exception{
 		HistoricTaskInstance hti=historyService.createHistoricTaskInstanceQuery().taskId(taskId).singleResult();
-		String processDefinitionId=hti.getProcessDefinitionId(); // »ñÈ¡Á÷³Ì¶¨Òåid
+		String processDefinitionId=hti.getProcessDefinitionId(); // è·å–æµç¨‹å®šä¹‰id
 		ProcessDefinition pd=repositoryService.createProcessDefinitionQuery().processDefinitionId(processDefinitionId).singleResult();
 		InputStream inputStream=repositoryService.getResourceAsStream(pd.getDeploymentId(), pd.getDiagramResourceName());
 		OutputStream out=response.getOutputStream();

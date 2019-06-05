@@ -22,7 +22,7 @@ import com.java1234.entity.Result;
 import com.java1234.util.ResponseUtil;
 
 /**
- * ²¿Êğ¹ÜÀíController
+ * éƒ¨ç½²ç®¡ç†Controller
  * @author user
  *
  */
@@ -35,7 +35,7 @@ public class DeployAdminController {
 	
 	
 	/**
-	 * ÉÏ´«Á÷³Ì²¿ÊğÎÄ¼ş
+	 * ä¸Šä¼ æµç¨‹éƒ¨ç½²æ–‡ä»¶
 	 * @param deployFile
 	 * @param response
 	 * @return
@@ -43,14 +43,14 @@ public class DeployAdminController {
 	 */
 	@RequestMapping("/deploy")
 	public String deploy(@RequestParam("deployFile") MultipartFile deployFile,HttpServletResponse response)throws Exception{
-		repositoryService.createDeployment() // ´´½¨²¿Êğ
-				.name(deployFile.getOriginalFilename()) // Á÷³ÌÃû³Æ
-				.addZipInputStream(new ZipInputStream(deployFile.getInputStream())) // Ìí¼ÓzipÊäÈëÁ÷
-				.deploy(); // ²¿Êğ
+		repositoryService.createDeployment() // åˆ›å»ºéƒ¨ç½²
+				.name(deployFile.getOriginalFilename()) // æµç¨‹åç§°
+				.addZipInputStream(new ZipInputStream(deployFile.getInputStream())) // æ·»åŠ zipè¾“å…¥æµ
+				.deploy(); // éƒ¨ç½²
 		
 		Result result = new Result();
 		result.setSuccess(true);
-		result.setMsg("²¿Êğ³É¹¦");
+		result.setMsg("éƒ¨ç½²æˆåŠŸ");
 		
 		Gson gson = new Gson();
 		ResponseUtil.write(response, gson.toJson(result));
@@ -61,7 +61,7 @@ public class DeployAdminController {
 	
 	
 	/**
-	 * Á÷³Ì²¿Êğ²éÑ¯
+	 * æµç¨‹éƒ¨ç½²æŸ¥è¯¢
 	 * @param page
 	 * @param rows
 	 * @param s_name
@@ -77,11 +77,11 @@ public class DeployAdminController {
 		
 		
 		PageBean pageBean=new PageBean(Integer.parseInt(page),Integer.parseInt(rows));
-		List<Deployment> deploymentList=repositoryService.createDeploymentQuery() // ´´½¨Á÷³Ì²¿Êğ²éÑ¯
-					.orderByDeploymenTime().desc() // ¸ù¾İ²¿ÊğÊ±¼ä½µĞòÅÅÁĞ
-					.deploymentNameLike("%"+q+"%") // ¸ù¾İ²¿ÊğÃû³ÆÄ£ºı²éÑ¯
-					.listPage(pageBean.getStart(), pageBean.getPageSize()); // ·µ»Ø´ø·ÖÒ³µÄ½á¹û¼¯ºÏ
-		long total=repositoryService.createDeploymentQuery().deploymentNameLike("%"+q+"%").count(); // »ñÈ¡×Ü¼ÇÂ¼Êı
+		List<Deployment> deploymentList=repositoryService.createDeploymentQuery() // åˆ›å»ºæµç¨‹éƒ¨ç½²æŸ¥è¯¢
+					.orderByDeploymenTime().desc() // æ ¹æ®éƒ¨ç½²æ—¶é—´é™åºæ’åˆ—
+					.deploymentNameLike("%"+q+"%") // æ ¹æ®éƒ¨ç½²åç§°æ¨¡ç³ŠæŸ¥è¯¢
+					.listPage(pageBean.getStart(), pageBean.getPageSize()); // è¿”å›å¸¦åˆ†é¡µçš„ç»“æœé›†åˆ
+		long total=repositoryService.createDeploymentQuery().deploymentNameLike("%"+q+"%").count(); // è·å–æ€»è®°å½•æ•°
 		
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm").create();
 		
@@ -97,7 +97,7 @@ public class DeployAdminController {
 	
 	
 	/**
-	 * É¾³ıÁ÷³Ì²¿Êğ
+	 * åˆ é™¤æµç¨‹éƒ¨ç½²
 	 * @param ids
 	 * @param response
 	 * @return
@@ -111,7 +111,7 @@ public class DeployAdminController {
 		}
 		Result result = new Result();
 		result.setSuccess(true);
-		result.setMsg("É¾³ı³É¹¦");
+		result.setMsg("åˆ é™¤æˆåŠŸ");
 		Gson gson = new Gson();
 		ResponseUtil.write(response, gson.toJson(result));
 		return null;

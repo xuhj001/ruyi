@@ -16,11 +16,11 @@ public class SMSTaskUtil {
 	}
 	
 	/**
-	 * renwuTitle  = ÒâÏò·¿Ô´
-	 * groupName  = Ö¸¶¨µÄ²¿ÃÅ
-	 * likeHouse  = ÒâÏò·¿Ô´
-	 * renwuCreateUser = Á÷³ÌµÄ´´½¨ÈË
-	 * renwuJine = client¡£jine
+	 * renwuTitle  = æ„å‘æˆ¿æº
+	 * groupName  = æŒ‡å®šçš„éƒ¨é—¨
+	 * likeHouse  = æ„å‘æˆ¿æº
+	 * renwuCreateUser = æµç¨‹çš„åˆ›å»ºäºº
+	 * renwuJine = clientã€‚jine
 	 * renwuClient = renwu.getClient().getClientName()
 	 * renwuClientPhone =  renwu.getClient().getClientPhone()
 	 * renwuType =  renwu.getProcessDefinitionName()

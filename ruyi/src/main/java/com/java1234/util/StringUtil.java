@@ -6,13 +6,13 @@ import java.util.Random;
 
 
 /**
- * ×Ö·û´®¹¤¾ßÀà
+ * å­—ç¬¦ä¸²å·¥å…·ç±»
  *
  */
 public class StringUtil {
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÊÇ¿Õ
+	 * åˆ¤æ–­æ˜¯å¦æ˜¯ç©º
 	 */
 	public static boolean isEmpty(String str) {
 		if (str == null || "".equals(str.trim())) {
@@ -23,7 +23,7 @@ public class StringUtil {
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñ²»ÊÇ¿Õ
+	 * åˆ¤æ–­æ˜¯å¦ä¸æ˜¯ç©º
 	 */
 	public static boolean isNotEmpty(String str) {
 		if ((str != null) && !"".equals(str.trim())) {
@@ -34,7 +34,7 @@ public class StringUtil {
 	}
 
 	/**
-	 * ¸ñÊ½»¯Ä£ºı²éÑ¯
+	 * æ ¼å¼åŒ–æ¨¡ç³ŠæŸ¥è¯¢
 	 */
 	public static String formatLike(String str) {
 		if (isNotEmpty(str)) {

@@ -22,7 +22,7 @@ public class PublicController {
 	
 	
 	/**
-	 * 接受时间 格式 返回时间 
+	 * 鎺ュ彈鏃堕棿 鏍煎紡 杩斿洖鏃堕棿 
 	 * @param 
 	 * @param response
 	 * @return

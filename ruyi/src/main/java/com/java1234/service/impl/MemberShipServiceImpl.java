@@ -15,7 +15,7 @@ import com.java1234.service.MemberShipService;
 import com.java1234.util.StringUtil;
 
 /**
- * ÓÃ»§½ÇÉ«¹ØÏµServiceÊµÏÖÀà
+ * ç”¨æˆ·è§’è‰²å…³ç³»Serviceå®ç°ç±»
  * @author user
  *
  */

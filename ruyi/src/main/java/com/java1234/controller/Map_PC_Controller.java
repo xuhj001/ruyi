@@ -22,7 +22,7 @@ public class Map_PC_Controller {
 	
 	
 	/**
-	 * ´ò¿ª µØÍ¼²¢ÇÒÏÔÊ¾   ÎÒÃÇµÄ×ø±ê
+	 * æ‰“å¼€ åœ°å›¾å¹¶ä¸”æ˜¾ç¤º   æˆ‘ä»¬çš„åæ ‡
 	 * @param request
 	 * @return
 	 * @throws Exception

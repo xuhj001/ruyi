@@ -4,7 +4,7 @@ package com.java1234.util;
 import org.apache.shiro.crypto.hash.Md5Hash;
 
 /**
- * ¼ÓÃÜ¹¤¾ß
+ * åŠ å¯†å·¥å…·
  * @author Administrator
  *
  */
@@ -21,15 +21,15 @@ public class CryptographyUtil {
 		
 		
 		String password="123";//fd58e1d93432f4da5b6ff1c2821b2327
-		System.out.println("Md5¼ÓÃÜ£º"+CryptographyUtil.md5(password, "chenhao"));
+		System.out.println("Md5åŠ å¯†ï¼š"+CryptographyUtil.md5(password, "chenhao"));
 		MyUtil.existStrArr("1", ids.split(","));
 	}
 	
 	
 	/**
-	 * Md5¼ÓÃÜ
-	 * @param str  ¼ÓÃÜµÄÄÚÈİ
-	 * @param salt  ÑÎÖµ 
+	 * Md5åŠ å¯†
+	 * @param str  åŠ å¯†çš„å†…å®¹
+	 * @param salt  ç›å€¼ 
 	 */
 	public static String md5(String str,String salt){
 		return new Md5Hash(str,salt).toString();

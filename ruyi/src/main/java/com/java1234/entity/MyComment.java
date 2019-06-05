@@ -9,7 +9,7 @@ public class MyComment {
 	private String userId;
 	private Date time;
 	private String message;
-	private List<String> imageList=new LinkedList<String>(); // 主要用于列表展示的缩略图
+	private List<String> imageList=new LinkedList<String>(); // 涓昏鐢ㄤ簬鍒楄〃灞曠ず鐨勭缉鐣ュ浘
 
 	
 	public String getUserId() {

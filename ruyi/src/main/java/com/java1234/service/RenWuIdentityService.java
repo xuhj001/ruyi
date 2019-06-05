@@ -19,7 +19,7 @@ public interface RenWuIdentityService {
 	
 	
 	/**
-	 * лМ╪сиМ╥ща╙о╣хкё╛  лМ╪сж╝г╟еп╤ообспц╩спё╛ц╩сп╬м╪с║ё сп╬м╡╩╪с
+	 * Ф╥╩Е┼═Х╨╚Д╩╫Х│■ГЁ╩Д╨╨О╪▄  Ф╥╩Е┼═Д╧▀Е┴█Е┬╓Ф√╜Д╦▀Ф°┴Ф╡║Ф°┴О╪▄Ф╡║Ф°┴Е╟╠Е┼═Ц─┌ Ф°┴Е╟╠Д╦█Е┼═
 	 */
 	public void add_idt(User currentUser,RenWu renwu);
 	

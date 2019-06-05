@@ -18,8 +18,8 @@ public class Procedef__PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "流程定义管理");
-		mav.addObject("title", "流程定义管理");
+		mav.addObject("pageTitle", "娴佺▼瀹氫箟绠＄悊");
+		mav.addObject("title", "娴佺▼瀹氫箟绠＄悊");
 		
 		mav.setViewName("/admin/page/procedef/procedef_manage");
 		return mav;

@@ -54,17 +54,17 @@ public class UserAdminController {
 			wxuserinfo.setOpenid(user.getId_());
 			wxuserinfo.setCreateDateTime(new Date());
 			wxuserinfo.setDaka_count(1);
-			wxuserinfo.setTreeIds("");//È¨ÏŞ²»ÄÜÊÇnull  ÉèÖÃ¸ö¿Õstr
+			wxuserinfo.setTreeIds("");//æƒé™ä¸èƒ½æ˜¯null  è®¾ç½®ä¸ªç©ºstr
 			weiXinUserInfoService.add(wxuserinfo);
 		}
 		Result result = new Result();
 		Gson gson = new Gson();
 		if (resultTotal > 0) {
 			result.setSuccess(true);
-			result.setMsg("Ìí¼Ó³É¹¦");
+			result.setMsg("æ·»åŠ æˆåŠŸ");
 		} else {
 			result.setSuccess(false);
-			result.setMsg("Ìí¼ÓÊ§°Ü");
+			result.setMsg("æ·»åŠ å¤±è´¥");
 		}
 		ResponseUtil.write(response, gson.toJson(result));
 		return null;
@@ -80,10 +80,10 @@ public class UserAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("×ÊÁÏĞŞ¸Ä³É¹¦");
+			result.setMsg("èµ„æ–™ä¿®æ”¹æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("×ÊÁÏĞŞ¸ÄÊ§°Ü");
+			result.setMsg("èµ„æ–™ä¿®æ”¹å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
@@ -91,7 +91,7 @@ public class UserAdminController {
 	
 	
 	/**
-	 * É¾³ıÓÃ»§
+	 * åˆ é™¤ç”¨æˆ·
 	 * @param ids
 	 * @param response
 	 * @return
@@ -107,7 +107,7 @@ public class UserAdminController {
 		Gson g = new Gson();
 		Result result=new Result();
 		result.setSuccess(true);
-		result.setMsg("É¾³ı³É¹¦.");
+		result.setMsg("åˆ é™¤æˆåŠŸ.");
 		ResponseUtil.write(response, g.toJson(result));
 		
 		return null;
@@ -116,7 +116,7 @@ public class UserAdminController {
 	
 	
 	/**
-	 * ÏÔÊ¾½ÇÉ«ºÍÈ¨ÏŞ
+	 * æ˜¾ç¤ºè§’è‰²å’Œæƒé™
 	 * @param page
 	 * @param rows
 	 * @param response
@@ -145,7 +145,7 @@ public class UserAdminController {
 				groups.append(g.getName_()+",");
 			}
 			if(groups.length()>0){
-				//É¾³ı×îºóÒ»¸ö¶¹ºÅ
+				//åˆ é™¤æœ€åä¸€ä¸ªè±†å·
 				user.setGroups(groups.deleteCharAt(groups.length()-1).toString());
 			}else{
 				user.setGroups(groups.toString());
@@ -166,7 +166,7 @@ public class UserAdminController {
 	
 	/**
 	 * /admin/user/set_trueOpenid
-	 * ÎªÄÚ²¿ÈËÔ±ÉèÖÃ  ÕæÊµµÄopenid
+	 * ä¸ºå†…éƒ¨äººå‘˜è®¾ç½®  çœŸå®çš„openid
 	 * @param user
 	 * @param response
 	 * @return
@@ -184,10 +184,10 @@ public class UserAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("×ÊÁÏĞŞ¸Ä³É¹¦");
+			result.setMsg("èµ„æ–™ä¿®æ”¹æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("×ÊÁÏĞŞ¸ÄÊ§°Ü");
+			result.setMsg("èµ„æ–™ä¿®æ”¹å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
@@ -205,10 +205,10 @@ public class UserAdminController {
 		Gson g = new Gson();
 		if(resultTotal>0){
 			result.setSuccess(true); 
-			result.setMsg("ÃÜÂëĞŞ¸Ä³É¹¦");
+			result.setMsg("å¯†ç ä¿®æ”¹æˆåŠŸ");
 		}else{
 			result.setSuccess(false); 
-			result.setMsg("ÃÜÂëĞŞ¸ÄÊ§°Ü");
+			result.setMsg("å¯†ç ä¿®æ”¹å¤±è´¥");
 		}
 		ResponseUtil.write(response, g.toJson(result));
 		return null;

@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService  {
 			groups.append(g.getName_()+",");
 		}
 		if(groups.length()>0){
-			//É¾³ı×îºóÒ»¸ö¶¹ºÅ
+			//åˆ é™¤æœ€åä¸€ä¸ªè±†å·
 			user.setGroups(groups.deleteCharAt(groups.length()-1).toString());
 		}else{
 			user.setGroups(groups.toString());

@@ -2,7 +2,7 @@ package com.java1234.entity;
 
 public class Result {
 
-	//{"success":false,"errorcode":-1,"msg":"·¢ËÍÊ§°Ü!"}
+	//{"success":false,"errorcode":-1,"msg":"å‘é€å¤±è´¥!"}
 	
 	private boolean success;
 	private  Integer errorcode ; 

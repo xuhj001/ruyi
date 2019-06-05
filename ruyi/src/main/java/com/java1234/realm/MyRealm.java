@@ -25,7 +25,7 @@ import com.java1234.util.MyUtil;
 import com.java1234.util.StringUtil;
 
 /**
- * ×Ô¶¨ÒåRealm
+ * è‡ªå®šä¹‰Realm
  * 
  * @author Administrator
  *
@@ -39,13 +39,13 @@ public class MyRealm extends AuthorizingRealm {
 	private UserService userService;
 	
 	/**
-	 * Îªµ±Ç°µÄµÇÂ¼µÄÓÃ»§½ÇÉ«ºÍÈ¨ÏŞ
+	 * ä¸ºå½“å‰çš„ç™»å½•çš„ç”¨æˆ·è§’è‰²å’Œæƒé™
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-		// Í¨¹ıÓÃ»§È¡µÃËûÓ¦¸ÃÓµÓĞµÄÈ¨ÏŞ
+		// é€šè¿‡ç”¨æˆ·å–å¾—ä»–åº”è¯¥æ‹¥æœ‰çš„æƒé™
 		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-		// ÉèÖÃ½ÇÉ« ¼¯ºÏ Õâ¸öÄ¿Ç°ÓÃ²»µ½¡£
+		// è®¾ç½®è§’è‰² é›†åˆ è¿™ä¸ªç›®å‰ç”¨ä¸åˆ°ã€‚
 		// authorizationInfo.setRoles(roles);
 		User user = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		user = userService.findById_(user.getId_());
@@ -57,7 +57,7 @@ public class MyRealm extends AuthorizingRealm {
 			return authorizationInfo;
 		}
 		List<Tree> treeList = treeService.getTreesByFatherOrIds(map);
-		// È¨ÏŞ¼¯ºÏ
+		// æƒé™é›†åˆ
 		Set<String> stringPermissions = new HashSet<String>();
 		for (Tree tree : treeList) {
 			if (StringUtil.isNotEmpty(tree.getPermissions())) {
@@ -69,7 +69,7 @@ public class MyRealm extends AuthorizingRealm {
 	}
 
 	/**
-	 * ÑéÖ¤µ±Ç°µÇÂ¼µÄÓÃ»§
+	 * éªŒè¯å½“å‰ç™»å½•çš„ç”¨æˆ·
 	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
@@ -77,7 +77,7 @@ public class MyRealm extends AuthorizingRealm {
 		// String login_type = (String)
 		// SecurityUtils.getSubject().getSession().getAttribute("login_type");
 
-		String openid = (String) token.getPrincipal();// ÎÒÉÏÃæÊ¹ÓÃÁËopenid
+		String openid = (String) token.getPrincipal();// æˆ‘ä¸Šé¢ä½¿ç”¨äº†openid
 		User user = userService.findById_(openid);
 		if (user != null) {
 			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getId_(), user.getPwd_(), "xxx");

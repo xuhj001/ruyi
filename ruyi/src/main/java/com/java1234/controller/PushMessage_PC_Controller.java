@@ -36,10 +36,10 @@ public class PushMessage_PC_Controller {
 		String []idsStr=ids.split(",");
 		for(int i=0;i<idsStr.length;i++){
 			user = userService.findById_(idsStr[i]);
-			about = about+user.getFirst_()+",";//设置相关人员
+			about = about+user.getFirst_()+",";//璁剧疆鐩稿叧浜哄憳
 		}
 		
-		//about 删除最后一个逗号
+		//about 鍒犻櫎鏈�鍚庝竴涓�楀彿
 		about =about.substring(0, about.length()-1);
 		
 		mav.addObject("ids", ids);

@@ -28,7 +28,7 @@ public class HttpClient {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpPost httppost = new HttpPost(url);
 		String result = "";
-		StringEntity entity = new StringEntity(data, "utf-8");// ½â¾öÖĞÎÄÂÒÂëÎÊÌâ
+		StringEntity entity = new StringEntity(data, "utf-8");// è§£å†³ä¸­æ–‡ä¹±ç é—®é¢˜
 		entity.setContentEncoding("UTF-8");
 		entity.setContentType("application/json");
 		httppost.setEntity(entity);
@@ -44,38 +44,38 @@ public class HttpClient {
 	
 
 	/**
-	 * ·¢ËÍget ÇëÇóÒ»¸öurl·µ»Ø ·µ»ØµÄÄÚÈİ
+	 * å‘é€get è¯·æ±‚ä¸€ä¸ªurlè¿”å› è¿”å›çš„å†…å®¹
 	 * 
 	 */
 	public static String get(String url) {
 		String html = null;
-		CloseableHttpClient httpClient = HttpClients.createDefault(); // ´´½¨httpClientÊµÀı
-		HttpGet httpGet = new HttpGet(url); // ´´½¨httpgetÊµÀı
+		CloseableHttpClient httpClient = HttpClients.createDefault(); // åˆ›å»ºhttpClientå®ä¾‹
+		HttpGet httpGet = new HttpGet(url); // åˆ›å»ºhttpgetå®ä¾‹
 		CloseableHttpResponse response = null;
 		try {
-			response = httpClient.execute(httpGet); // Ö´ĞĞhttp getÇëÇó
-		} catch (ClientProtocolException e) { // httpĞ­ÒéÒì³£
+			response = httpClient.execute(httpGet); // æ‰§è¡Œhttp getè¯·æ±‚
+		} catch (ClientProtocolException e) { // httpåè®®å¼‚å¸¸
 			e.printStackTrace();
-		} catch (IOException e) { // ioÒì³£
+		} catch (IOException e) { // ioå¼‚å¸¸
 			e.printStackTrace();
 		}
-		HttpEntity entity = response.getEntity(); // »ñÈ¡·µ»ØÊµÌå
+		HttpEntity entity = response.getEntity(); // è·å–è¿”å›å®ä½“
 		try {
-			// System.out.println("ÍøÒ³ÄÚÈİ£º"+EntityUtils.toString(entity,
-			// "utf-8")); // »ñÈ¡ÍøÒ³ÄÚÈİ
+			// System.out.println("ç½‘é¡µå†…å®¹ï¼š"+EntityUtils.toString(entity,
+			// "utf-8")); // è·å–ç½‘é¡µå†…å®¹
 			html = EntityUtils.toString(entity, "utf-8");
-		} catch (ParseException e) { // ½âÎöÒì³£
+		} catch (ParseException e) { // è§£æå¼‚å¸¸
 			e.printStackTrace();
-		} catch (IOException e) { // ioÒì³£
-			e.printStackTrace();
-		}
-		try {
-			response.close(); // response¹Ø±Õ
-		} catch (IOException e) { // ioÒì³£
+		} catch (IOException e) { // ioå¼‚å¸¸
 			e.printStackTrace();
 		}
 		try {
-			httpClient.close(); // httpClient¹Ø±Õ
+			response.close(); // responseå…³é—­
+		} catch (IOException e) { // ioå¼‚å¸¸
+			e.printStackTrace();
+		}
+		try {
+			httpClient.close(); // httpClientå…³é—­
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -102,20 +102,20 @@ public class HttpClient {
 				"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36");
 		httppost.setHeader("X-Requested-With", "XMLHttpRequest");
 
-		// ÅĞ¶Ï ÊÇ·ñ ´´½¨´úÀí ¸ßÄäÃû´úÀí
+		// åˆ¤æ–­ æ˜¯å¦ åˆ›å»ºä»£ç† é«˜åŒ¿åä»£ç†
 		if (useDaiLi) {
 			HttpHost proxy = new HttpHost(ip, port);
 			RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).build();
 			httppost.setConfig(requestConfig);
 		}
 
-		// ´´½¨²ÎÊı¶ÓÁĞ
+		// åˆ›å»ºå‚æ•°é˜Ÿåˆ—
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 
 		String result = null;
 		formparams.add(new BasicNameValuePair("phone", phone));
 		formparams.add(new BasicNameValuePair("length", "6"));
-		formparams.add(new BasicNameValuePair("msg", "×¢²á"));
+		formparams.add(new BasicNameValuePair("msg", "æ³¨å†Œ"));
 		formparams.add(new BasicNameValuePair("type", "0"));
 		formparams.add(new BasicNameValuePair("verify", yzm));
 		formparams.add(new BasicNameValuePair("validTime", "60"));

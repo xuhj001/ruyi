@@ -1,7 +1,7 @@
 package com.java1234.entity;
 
 /**
- * ¹ÊÕÏÔ­Òò±í
+ * æ•…éšœåŸå› è¡¨
  * @author Administrator
  *
  */

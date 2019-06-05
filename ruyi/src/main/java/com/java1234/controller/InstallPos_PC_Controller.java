@@ -24,8 +24,8 @@ public class InstallPos_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "安装位置管理");
-		mav.addObject("title", "安装位置管理");
+		mav.addObject("pageTitle", "瀹夎浣嶇疆绠＄悊");
+		mav.addObject("title", "瀹夎浣嶇疆绠＄悊");
 		
 		mav.setViewName("/admin/page/install_pos/install_pos_manage");
 		return mav;
@@ -35,7 +35,7 @@ public class InstallPos_PC_Controller {
 	@RequestMapping("/add")
 	public ModelAndView add() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("btn_text", "添加");
+		mav.addObject("btn_text", "娣诲姞");
 		mav.addObject("save_url", "/admin/installpos/add");
 		mav.setViewName("/admin/page/install_pos/add_or_update");
 		return mav;
@@ -51,7 +51,7 @@ public class InstallPos_PC_Controller {
 		InstallPos installPos = installPosService.findById(Integer.parseInt(id));
 		
 		mav.addObject("installPos", installPos);
-		mav.addObject("btn_text", "修改");
+		mav.addObject("btn_text", "淇敼");
 		mav.addObject("save_url", "/admin/installpos/update?id="+id);
 		
 		mav.setViewName("/admin/page/install_pos/add_or_update");

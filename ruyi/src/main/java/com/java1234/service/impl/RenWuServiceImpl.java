@@ -80,7 +80,7 @@ public class RenWuServiceImpl implements RenWuService {
 		renWuDao.delete(id);
 		RenWu renWu = this.findById(id);
 		if(renWu.getXiaoshou()!=null){
-			//É¾³ıµôÏúÊÛ
+			//åˆ é™¤æ‰é”€å”®
 			xiaoShouService.delete(renWu.getXiaoshouId());
 		}
 		return  rwidttService.delete(id);
@@ -97,35 +97,35 @@ public class RenWuServiceImpl implements RenWuService {
 		
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
-		//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿  shouhouId
+		//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡  shouhouId
 		Integer renwuId=(Integer) taskService.getVariable(taskId, "renwuId");
 		RenWu renwu  =this.findById(renwuId);
 		
-		renwu.setIsLock(2);//2Ëø×¡
+		renwu.setIsLock(2);//2é”ä½
 		renwu.setAcceptUserId(currentUser.getId_());
 		renwu.setAcceptDateTime(new Date());
 		this.update(renwu);
-		//¸üĞÂ Õ¼¿ÓÈËÊı¾İ
+		//æ›´æ–° å å‘äººæ•°æ®
 		
 		
-		//¸ù¾İtaskname Á÷³Ì¶¨Òåid  ºÍtype  1Íê³É  2½ÓÊÜ    È¡µÃÊÇ·ñÏÔÊ¾ºÅÂë
+		//æ ¹æ®taskname æµç¨‹å®šä¹‰id  å’Œtype  1å®Œæˆ  2æ¥å—    å–å¾—æ˜¯å¦æ˜¾ç¤ºå·ç 
 		String phoneText = showPhoneService.getPhone(taskName,"2", renwu, currentUser);
 		
 		
-		//Ìí¼Ó Åú×¢ 
-		String comment="½ÓÊÜ´ËÈÎÎñ";
+		//æ·»åŠ  æ‰¹æ³¨ 
+		String comment="æ¥å—æ­¤ä»»åŠ¡";
 		publicService.addComment(taskId, currentUser, comment+phoneText,taskName);
 		
-		//Ìí¼Óµ½ÒÑ·ÖÅä
+		//æ·»åŠ åˆ°å·²åˆ†é…
 		assignedService.add(taskId);	
 		
 		
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ  
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡  
 		sMSTaskService.completeAfterSendSMS(taskName,null,renwu.getProcessDefinitionId(), "2", renwu, currentUser);
 		
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡
 		
-		//Ìí¼ÓÈÎÎñµÄÉí·İÁªÏµÈË
+		//æ·»åŠ ä»»åŠ¡çš„èº«ä»½è”ç³»äºº
 		rwidttService.add_idt(currentUser,renwu);
 		
 	}
@@ -136,67 +136,67 @@ public class RenWuServiceImpl implements RenWuService {
 		
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
-		//Á÷³Ì±äÁ¿
+		//æµç¨‹å˜é‡
 		Map<String,Object> variables=new HashMap<String,Object>();
 		variables.clear();
 		variables.put("msg", msg);
 		
-		//ÄÃ³ö ÊÛºóÊµÀı 
+		//æ‹¿å‡º å”®åå®ä¾‹ 
 		Integer renwuId=(Integer) taskService.getVariable(taskId, "renwuId");
 		RenWu renwu = this.findById(renwuId);
 		
 		
-		//Çå³ıÕ¼¿ÓÈË
+		//æ¸…é™¤å å‘äºº
 		renwu.setAcceptUserId(null);
 		renwu.setAcceptDateTime(null);
 		renwu.setIsLock(1);
 		
 		
-		//¸üĞÂ×´Ì¬  //1´¦ÀíÖĞ    2Í¨¹ı    3²µ»Ø     3=¹Ø±Õ
-		if(msg.equals("Í¨¹ı")){
+		//æ›´æ–°çŠ¶æ€  //1å¤„ç†ä¸­    2é€šè¿‡    3é©³å›     3=å…³é—­
+		if(msg.equals("é€šè¿‡")){
 			renwu.setState(1);
 		}
-		if(msg.equals("²µ»Ø")){
+		if(msg.equals("é©³å›")){
 			renwu.setState(1);
 		}
-		if(msg.equals("¹Ø±Õ")){
+		if(msg.equals("å…³é—­")){
 			renwu.setState(3);
 		}
 		
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ  ¸ù¾İmsg ²é
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡  æ ¹æ®msg æŸ¥
 		sMSTaskService.completeAfterSendSMS(taskName,msg, renwu.getProcessDefinitionId(), "1", renwu, currentUser);
 		weiXinMSGService.completeAfterSendWXmsg(taskName, msg,  renwu.getProcessDefinitionId(), "1", renwu, currentUser);
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡
 		
 		
 		
 		
 		this.update(renwu);
 		
-		//¸ù¾İtaskname Á÷³Ì¶¨Òåid  ºÍtype(Íê³É1£¬½ÓÊÜ2)   È¡µÃÊÇ·ñÏÔÊ¾ºÅÂë
+		//æ ¹æ®taskname æµç¨‹å®šä¹‰id  å’Œtype(å®Œæˆ1ï¼Œæ¥å—2)   å–å¾—æ˜¯å¦æ˜¾ç¤ºå·ç 
 		String phoneText = showPhoneService.getPhone(taskName,"1", renwu, currentUser);
-		//Ìí¼ÓÅú×¢
+		//æ·»åŠ æ‰¹æ³¨
 		publicService.addComment(taskId, currentUser, comment+phoneText,taskName);		
 		
-		//ÕâÀï²éÑ¯ĞèÒª²»ĞèÒª Ìí¼Ó¶îÍâµÄÁ÷³Ì±äÁ¿  ¸ù¾İÁ÷³Ì¶¨Òåid renwu.getProcessDefinitionId()   ÈÎÎñÃû³ÆtaskName
+		//è¿™é‡ŒæŸ¥è¯¢éœ€è¦ä¸éœ€è¦ æ·»åŠ é¢å¤–çš„æµç¨‹å˜é‡  æ ¹æ®æµç¨‹å®šä¹‰id renwu.getProcessDefinitionId()   ä»»åŠ¡åç§°taskName
 		processVariableService.setProceVar(variables, renwu.getProcessDefinitionId(), taskName, renwu, currentUser);
 		
-		//Íê³ÉÈÎÎñ Ìí¼Ó±äÁ¿
-		taskService.complete(taskId,variables); // Íê³ÉÈÎÎñ   ²¢ÇÒ Ìí¼Ó¾Ö²¿Á÷³Ì±äÁ¿
+		//å®Œæˆä»»åŠ¡ æ·»åŠ å˜é‡
+		taskService.complete(taskId,variables); // å®Œæˆä»»åŠ¡   å¹¶ä¸” æ·»åŠ å±€éƒ¨æµç¨‹å˜é‡
 		
-		//Çå³ı ÒÑ·ÖÅä 
+		//æ¸…é™¤ å·²åˆ†é… 
 		assignedService.delete(taskId);
 		
-		//Ìí¼ÓÈÎÎñµÄÉí·İÁªÏµÈË
+		//æ·»åŠ ä»»åŠ¡çš„èº«ä»½è”ç³»äºº
 		rwidttService.add_idt(currentUser,renwu);
 		
-		//Íê³ÉÖ®ºó£¬»¹Òª×öÒ»²½  ¾ÍÊÇ¸üĞÂrenwuµÄtaskidºÍtaskname
+		//å®Œæˆä¹‹åï¼Œè¿˜è¦åšä¸€æ­¥  å°±æ˜¯æ›´æ–°renwuçš„taskidå’Œtaskname
 		
-		//¸ù¾İÁ÷³ÌÊµÀıId²éÑ¯ÈÎÎñ Õâ¸öÈÎÎñ¾ÍÊÇµÚÒ»¸ö½ÚµãµÄÃû×Ó£¬´´½¨ÈÎÎñ
+		//æ ¹æ®æµç¨‹å®ä¾‹IdæŸ¥è¯¢ä»»åŠ¡ è¿™ä¸ªä»»åŠ¡å°±æ˜¯ç¬¬ä¸€ä¸ªèŠ‚ç‚¹çš„åå­ï¼Œåˆ›å»ºä»»åŠ¡
 		Task task=taskService.createTaskQuery().processInstanceId(renwu.getProcessInstanceId()).singleResult();
 		
 		if(task==null){
-			System.out.println("ÒÑ¾­Ã»ÓĞÈÎÎñÁË£¬ÉèÖÃ£¬stateÎª3");
+			System.out.println("å·²ç»æ²¡æœ‰ä»»åŠ¡äº†ï¼Œè®¾ç½®ï¼Œstateä¸º3");
 			renwu.setState(3);
 			this.update(renwu);
 		}
@@ -208,60 +208,60 @@ public class RenWuServiceImpl implements RenWuService {
 	public void last_done(String taskId, String taskName, String comment, String msg, RenWu renwu) {
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
-		//Á÷³Ì±äÁ¿
+		//æµç¨‹å˜é‡
 		Map<String,Object> variables=new HashMap<String,Object>();
 		variables.clear();
 		variables.put("msg", msg);
 		
-		//Çå³ıÕ¼¿ÓÈË
+		//æ¸…é™¤å å‘äºº
 		renwu.setAcceptUserId(null);
 		renwu.setAcceptDateTime(null);
 		renwu.setIsLock(1);
 		
-		//¸üĞÂ×´Ì¬   1´¦ÀíÖĞ    2Í¨¹ı    3²µ»Ø     3=¹Ø±Õ
-		if(msg.equals("Í¨¹ı")){
+		//æ›´æ–°çŠ¶æ€   1å¤„ç†ä¸­    2é€šè¿‡    3é©³å›     3=å…³é—­
+		if(msg.equals("é€šè¿‡")){
 			renwu.setState(2);
-			//ÅĞ¶ÏÈÎÎñÊÇ²»ÊÇÏúÊÛ
+			//åˆ¤æ–­ä»»åŠ¡æ˜¯ä¸æ˜¯é”€å”®
 			if(renwu.getXiaoshou()!=null){
 				XiaoShou xiaoShou = renwu.getXiaoshou();
 				xiaoShou.setLast_change_xin_dataTime(new Date());
 				xiaoShouService.update(xiaoShou);
 			}
 		}
-		if(msg.equals("²µ»Ø")){
+		if(msg.equals("é©³å›")){
 			renwu.setState(1);
 		}
-		if(msg.equals("¹Ø±Õ")){
+		if(msg.equals("å…³é—­")){
 			renwu.setState(3);
 		}
 		this.update(renwu);
 		
 		
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ  
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡  
 		sMSTaskService.completeAfterSendSMS(taskName, msg,renwu.getProcessDefinitionId(), "1", renwu, currentUser);
 		weiXinMSGService.completeAfterSendWXmsg(taskName, msg,renwu.getProcessDefinitionId(), "1", renwu, currentUser);
-		//²éÑ¯ ²¢·¢¶ÌĞÅÈÎÎñ
+		//æŸ¥è¯¢ å¹¶å‘çŸ­ä¿¡ä»»åŠ¡
 		
 		
-		//¸ù¾İtaskname Á÷³Ì¶¨Òåid  ºÍtype  È¡µÃÊÇ·ñÏÔÊ¾ºÅÂë
+		//æ ¹æ®taskname æµç¨‹å®šä¹‰id  å’Œtype  å–å¾—æ˜¯å¦æ˜¾ç¤ºå·ç 
 		String phoneText = showPhoneService.getPhone(taskName,"1", renwu, currentUser);
 		
-		//Ìí¼ÓÅú×¢
+		//æ·»åŠ æ‰¹æ³¨
 		publicService.addComment(taskId, currentUser, comment+phoneText,taskName);
 		
 		
-		//ÕâÀï²éÑ¯ĞèÒª²»ĞèÒª Ìí¼Ó¶îÍâµÄÁ÷³Ì±äÁ¿  ¸ù¾İÁ÷³Ì¶¨Òåid renwu.getProcessDefinitionId()   ÈÎÎñÃû³ÆtaskName
+		//è¿™é‡ŒæŸ¥è¯¢éœ€è¦ä¸éœ€è¦ æ·»åŠ é¢å¤–çš„æµç¨‹å˜é‡  æ ¹æ®æµç¨‹å®šä¹‰id renwu.getProcessDefinitionId()   ä»»åŠ¡åç§°taskName
 		processVariableService.setProceVar(variables, renwu.getProcessDefinitionId(), taskName, renwu, currentUser);
 		
 		
-		//Íê³ÉÈÎÎñ Ìí¼Ó±äÁ¿
+		//å®Œæˆä»»åŠ¡ æ·»åŠ å˜é‡
 		taskService.complete(taskId,variables);
 		
-		//Çå³ıÒÑ·ÖÅä 
+		//æ¸…é™¤å·²åˆ†é… 
 		assignedService.delete(taskId);
 		
 		
-		//Ìí¼ÓÈÎÎñµÄÉí·İÁªÏµÈË
+		//æ·»åŠ ä»»åŠ¡çš„èº«ä»½è”ç³»äºº
 		rwidttService.add_idt(currentUser,renwu);
 		
 	}

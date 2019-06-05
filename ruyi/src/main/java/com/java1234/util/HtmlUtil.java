@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 public class HtmlUtil {
 
 	/**
-	 * ½ÓÊÜ str  È¡ÆäÖĞµÄimgs  È»ºó·µ»Ølist_imgÁĞ±í
+	 * æ¥å— str  å–å…¶ä¸­çš„imgs  ç„¶åè¿”å›list_imgåˆ—è¡¨
 	 */
 	public static List<String> getImgUrls(String htmlStr) {
 		
@@ -25,7 +25,7 @@ public class HtmlUtil {
 	}
 	
 	/**
-	 * ½ÓÊÜstr  É¾³ıÆäÖĞµÄimg ±êÇ© ·µ»Ø   ¡¾Ö»ÁôÏÂÎÄ±¾¡¿
+	 * æ¥å—str  åˆ é™¤å…¶ä¸­çš„img æ ‡ç­¾ è¿”å›   ã€åªç•™ä¸‹æ–‡æœ¬ã€‘
 	 */
 	public static String removeImg(String htmlStr){
 		

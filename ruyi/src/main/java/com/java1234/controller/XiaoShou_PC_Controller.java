@@ -51,14 +51,14 @@ public class XiaoShou_PC_Controller {
 	private ConfigService configService;
 	
 	/**
-	 * ÓÃ»§¹ÜÀíÒ³Ãæ
+	 * ç”¨æˆ·ç®¡ç†é¡µé¢
 	 * @return
 	 * @throws Exception
 	 */
 	@RequestMapping("/manage")
 	public ModelAndView manage(@RequestParam(value="fendian",required=false)String fendian) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("title", "ÏúÊÛ¹ÜÀí");
+		mav.addObject("title", "é”€å”®ç®¡ç†");
 		
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
@@ -87,7 +87,7 @@ public class XiaoShou_PC_Controller {
 		String date = DateUtil.formatDate(new Date(), "yyyy-MM-dd");
 		date = DateUtil.addDay("yyyy-MM-dd", date, (0-config.getDays()));
 		mav.addObject("last_change_xin_dataTime", date);
-		//²éµÄ»°£¬¾Í²é±ÈÕâ¸öÈÕÆÚĞ¡µÄ  µ¥×Ó
+		//æŸ¥çš„è¯ï¼Œå°±æŸ¥æ¯”è¿™ä¸ªæ—¥æœŸå°çš„  å•å­
 		
 		mav.setViewName("/admin/page/xiaoshou/xiaoshou_manage");
 		return mav;

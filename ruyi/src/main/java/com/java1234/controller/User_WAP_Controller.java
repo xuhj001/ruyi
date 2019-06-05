@@ -43,12 +43,12 @@ public class User_WAP_Controller {
 	public String login(User user,String err_url,@RequestParam(value = "bj", required = false) String bj
 			,HttpServletResponse response,HttpServletRequest request)throws Exception{
 		Subject subject=SecurityUtils.getSubject();
-		subject.getSession().setAttribute("login_type", "wx");//ÊÇ¸öwxÊÇÓÃÓÚrealmµÇÂ½ÄÄÀï¡£
-		subject.getSession().setAttribute("bj", bj);//ÉèÖÃµÇÂ½µÄ±êÊ¶  ÓÃÓÚÇø·ÖandroidºÍios pc  weixin
+		subject.getSession().setAttribute("login_type", "wx");//æ˜¯ä¸ªwxæ˜¯ç”¨äºrealmç™»é™†å“ªé‡Œã€‚
+		subject.getSession().setAttribute("bj", bj);//è®¾ç½®ç™»é™†çš„æ ‡è¯†  ç”¨äºåŒºåˆ†androidå’Œios pc  weixin
 		UsernamePasswordToken token=new UsernamePasswordToken(user.getId_(), CryptographyUtil.md5(user.getPwd_(), "chenhao"));
 		
 		try{
-			subject.login(token); // µÇÂ¼ÑéÖ¤
+			subject.login(token); // ç™»å½•éªŒè¯
 			user = userService.findById_(user.getId_());
 			userService.setGroups(user);
 			
@@ -57,12 +57,12 @@ public class User_WAP_Controller {
 			//return "go_home";
 			return "redirect:/wap_index";
 			
-			//Èç¹ûµÇÂ½³É¹¦ ¾Í²»»á±¨´í  ±¨´í¾ÍÊÇµÇÂ½Ê§°ÜÁË
-			//return "redirect:/admin/main.jsp";//µØÖ·À¸·¢Éú±ä»¯ÁË
+			//å¦‚æœç™»é™†æˆåŠŸ å°±ä¸ä¼šæŠ¥é”™  æŠ¥é”™å°±æ˜¯ç™»é™†å¤±è´¥äº†
+			//return "redirect:/admin/main.jsp";//åœ°å€æ å‘ç”Ÿå˜åŒ–äº†
 		}catch(Exception e){
 			e.printStackTrace();
 			request.setAttribute("user", user);
-			request.setAttribute("errorInfo", "ÓÃ»§Ãû»òÕßÃÜÂë´íÎó£¡");
+			request.setAttribute("errorInfo", "ç”¨æˆ·åæˆ–è€…å¯†ç é”™è¯¯ï¼");
 			return "redirect:/"+err_url;
 		}
 	}

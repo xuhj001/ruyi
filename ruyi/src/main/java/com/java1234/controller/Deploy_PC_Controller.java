@@ -24,8 +24,8 @@ public class Deploy_PC_Controller {
 	@RequestMapping("/manage")
 	public ModelAndView manage() throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "流程部署");
-		mav.addObject("title", "流程部署");
+		mav.addObject("pageTitle", "娴佺▼閮ㄧ讲");
+		mav.addObject("title", "娴佺▼閮ㄧ讲");
 		
 		mav.setViewName("/admin/page/deploy/deploy_manage");
 		return mav;

@@ -2,11 +2,190 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="mayikeji:war exploded" />
+      <artifact name="mayikeji:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdf2c40c-e49d-4764-9316-da868a555986" name="Default Changelist" comment="" />
+    <list default="true" id="cdf2c40c-e49d-4764-9316-da868a555986" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/BaiDuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/BaiDuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Config_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Config_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Deploy_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Deploy_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/FenDian_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/FenDian_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Group_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Group_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/GuZhang_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/GuZhang_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/IndexContrller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/IndexContrller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/InstallPos_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/InstallPos_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/JiXing_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/JiXing_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Map_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Map_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Map_WAP_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Map_WAP_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Procedef__PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Procedef__PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/ProcessVariable_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/ProcessVariable_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/PublicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/PublicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/PushMessage_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/PushMessage_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/RenWu_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/RenWu_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/RenWu_WAP_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/RenWu_WAP_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/SMSTask_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/SMSTask_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/ShowPhone_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/ShowPhone_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/ShuiYuan_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/ShuiYuan_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Task_WAP_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/Task_WAP_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/TreeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/TreeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/User_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/User_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/User_WAP_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/User_WAP_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/WeiXin_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/WeiXin_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/WeiXin_WAP_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/WeiXin_WAP_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/XiaoShou_PC_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/XiaoShou_PC_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/XiaoShou_WAP_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/XiaoShou_WAP_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ConfigAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ConfigAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/DeployAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/DeployAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/FenDianAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/FenDianAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/GroupAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/GroupAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/GuZhangAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/GuZhangAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/InstallPosAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/InstallPosAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/JiXingAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/JiXingAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/MemberShipAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/MemberShipAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ProcessDefinitionAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ProcessDefinitionAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ProcessVariableAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ProcessVariableAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/PushMessageAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/PushMessageAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/RenWuAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/RenWuAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/RenWuIdentityAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/RenWuIdentityAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/SMSTaskAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/SMSTaskAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ShowPhoneAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ShowPhoneAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ShuiYuanAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/ShuiYuanAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/TaskAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/TaskAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/TreeAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/TreeAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/UserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/UserAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/WXUserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/WXUserAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/WeiXinAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/WeiXinAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/XiaoShouAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/controller/admin/XiaoShouAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/AssignedDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/AssignedDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ConfigDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ConfigDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/FenDianDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/FenDianDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/GroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/GroupDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/GuZhangDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/GuZhangDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/InstallPosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/InstallPosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/JiXingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/JiXingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/MemberShipDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/MemberShipDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ProcessVariableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ProcessVariableDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/RenWuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/RenWuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/RenWuIdentityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/RenWuIdentityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/SMSTaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/SMSTaskDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ShowPhoneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ShowPhoneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ShuiYuanDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/ShuiYuanDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/TreeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/TreeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/WeiXinUserInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/WeiXinUserInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/dao/XiaoShouDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/dao/XiaoShouDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Access_token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Access_token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Assigned.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Assigned.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/FenDian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/FenDian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/GuZhang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/GuZhang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/InstallPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/InstallPos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/JiXing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/JiXing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/MemberShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/MemberShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/MyComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/MyComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/MyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/MyTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/PageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ProcessVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ProcessVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/RenWu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/RenWu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/RenWuIdentity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/RenWuIdentity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/SMSTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/SMSTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ShouHou.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ShouHou.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ShowPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ShowPhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ShuiYuan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/ShuiYuan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/UserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/UserTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/WeiXinMSG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/WeiXinMSG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/WeiXinUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/WeiXinUserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/entity/XiaoShou.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/entity/XiaoShou.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/http/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/quartz/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/quartz/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/realm/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/realm/MyRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/AssignedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/AssignedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/ConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/ConfigService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/FenDianService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/FenDianService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/GuZhangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/GuZhangService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/InstallPosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/InstallPosService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/JiXingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/JiXingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/MemberShipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/MemberShipService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/ProcessVariableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/ProcessVariableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/PublicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/PublicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/RenWuIdentityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/RenWuIdentityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/RenWuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/RenWuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/SMSTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/SMSTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/ShowPhoneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/ShowPhoneService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/ShuiYuanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/ShuiYuanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/TreeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/TreeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/WeiXinMSGService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/WeiXinMSGService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/WeiXinUserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/WeiXinUserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/XiaoShouService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/XiaoShouService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/AssignedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/AssignedServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ConfigServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/FenDianServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/FenDianServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/GroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/GuZhangServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/GuZhangServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/InitComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/InitComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/InstallPosServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/InstallPosServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/JiXingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/JiXingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/MemberShipServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/MemberShipServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ProcessVariableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ProcessVariableServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/PublicServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/PublicServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/RenWuIdentityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/RenWuIdentityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/RenWuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/RenWuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/SMSTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/SMSTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ShowPhoneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ShowPhoneServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ShuiYuanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/ShuiYuanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/TreeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/TreeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/WeiXinMSGServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/WeiXinMSGServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/WeiXinUserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/WeiXinUserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/XiaoShouServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/service/impl/XiaoShouServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/CryptographyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/CryptographyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/DateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/HtmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/HtmlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/MyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/MyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/PageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/PageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/ResponseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/SMSTaskUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/SMSTaskUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/util/XMLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/util/XMLUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/weixin/WeiXinConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/weixin/WeiXinConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/weixin/WeiXinUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/weixin/WeiXinUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java1234/yunpian/YunPianUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java1234/yunpian/YunPianUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/AssignedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/AssignedMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ConfigMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ConfigMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/FenDianMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/FenDianMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/GroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/GroupMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/GuZhangMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/GuZhangMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/InstallPosMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/InstallPosMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/JiXingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/JiXingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/MemberShipMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/MemberShipMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ProcessVariableMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ProcessVariableMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/RenWuIdentityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/RenWuIdentityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/RenWuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/RenWuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/SMSTaskMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/SMSTaskMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ShowPhoneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ShowPhoneMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ShuiYuanMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/ShuiYuanMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/TreeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/TreeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/WeiXinUserInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/WeiXinUserInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/XiaoShouMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/java1234/mappers/XiaoShouMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/foreground/common/fail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/foreground/common/fail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/foreground/common/mobile_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/foreground/common/mobile_index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/foreground/common/wo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/foreground/common/wo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/foreground/map/select_point_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/foreground/map/select_point_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/foreground/task/daiban.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/foreground/task/daiban.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/foreground/user/set_openid.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/foreground/user/set_openid.jsp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,95 +194,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/go_index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="37" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="37" column="77" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/service/impl/WeiXinMSGServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/main.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/PC_login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/controller/IndexContrller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="111" selection-start-line="111" selection-end-line="111" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.7.RELEASE/spring-web-4.1.7.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1012">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.7.RELEASE/spring-webmvc-4.1.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -112,10 +208,20 @@
       <find>html</find>
       <find>/login</find>
       <find>PC_log</find>
+      <find>销售待</find>
+      <find>mui-title</find>
+      <find>mui_title</find>
+      <find>daiban</find>
+      <find>/task/wap</find>
+      <find>/task/wap/daiban?prodefkey=xiaoshou</find>
+      <find>/task/wap/daiban</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -162,13 +268,12 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,6 +297,21 @@
               <item name="ruyi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mayikeji" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ruyi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="java1234" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mayikeji" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ruyi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -207,51 +327,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mayikeji" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ruyi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mayikeji" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ruyi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mayikeji" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ruyi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mayikeji" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ruyi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -269,12 +359,11 @@
   </component>
   <component name="RunManager">
     <configuration name="tomcat-7.0.94" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="tomcat-7.0.94" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/mayikeji_war_exploded/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="mayikeji:war exploded">
+        <artifact name="mayikeji:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/mayikeji_war_exploded" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -337,7 +426,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="mayikeji:war exploded" />
+          <artifact name="mayikeji:war" />
         </option>
       </method>
     </configuration>
@@ -354,16 +443,17 @@
       <updated>1559637778695</updated>
       <workItem from="1559637783328" duration="1741000" />
       <workItem from="1559639723794" duration="24000" />
+      <workItem from="1559705747426" duration="2405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1765000" />
+    <option name="totallyTimeSpent" value="4170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24040511" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1391258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -374,7 +464,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.69880825" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.22101842" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -390,7 +480,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.32995737" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.26545843" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -400,6 +490,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/java1234/controller/Task_WAP_Controller.java</url>
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
@@ -433,27 +535,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/go_index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="37" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="77" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -494,8 +579,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/controller/IndexContrller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="-1181">
           <caret line="111" selection-start-line="111" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="37" column="77" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/dao/RenWuDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/dao/RenWuIdentityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/foreground/common/wo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/controller/WeiXin_WAP_Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="73" column="36" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/foreground/task/daiban.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.7.RELEASE/spring-webmvc-4.1.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="483" selection-start-line="483" selection-end-line="483" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.7.RELEASE/spring-webmvc-4.1.7.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="408" selection-start-line="408" selection-end-line="408" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/foreground/common/mobile_index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/java1234/controller/Task_WAP_Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
       </provider>
     </entry>

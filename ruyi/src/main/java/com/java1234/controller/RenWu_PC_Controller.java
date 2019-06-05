@@ -52,13 +52,13 @@ public class RenWu_PC_Controller {
 		mav.addObject("renwu", renwu);
 		
 		
-		//¸ù¾İÊµÀıid²éµÄ ÀúÊ·Åú×¢
+		//æ ¹æ®å®ä¾‹idæŸ¥çš„ å†å²æ‰¹æ³¨
 		List<Comment> commentList = taskService.getProcessInstanceComments(renwu.getProcessInstanceId());
 		List<MyComment> myCommentList = new ArrayList<MyComment>();
 		MyComment mc = null;
-		// °ÑÀúÊ·Åú×¢ ×°µ½ÎÒÃÇ×Ô¼º·â×°µÄÊµÌåÖĞ
+		// æŠŠå†å²æ‰¹æ³¨ è£…åˆ°æˆ‘ä»¬è‡ªå·±å°è£…çš„å®ä½“ä¸­
 		for (Comment comment : commentList) {
-			// È¡³östrÖĞµÄimg ±êÇ©
+			// å–å‡ºsträ¸­çš„img æ ‡ç­¾
 			mc = new MyComment();
 			mc.setMessage(HtmlUtil.removeImg(comment.getFullMessage()));
 			mc.setTime(comment.getTime());
@@ -68,7 +68,7 @@ public class RenWu_PC_Controller {
 		}
 		mav.addObject("myCommentList", myCommentList);
 		
-		// ¸ù¾İÊµÀıid²é»» Á÷³ÌÖ´ĞĞ¹ı³Ì  Ìí¼ÓÅÅĞò
+		// æ ¹æ®å®ä¾‹idæŸ¥æ¢ æµç¨‹æ‰§è¡Œè¿‡ç¨‹  æ·»åŠ æ’åº
 		List<HistoricActivityInstance> haiList=historyService.createHistoricActivityInstanceQuery()
 				.orderByHistoricActivityInstanceStartTime().asc()
 				.executionId(renwu.getProcessInstanceId())

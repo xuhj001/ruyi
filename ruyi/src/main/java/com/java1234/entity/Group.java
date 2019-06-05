@@ -1,16 +1,16 @@
 package com.java1234.entity;
 
 /**
- * ½ÇÉ«ÊµÌåÀ©Õ¹
+ * è§’è‰²å®ä½“æ‰©å±•
  * @author user
  *
  */
 public class Group {
 
-	private String id_; // Ö÷¼ü ½ÇÉ«Ãû  ¼ò³Æ
-	private Integer rev_; //ÅÅĞòÓÃ
-	private String name_; // Ãû³Æ     °à³¤
-	private String  type_;//²»ÖªµÀ¸ÉÊ²Ã´ÓÃ
+	private String id_; // ä¸»é”® è§’è‰²å  ç®€ç§°
+	private Integer rev_; //æ’åºç”¨
+	private String name_; // åç§°     ç­é•¿
+	private String  type_;//ä¸çŸ¥é“å¹²ä»€ä¹ˆç”¨
 	
 	
 	public String getId_() {

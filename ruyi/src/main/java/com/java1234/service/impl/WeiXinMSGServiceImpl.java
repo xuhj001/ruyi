@@ -53,7 +53,7 @@ public class WeiXinMSGServiceImpl implements WeiXinMSGService {
 	public void completeAfterSendWXmsg(String taskName, String msg, String procdefId, String type, RenWu renwu,
 			User currentUser) {
 		
-		//²éÑ¯·¢°õ¶ÌĞÅÈÎÎñ  ¸ù¾İ taskNameºÍ procdefId ²éÑ¯
+		//æŸ¥è¯¢å‘ç£…çŸ­ä¿¡ä»»åŠ¡  æ ¹æ® taskNameå’Œ procdefId æŸ¥è¯¢
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("taskName", taskName);
 		map.put("procdefId", renwu.getProcessDefinitionId());
@@ -61,11 +61,11 @@ public class WeiXinMSGServiceImpl implements WeiXinMSGService {
 		map.put("msg", msg);
 		List<SMSTask> TaskList = sMSTaskService.list(map);
 		
-		List<User> users = new ArrayList<User>();//¶¨Òå¼¯ºÏ×°user
+		List<User> users = new ArrayList<User>();//å®šä¹‰é›†åˆè£…user
 		
 		for(SMSTask smsTask :TaskList){
 			if(smsTask.getWx_sms().equals("1")){
-				//ÄÃËùÓĞµÄ ÈËÔ±Ãûµ¥ 
+				//æ‹¿æ‰€æœ‰çš„ äººå‘˜åå• 
 		        Map<String,Object> group_map  = new HashMap<String,Object>();
 		        group_map.put("groupId", smsTask.getGroupId());
 		        List<MemberShip> list = memberShipService.list(group_map);
@@ -73,28 +73,28 @@ public class WeiXinMSGServiceImpl implements WeiXinMSGService {
 					users.add(m.getUser());
 				}
 		        
-		        //users¾ÍÊÇËùÓĞ·¢ Î¢ĞÅÏûÏ¢µÄÈË
+		        //userså°±æ˜¯æ‰€æœ‰å‘ å¾®ä¿¡æ¶ˆæ¯çš„äºº
 		        Group group = groupService.findById_(smsTask.getGroupId());
 		        
-			     // Èç¹ûÊÇÏúÊÛ ¾Í·¢ÕâÑùÄÚÈİ¡£Èç¹û²»±ğµÄÁ÷³Ì ¾Í·¢±ğµÄÄÚÈİ¡£
+			     // å¦‚æœæ˜¯é”€å”® å°±å‘è¿™æ ·å†…å®¹ã€‚å¦‚æœä¸åˆ«çš„æµç¨‹ å°±å‘åˆ«çš„å†…å®¹ã€‚
 			     List<JSONObject> push_list = new ArrayList<JSONObject>();
 			     
-		        //Èç¹ûÊÇÏúÊÛ ¾Í·¢ÕâÑùÄÚÈİ¡£Èç¹û²»±ğµÄÁ÷³Ì  ¾Í·¢±ğµÄÄÚÈİ¡£
+		        //å¦‚æœæ˜¯é”€å”® å°±å‘è¿™æ ·å†…å®¹ã€‚å¦‚æœä¸åˆ«çš„æµç¨‹  å°±å‘åˆ«çš„å†…å®¹ã€‚
 		        if(renwu.getXiaoshou()!=null){
 		        	for(User user :users){
-			        	String first = "¡¾"+msg+"ÈÎÎñ¡¿"+"\t\n"
-			        			+"¿Í»§ĞÕÃû:"+renwu.getXiaoshou().getClientName()+"\t\n"
-			        +"¿Í»§µç»°:"+renwu.getXiaoshou().getClientPhone()+"\t\n"
-			        +"ÊÇ·ñ°²×°:"+renwu.getXiaoshou().getInstall_()+"\t\n"
-			        +"¿Í»§µØÖ·:"+renwu.getXiaoshou().getClientAddress()+"\t\n"
-			        +"ÏúÊÛµ¥±¸×¢:"+renwu.getXiaoshou().getRemark()+"\t\n"
-			        +"¶¨½ğ:"+renwu.getXiaoshou().getDing_jine()+"\t\n"
-			        +"Óà¿î:"+renwu.getXiaoshou().getYu_jine()+"\t\n";
+			        	String first = "ã€"+msg+"ä»»åŠ¡ã€‘"+"\t\n"
+			        			+"å®¢æˆ·å§“å:"+renwu.getXiaoshou().getClientName()+"\t\n"
+			        +"å®¢æˆ·ç”µè¯:"+renwu.getXiaoshou().getClientPhone()+"\t\n"
+			        +"æ˜¯å¦å®‰è£…:"+renwu.getXiaoshou().getInstall_()+"\t\n"
+			        +"å®¢æˆ·åœ°å€:"+renwu.getXiaoshou().getClientAddress()+"\t\n"
+			        +"é”€å”®å•å¤‡æ³¨:"+renwu.getXiaoshou().getRemark()+"\t\n"
+			        +"å®šé‡‘:"+renwu.getXiaoshou().getDing_jine()+"\t\n"
+			        +"ä½™æ¬¾:"+renwu.getXiaoshou().getYu_jine()+"\t\n";
 			        	JSONObject obj = new JSONObject();
 						obj.put("openid", user.getWeiXinUserInfo().getTrueOpenid());
 						obj.put("first", first);
-						obj.put("rw_name", "ĞèÒª¡¾" + group.getName_() + "¡¿´¦Àí");
-						obj.put("about", group.getName_() + "²¿ÃÅ");
+						obj.put("rw_name", "éœ€è¦ã€" + group.getName_() + "ã€‘å¤„ç†");
+						obj.put("about", group.getName_() + "éƒ¨é—¨");
 						push_list.add(obj);
 			        }
 		        }
@@ -142,7 +142,7 @@ public class WeiXinMSGServiceImpl implements WeiXinMSGService {
 					weiXinMSGService.push_sms(obj.get("openid").toString(), obj.get("first").toString(), obj.get("rw_name").toString(),obj.get("about").toString() );
 				}
 				
-				executorService.shutdown();// ¹Ø±Õ
+				executorService.shutdown();// å…³é—­
 				
 			}
 		});

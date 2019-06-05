@@ -3,7 +3,7 @@ package com.java1234.entity;
 import java.util.Date;
 
 /**
- * Á÷³Ì ¹ÜÀí
+ * æµç¨‹ ç®¡ç†
  * 
  * @author Administrator
  *
@@ -12,40 +12,40 @@ import java.util.Date;
 public class RenWu {
 	
 	private Integer id;
-	private String dingdan_num;//¶©µ¥ºÅ
+	private String dingdan_num;//è®¢å•å·
 	
-	private Date createDateTime;// Á÷³Ì ´´½¨Ê±¼ä
+	private Date createDateTime;// æµç¨‹ åˆ›å»ºæ—¶é—´
 	
-	// ÈÎÎñ´´½¨ÈË
+	// ä»»åŠ¡åˆ›å»ºäºº
 	private String createUserId;
 	private User createUser;
 	
-	private String processInstanceId; // Á÷³ÌÊµÀıid¡¾¿ÉÒÔ²éÀúÊ·Åú×¢ ºÍÖ´ĞĞ¹ı³Ì¡¿
-	private Integer isLock;// 1Ã»ÓĞËø 2Ëø×¡ //¼ÓÒ»¸öÊÇ·ñËø×¡£¬ Èç¹ûÓĞÈË°ìÀí£¬¾ÍËø×¡±ğÈË²»ÄÜ°ìÀí
+	private String processInstanceId; // æµç¨‹å®ä¾‹idã€å¯ä»¥æŸ¥å†å²æ‰¹æ³¨ å’Œæ‰§è¡Œè¿‡ç¨‹ã€‘
+	private Integer isLock;// 1æ²¡æœ‰é” 2é”ä½ //åŠ ä¸€ä¸ªæ˜¯å¦é”ä½ï¼Œ å¦‚æœæœ‰äººåŠç†ï¼Œå°±é”ä½åˆ«äººä¸èƒ½åŠç†
 	
-	private Integer state;// 1´¦ÀíÖĞ  2Í¨¹ı   3=¹Ø±Õ
+	private Integer state;// 1å¤„ç†ä¸­  2é€šè¿‡   3=å…³é—­
 	
-	private String acceptUserId;// ÈÎÎñÄ¿Ç°ÊÇ·ñÓĞÈËÕ¼¿Ó
-	private User acceptUser; // ÈÎÎñÄ¿Ç°ÊÇ·ñÓĞÈËÕ¼¿Ó
+	private String acceptUserId;// ä»»åŠ¡ç›®å‰æ˜¯å¦æœ‰äººå å‘
+	private User acceptUser; // ä»»åŠ¡ç›®å‰æ˜¯å¦æœ‰äººå å‘
 	
-	private Date acceptDateTime;// Õ¼¿Ó Ê±¼ä
+	private Date acceptDateTime;// å å‘ æ—¶é—´
 	
-	// ²éÑ¯ÊÇ°´Á÷³Ì¶¨Òåkey²éÑ¯
-	private String processDefinitionKey;// Á÷³Ì¶¨Òåkey procdef
-	private String processDefinitionName;// Á÷³Ì¶¨Òåname Ïàµ±ÓÚÈÎÎñÀàĞÍ
-	private Integer version_; // ¼ÇÂ¼·¢ÆğÈÎÎñµÄ°æ±¾ ÓĞkey»¹ÊÇ²»ĞĞ¡£²»Í¬°æ±¾
-	private String processDefinitionId;// Á÷³Ì¶¨Òåid£¬¿ÉÒÔ²é³öÀ´ËùÓĞµÄÈÎÎñµã½Ú£¬È»ºó¸ù¾İ½ÚµãÃû×ÓÎÇºÏÏÂ
-										// Èç¹ûÎÇºÏµ½ÁË£¬¾ÍÕÒÕâ¸ö½ÚµãÓĞÃ»ÓĞ¶ÌĞÅĞèÒª
+	// æŸ¥è¯¢æ˜¯æŒ‰æµç¨‹å®šä¹‰keyæŸ¥è¯¢
+	private String processDefinitionKey;// æµç¨‹å®šä¹‰key procdef
+	private String processDefinitionName;// æµç¨‹å®šä¹‰name ç›¸å½“äºä»»åŠ¡ç±»å‹
+	private Integer version_; // è®°å½•å‘èµ·ä»»åŠ¡çš„ç‰ˆæœ¬ æœ‰keyè¿˜æ˜¯ä¸è¡Œã€‚ä¸åŒç‰ˆæœ¬
+	private String processDefinitionId;// æµç¨‹å®šä¹‰idï¼Œå¯ä»¥æŸ¥å‡ºæ¥æ‰€æœ‰çš„ä»»åŠ¡ç‚¹èŠ‚ï¼Œç„¶åæ ¹æ®èŠ‚ç‚¹åå­å»åˆä¸‹
+										// å¦‚æœå»åˆåˆ°äº†ï¼Œå°±æ‰¾è¿™ä¸ªèŠ‚ç‚¹æœ‰æ²¡æœ‰çŸ­ä¿¡éœ€è¦
 	
-	// Î¢ĞÅ Ê¹ÓÃ ÓÃ»§²é¹ı¶©µ¥ºó °ó¶¨µÄÈË
+	// å¾®ä¿¡ ä½¿ç”¨ ç”¨æˆ·æŸ¥è¿‡è®¢å•å ç»‘å®šçš„äºº
 	private String bindUserId;
 	private User bindUser;
 	
-	//ÊÛºó
+	//å”®å
 	private Integer xiaoshouId;
 	private XiaoShou xiaoshou; 
 	
-	//·Öµê
+	//åˆ†åº—
 	private Integer fendianId;
 	private FenDian fendian;
 	

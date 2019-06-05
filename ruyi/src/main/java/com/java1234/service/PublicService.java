@@ -17,30 +17,30 @@ public interface PublicService {
 	
 	/**
 	 * 
-	 * @param Ìí¼Ómav.addObject("leftPage", "/admin/common/left_menu.jsp");
-	 * @param ÒÔ¼°Ìí¼Óleftmenu µÄÄÚÈİ
+	 * @param æ·»åŠ mav.addObject("leftPage", "/admin/common/left_menu.jsp");
+	 * @param ä»¥åŠæ·»åŠ leftmenu çš„å†…å®¹
 	 * @param mav
 	 */
 	public void addLeftMenu(ModelAndView mav);
 	
 	/**
-	 * ¸ù¾İÁ÷³Ì¶¨ÒåµÄid ²éÈ«²¿µÄÈÎÎñ½Úµã
+	 * æ ¹æ®æµç¨‹å®šä¹‰çš„id æŸ¥å…¨éƒ¨çš„ä»»åŠ¡èŠ‚ç‚¹
 	 * @param map
 	 * @return
 	 */
 	public List<UserTask> getAllUserTaskByProcdefId(Map<String, Object> map);
 	
 	/**
-	 * @±¸×¢ Ìí¼ÓÅú×¢ ¸ù¾İÈÎÎñidÕÒµ½ÊµÀıid È»ºóÌí¼Ó
+	 * @å¤‡æ³¨ æ·»åŠ æ‰¹æ³¨ æ ¹æ®ä»»åŠ¡idæ‰¾åˆ°å®ä¾‹id ç„¶åæ·»åŠ 
 	 * 
-	 * @±¸×¢ ³ÂºÀ[´´½¨ÈÎÎñ]   ¡¾ĞÕÃû +  ÈÎÎñÃû³Æ-Ò²¾ÍÊÇtaskName¡¿
-	 * @±¸×¢ comment Åú×¢ÄÚÈİ
+	 * @å¤‡æ³¨ é™ˆè±ª[åˆ›å»ºä»»åŠ¡]   ã€å§“å +  ä»»åŠ¡åç§°-ä¹Ÿå°±æ˜¯taskNameã€‘
+	 * @å¤‡æ³¨ comment æ‰¹æ³¨å†…å®¹
 	 * @return
 	 */
 	public Integer addComment(String taskId,  User user,String comment,String taskName);
 	
 	/**
-	 * ÄÃµ½ËùÓĞÈËµÄµç»°¡¾¸ù¾İgroupid¡¿
+	 * æ‹¿åˆ°æ‰€æœ‰äººçš„ç”µè¯ã€æ ¹æ®groupidã€‘
 	 * @param queryMP
 	 * @return
 	 */

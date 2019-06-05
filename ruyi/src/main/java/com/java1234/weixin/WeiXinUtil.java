@@ -23,7 +23,7 @@ public class WeiXinUtil {
 	
 	/**
 	 * 
-	 * Ê¹ÓÃcode ÄÃopenidºÍaccess_token
+	 * ä½¿ç”¨code æ‹¿openidå’Œaccess_token
 	 * 
 	 */
 	public  static String getOpenidUrl(String code) {
@@ -35,7 +35,7 @@ public class WeiXinUtil {
 	}
 	
 	/**
-	 * Ê¹ÓÃopenid »»È¡ ÓÃ»§×ÊÁÏ
+	 * ä½¿ç”¨openid æ¢å– ç”¨æˆ·èµ„æ–™
 	 */
 	public static String getWXUserInfoUrl(JSONObject accessToken_openid_obj) {
 		
@@ -48,7 +48,7 @@ public class WeiXinUtil {
 	
 	
 	/**
-	 * ÄÃµ½Access_token
+	 * æ‹¿åˆ°Access_token
 	 * @return
 	 */
 	public static Access_token getToken() {
@@ -61,7 +61,7 @@ public class WeiXinUtil {
 	}
 	
 	/**
-	 * ½«ÉÏÃæµÄ²ÎÊı ´ò°ü³É
+	 * å°†ä¸Šé¢çš„å‚æ•° æ‰“åŒ…æˆ
 	  {
 	    "touser":"OPENID",
 	    "msgtype":"text",
@@ -109,11 +109,11 @@ public class WeiXinUtil {
 		
 		JSONObject OrderStatus= new JSONObject();
 		OrderStatus.put("color", "#173177");
-		OrderStatus.put("value", " ÒÑÊÕ»õ");
+		OrderStatus.put("value", " å·²æ”¶è´§");
 		
 		JSONObject remark= new JSONObject();
 		remark.put("color", "#173177");
-		remark.put("value", "ÕâÊÇ±¸×¢£¬http://localhost/wx2");
+		remark.put("value", "è¿™æ˜¯å¤‡æ³¨ï¼Œhttp://localhost/wx2");
 		
 		JSONObject data1 = new JSONObject();
 		data1.put("OrderSn", OrderSn);
@@ -129,17 +129,17 @@ public class WeiXinUtil {
 	
 	
 	/**
-	 * ÉóºËÌáĞÑ
+	 * å®¡æ ¸æé†’
 	 * 
-	 * Ä£°åid£ºr034vrL_04MhO7Jyvco6Xp5KOZvSLRLPIRo0kYt42yU
+	 * æ¨¡æ¿idï¼šr034vrL_04MhO7Jyvco6Xp5KOZvSLRLPIRo0kYt42yU
 	 * 
-	 * Õâ¸öÏûÏ¢ Ä£°å  ÎÒÃÇÓÃÓÚ·¢ÏûÏ¢°É¡£
+	 * è¿™ä¸ªæ¶ˆæ¯ æ¨¡æ¿  æˆ‘ä»¬ç”¨äºå‘æ¶ˆæ¯å§ã€‚
 	 * 
 	 * @author {{first.DATA}}
-	 * @author ÏûÏ¢Àà±ğ£º{{keyword1.DATA}}
-	 * @author Í¨ÖªÓÃ»§£º{{keyword2.DATA}}
-	 * @author Í¨ÖªÄÚÈİ£º{{keyword3.DATA}}
-	 * @author Í¨ÖªÊ±¼ä£º{{keyword4.DATA}}
+	 * @author æ¶ˆæ¯ç±»åˆ«ï¼š{{keyword1.DATA}}
+	 * @author é€šçŸ¥ç”¨æˆ·ï¼š{{keyword2.DATA}}
+	 * @author é€šçŸ¥å†…å®¹ï¼š{{keyword3.DATA}}
+	 * @author é€šçŸ¥æ—¶é—´ï¼š{{keyword4.DATA}}
 	 * @author {{remark.DATA}}
 	 * 
 	 */
@@ -151,7 +151,7 @@ public class WeiXinUtil {
 		
 		JSONObject first = new JSONObject();
 		first.put("color", "#173177");
-		first.put("value", "Ã÷Ìì£¬ÔçÉÏ8µã¿ª»á¡£Çë´ó¼Ò×¢ÒâÁË¡£");
+		first.put("value", "æ˜å¤©ï¼Œæ—©ä¸Š8ç‚¹å¼€ä¼šã€‚è¯·å¤§å®¶æ³¨æ„äº†ã€‚");
 		
 		JSONObject data1 = new JSONObject();
 		data1.put("first", first);
@@ -165,8 +165,8 @@ public class WeiXinUtil {
 	/**
 	 * 
 	 * @param {{first.DATA}}
-	 * @param ÈÎÎñÃû³Æ£º{{keyword1.DATA}}
-	 * @param Ïà¹ØÈËÔ±£º{{keyword2.DATA}}
+	 * @param ä»»åŠ¡åç§°ï¼š{{keyword1.DATA}}
+	 * @param ç›¸å…³äººå‘˜ï¼š{{keyword2.DATA}}
 	 * @param {{remark.DATA}}
 	 * @return
 	 */
@@ -202,14 +202,14 @@ public class WeiXinUtil {
 	
 	
 	/*
-	 * ÁÙÊ±¶şÎ¬Âë£¬Èç¹ûÓÃ»§Î´¹Ø×¢  ÔòÈÃÓÃ»§¹Ø×¢ ¡£¹ØÓÚºó£¬»áÍÆËÍÎÒÃÇÉèÖÃµÄscene_id±íÃ÷ÓÃ»§´ÓÄÄÀïÀ´µÄ¡£
+	 * ä¸´æ—¶äºŒç»´ç ï¼Œå¦‚æœç”¨æˆ·æœªå…³æ³¨  åˆ™è®©ç”¨æˆ·å…³æ³¨ ã€‚å…³äºåï¼Œä¼šæ¨é€æˆ‘ä»¬è®¾ç½®çš„scene_idè¡¨æ˜ç”¨æˆ·ä»å“ªé‡Œæ¥çš„ã€‚
 	 * 
 	 * 
-	 * ÕâÀïÁÙÊ±¶şÎ¬ÂëĞèÒª¸Ä¶¯µÄÊÇexpire_secondsºóÃæµÄÊı×Ö£¬±íÊ¾Ê±¼ä¡£×î´óÖµÎª30Ìì£¬ÕâÀïÇë»»Ëã³ÉÃë±íÊ¾¡£
-	 * »¹Ğè¸Ä¶¯µÄÊÇscene_id£¬
-	 * ×ÔĞĞÊäÈëÒ»¸ö1-100000Ö®¼äµÄÕûÊı£¨Õâ¸ö¾ÍÊÇÄãµÄ¶şÎ¬Âë²ÎÊıÁË£¬¾ÍÊÇÓÃÕâ¸öÊı×Ö¸ø¶şÎ¬Âë±àºÅµÄÒâË¼£¬
-	 * ÓÃ»§É¨Ãè¶şÎ¬ÂëÒÔºó»á·µ»ØÕâ¸öÊı×Ö¸øÄã£¬
-	 * ±íÃ÷ÓÃ»§ÊÇÓÃÍ¨¹ı´ËÇşµÀ¹Ø×¢ÄãµÄ£¬ÕâÑù¾Í¿ÉÒÔÍ³¼ÆÓÃ»§ĞÅÏ¢Óë²»Í¬ÇşµÀĞû´«Ğ§¹û¡££©
+	 * è¿™é‡Œä¸´æ—¶äºŒç»´ç éœ€è¦æ”¹åŠ¨çš„æ˜¯expire_secondsåé¢çš„æ•°å­—ï¼Œè¡¨ç¤ºæ—¶é—´ã€‚æœ€å¤§å€¼ä¸º30å¤©ï¼Œè¿™é‡Œè¯·æ¢ç®—æˆç§’è¡¨ç¤ºã€‚
+	 * è¿˜éœ€æ”¹åŠ¨çš„æ˜¯scene_idï¼Œ
+	 * è‡ªè¡Œè¾“å…¥ä¸€ä¸ª1-100000ä¹‹é—´çš„æ•´æ•°ï¼ˆè¿™ä¸ªå°±æ˜¯ä½ çš„äºŒç»´ç å‚æ•°äº†ï¼Œå°±æ˜¯ç”¨è¿™ä¸ªæ•°å­—ç»™äºŒç»´ç ç¼–å·çš„æ„æ€ï¼Œ
+	 * ç”¨æˆ·æ‰«æäºŒç»´ç ä»¥åä¼šè¿”å›è¿™ä¸ªæ•°å­—ç»™ä½ ï¼Œ
+	 * è¡¨æ˜ç”¨æˆ·æ˜¯ç”¨é€šè¿‡æ­¤æ¸ é“å…³æ³¨ä½ çš„ï¼Œè¿™æ ·å°±å¯ä»¥ç»Ÿè®¡ç”¨æˆ·ä¿¡æ¯ä¸ä¸åŒæ¸ é“å®£ä¼ æ•ˆæœã€‚ï¼‰
 	         {
 		      "expire_seconds": 10000,
 		      "action_name": "QR_SCENE",
@@ -237,11 +237,11 @@ public class WeiXinUtil {
 	    "action_name": "QR_LIMIT_SCENE",
 	    "action_info": {
 	        "scene": {
-	            "scene_id": 1000   ¡¾1-100000¡¿
+	            "scene_id": 1000   ã€1-100000ã€‘
 	        }
 	    }
 	}
-	 * @return ÓÀ¾Ãticket
+	 * @return æ°¸ä¹…ticket
 	 */
 	public static String getTicketData(){
 		JSONObject ticket_data = new JSONObject();

@@ -93,14 +93,14 @@ public class RenWuAdminController {
 		Result result=new Result();
 		Gson gson = new Gson();
 		
-		//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿   renwuId
+		//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡   renwuId
 		Integer renwuId=(Integer) taskService.getVariable(taskId, "renwuId");
 		RenWu renwu  =renWuService.findById(renwuId);
-		//ÅĞ¶ÏÏÂ  shouhou  ÊÇ·ñ±»Ëø×¡ 
+		//åˆ¤æ–­ä¸‹  shouhou  æ˜¯å¦è¢«é”ä½ 
 		if(renwu.getIsLock()==2){
 			JSONObject  rest = new JSONObject();
 			rest.put("success", false);
-			rest.put("msg","ÒÑÓĞÈË½Óµ¥ÁË£¬"+"½Óµ¥ÈË:"+renwu.getAcceptUser().getFirst_());
+			rest.put("msg","å·²æœ‰äººæ¥å•äº†ï¼Œ"+"æ¥å•äºº:"+renwu.getAcceptUser().getFirst_());
 			ResponseUtil.write(response, rest);
 			return null;
 		}
@@ -108,7 +108,7 @@ public class RenWuAdminController {
 		renWuService.update_accept(taskId, taskName);
 		
 		result.setSuccess(true); 
-		result.setMsg("Ìí¼Ó³É¹¦");
+		result.setMsg("æ·»åŠ æˆåŠŸ");
 		
 		ResponseUtil.write(response, gson.toJson(result));
 		return null;
@@ -133,24 +133,24 @@ public class RenWuAdminController {
 		JSONObject result = new JSONObject();
 		
 		if(!file.isEmpty()){
-			//Õâ¸ö¾ÍÏàµ±ÓÚÈ¡µÃÏîÄ¿Â·¾¶
+			//è¿™ä¸ªå°±ç›¸å½“äºå–å¾—é¡¹ç›®è·¯å¾„
 			String webPath=request.getServletContext().getRealPath("/");
-			//°ÑÎÄ¼şÃû×Ó»»³É£¨Ê±¼ä´ê.png£©yyyyMMddHHmmss.jpg(imageName)
+			//æŠŠæ–‡ä»¶åå­æ¢æˆï¼ˆæ—¶é—´æ“.pngï¼‰yyyyMMddHHmmss.jpg(imageName)
 			String imageName = DateUtil.getCurrentDateStr("yyyyMMddHHmmss")+"."+file.getOriginalFilename().split("\\.")[1];
 			String dateStr = DateUtil.formatDate(new Date(), "yyyyMMdd");
-			//ÎÒÏ£Íû²úÉúÒ»¸öÈÕÆÚµÄÎÄ¼ş¼Ğ
+			//æˆ‘å¸Œæœ›äº§ç”Ÿä¸€ä¸ªæ—¥æœŸçš„æ–‡ä»¶å¤¹
 			String imagePath = "static/images/comment/"+dateStr+"/";
-			//µ÷ÓÃ²úÉúÎÄ¼ş¼ĞµÄ·½·¨
+			//è°ƒç”¨äº§ç”Ÿæ–‡ä»¶å¤¹çš„æ–¹æ³•
 			FileUtil.makeDirs(webPath+imagePath);
-			//C:\javaSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\mayikeji03\¡¾webPath¡¿
-			//static/images/comment/20170728/¡¾imagePath¡¿
+			//C:\javaSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\mayikeji03\ã€webPathã€‘
+			//static/images/comment/20170728/ã€imagePathã€‘
 			System.out.println(webPath+imagePath);
-			//±£´æµ½Â·¾¶
+			//ä¿å­˜åˆ°è·¯å¾„
 			file.transferTo(new File(webPath+imagePath+imageName));
 			
 			result.put("success", true);
 			result.put("url", "/"+imagePath+imageName);
-			result.put("msg", "Ìí¼ÓÍ¼Æ¬³É¹¦");
+			result.put("msg", "æ·»åŠ å›¾ç‰‡æˆåŠŸ");
 			
 			ResponseUtil.write(response, result);
 			return null;
@@ -172,23 +172,23 @@ public class RenWuAdminController {
 	public String updata(HttpServletRequest request,  HttpServletResponse response,Integer flag)throws Exception{
 		Map<String, Object> map = new HashMap<String, Object>();
         if(request.getHeader("content-type")!=null&&"application/x-www-form-urlencoded".equals(request.getHeader("content-type"))){
-            return null;//²»Ö§³Ö¶ÏµãĞø´«£¬Ö±½Ó·µ»Ønull¼´¿É
+            return null;//ä¸æ”¯æŒæ–­ç‚¹ç»­ä¼ ï¼Œç›´æ¥è¿”å›nullå³å¯
         }
         JSONObject result = new JSONObject();
         
         
-		//½«ÇëÇó×ª»»³É
+		//å°†è¯·æ±‚è½¬æ¢æˆ
         MultipartHttpServletRequest mRequest=(MultipartHttpServletRequest)request;
         Enumeration<String> ps = mRequest.getParameterNames();
         if(ps.hasMoreElements()){
             String hname = ps.nextElement();
-            //Ç°¶Ë  task.addData('name','file');
-            System.out.println(hname);//Êä³ö name
-            System.out.println(mRequest.getParameter(hname));//Êä³ö file
+            //å‰ç«¯  task.addData('name','file');
+            System.out.println(hname);//è¾“å‡º name
+            System.out.println(mRequest.getParameter(hname));//è¾“å‡º file
         }
         
         
-        Iterator<String> fns=mRequest.getFileNames();//»ñÈ¡ÉÏ´«µÄÎÄ¼şÁĞ±í
+        Iterator<String> fns=mRequest.getFileNames();//è·å–ä¸Šä¼ çš„æ–‡ä»¶åˆ—è¡¨
         while(fns.hasNext()){
             String s =fns.next();
             System.out.println(s+"==="+mRequest.getFile(s));
@@ -197,22 +197,22 @@ public class RenWuAdminController {
             if(mFile.isEmpty()){
                 map.put("error", "EventAction.picture.failed");
             }else{
-            	//ÓĞÄÚÈİ¿ªÊ¼´æ
+            	//æœ‰å†…å®¹å¼€å§‹å­˜
             	String webPath=request.getServletContext().getRealPath("/");
-    			//°ÑÎÄ¼şÃû×Ó»»³É£¨Ê±¼ä´ê.png£©yyyyMMddHHmmss.jpg(imageName)
+    			//æŠŠæ–‡ä»¶åå­æ¢æˆï¼ˆæ—¶é—´æ“.pngï¼‰yyyyMMddHHmmss.jpg(imageName)
             	
     			String imageName =  mFile.getOriginalFilename();
     			
     			String dateStr = DateUtil.formatDate(new Date(), "yyyyMMdd");
-    			//ÎÒÏ£Íû²úÉúÒ»¸öÈÕÆÚµÄÎÄ¼ş¼Ğ
+    			//æˆ‘å¸Œæœ›äº§ç”Ÿä¸€ä¸ªæ—¥æœŸçš„æ–‡ä»¶å¤¹
     			String imagePath = "static/images/comment/"+dateStr+"/";
-    			//µ÷ÓÃ²úÉúÎÄ¼ş¼ĞµÄ·½·¨
+    			//è°ƒç”¨äº§ç”Ÿæ–‡ä»¶å¤¹çš„æ–¹æ³•
     			FileUtil.makeDirs(webPath+imagePath);
     			System.out.println(webPath+imagePath);
     			mFile.transferTo(new File(webPath+imagePath+imageName));
     			result.put("success", true);
     			result.put("url", "/"+imagePath+imageName);
-    			result.put("msg", "Ìí¼ÓÍ¼Æ¬³É¹¦");
+    			result.put("msg", "æ·»åŠ å›¾ç‰‡æˆåŠŸ");
     			
     			ResponseUtil.write(response, result);
     			return null;
@@ -232,7 +232,7 @@ public class RenWuAdminController {
 		
 		JSONObject result = new JSONObject();
 		
-		//Õâ¸ö¾ÍÏàµ±ÓÚÈ¡µÃÏîÄ¿Â·¾¶
+		//è¿™ä¸ªå°±ç›¸å½“äºå–å¾—é¡¹ç›®è·¯å¾„
 		String webPath=request.getServletContext().getRealPath("/");
 		//C:\javaSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\mayikeji03\
 		System.out.println(webPath+url);
@@ -240,7 +240,7 @@ public class RenWuAdminController {
 		FileUtil.deleteFile(webPath+url);
 		
 		result.put("success",true );
-		result.put("msg", "É¾³ı³É¹¦");
+		result.put("msg", "åˆ é™¤æˆåŠŸ");
 		ResponseUtil.write(response, result);
 		return null;
 	}
@@ -253,22 +253,22 @@ public class RenWuAdminController {
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		int i = publicService.addComment(taskId, currentUser, comment,taskName);
 		
-		//¸ù¾İÈÎÎñidÄÃÁ÷³Ì±äÁ¿  shouhouId
+		//æ ¹æ®ä»»åŠ¡idæ‹¿æµç¨‹å˜é‡  shouhouId
 		Integer renwuId=(Integer) taskService.getVariable(taskId, "renwuId");
 		RenWu renwu  =renWuService.findById(renwuId);
 		
-		//Ìí¼ÓÈÎÎñµÄÉí·İÁªÏµÈË
+		//æ·»åŠ ä»»åŠ¡çš„èº«ä»½è”ç³»äºº
 		rwidttService.add_idt(currentUser, renwu);
-		//Ìí¼ÓÈÎÎñµÄÉí·İÁªÏµÈË
+		//æ·»åŠ ä»»åŠ¡çš„èº«ä»½è”ç³»äºº
 		
 		JSONObject result=new JSONObject();
 		
 		if(i>0){
 			result.put("success", true);
-			result.put("msg", "Ìí¼ÓÅú×¢³É¹¦");
+			result.put("msg", "æ·»åŠ æ‰¹æ³¨æˆåŠŸ");
 		}else{
 			result.put("success", true);
-			result.put("msg", "Ìí¼ÓÅú×¢Ê§°Ü");
+			result.put("msg", "æ·»åŠ æ‰¹æ³¨å¤±è´¥");
 		}
 		
 		ResponseUtil.write(response, result);
@@ -283,18 +283,18 @@ public class RenWuAdminController {
 			HttpServletResponse response)throws Exception{
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
-		//ÄÃ³ö ÊÛºóÊµÀı  ÅĞ¶ÏÓĞÃ»ÓĞÕ¼¿Ó
+		//æ‹¿å‡º å”®åå®ä¾‹  åˆ¤æ–­æœ‰æ²¡æœ‰å å‘
 		Integer renwuId=(Integer) taskService.getVariable(taskId, "renwuId");
 		RenWu renwu = renWuService.findById(renwuId);
 		
 		if(renwu.getAcceptUser()!=null){
 			JSONObject result=new JSONObject();
 			if ((renwu.getAcceptUser().getId_().equals(currentUser.getId_()))) {
-				//Õ¼¿Ó ºÍµ±Ç° Ò»Ñù
+				//å å‘ å’Œå½“å‰ ä¸€æ ·
 			}else{
-				//Èç¹û²»ÊÇÕ¼¿ÓÈË£¬ÌáÊ¾ÎŞÈ¨²Ù×÷
+				//å¦‚æœä¸æ˜¯å å‘äººï¼Œæç¤ºæ— æƒæ“ä½œ
 				result.put("success", false);
-				result.put("msg", "Äã²»ÊÇ°ìÀíÈË£¬ÎŞÈ¨²Ù×÷");
+				result.put("msg", "ä½ ä¸æ˜¯åŠç†äººï¼Œæ— æƒæ“ä½œ");
 				ResponseUtil.write(response, result);
 				return null;
 			}
@@ -306,7 +306,7 @@ public class RenWuAdminController {
 		
 		JSONObject result=new JSONObject();
 		result.put("success", true);
-		result.put("msg", "Íê³ÉÈÎÎñ£¬Ö´ĞĞ³É¹¦");
+		result.put("msg", "å®Œæˆä»»åŠ¡ï¼Œæ‰§è¡ŒæˆåŠŸ");
 		
 		ResponseUtil.write(response, result);
 		return null;
@@ -320,7 +320,7 @@ public class RenWuAdminController {
 		
 		User currentUser = (User) SecurityUtils.getSubject().getSession().getAttribute("currentUser");
 		
-		//ÄÃ³ö ÊÛºóÊµÀı  ÅĞ¶ÏÓĞÃ»ÓĞÕ¼¿Ó
+		//æ‹¿å‡º å”®åå®ä¾‹  åˆ¤æ–­æœ‰æ²¡æœ‰å å‘
 		Integer renwuId=(Integer) taskService.getVariable(taskId, "renwuId");
 		RenWu renwu = renWuService.findById(renwuId);
 		
@@ -328,9 +328,9 @@ public class RenWuAdminController {
 			JSONObject result=new JSONObject();
 			if ((renwu.getAcceptUser().getId_().equals(currentUser.getId_()))) {
 			}else{
-				//Èç¹û²»ÊÇÕ¼¿ÓÈË£¬ÌáÊ¾ÎŞÈ¨²Ù×÷
+				//å¦‚æœä¸æ˜¯å å‘äººï¼Œæç¤ºæ— æƒæ“ä½œ
 				result.put("success", false);
-				result.put("msg", "Äã²»ÊÇ°ìÀíÈË£¬ÎŞÈ¨²Ù×÷");
+				result.put("msg", "ä½ ä¸æ˜¯åŠç†äººï¼Œæ— æƒæ“ä½œ");
 				ResponseUtil.write(response, result);
 				return null;
 			}
@@ -340,7 +340,7 @@ public class RenWuAdminController {
 		
 		JSONObject result=new JSONObject();
 		result.put("success", true);
-		result.put("msg", "Íê³ÉÈÎÎñ£¬Ö´ĞĞ³É¹¦");
+		result.put("msg", "å®Œæˆä»»åŠ¡ï¼Œæ‰§è¡ŒæˆåŠŸ");
 		
 		ResponseUtil.write(response, result);
 		return null;
@@ -396,8 +396,8 @@ public class RenWuAdminController {
 		map.put("processDefinitionKey", processDefinitionKey);
 		map.put("q", StringUtil.formatLike(q));
 		
-		map.put("date1", date1);//´óÓÚ
-		map.put("date2", date2);//Ğ¡ÓÚ
+		map.put("date1", date1);//å¤§äº
+		map.put("date2", date2);//å°äº
 		
 		map.put("fendianId", fendianId);// 
 		map.put("jixingId", jixingId);// 
@@ -432,7 +432,7 @@ public class RenWuAdminController {
 	public String delete(@RequestParam(value="ids",required=false)String ids,HttpServletResponse response)throws Exception{
 		String []idsStr=ids.split(",");
 		for(int i=0;i<idsStr.length;i++){
-			//ÅĞ¶ÏÈÎÎñ ÊÇ·ñÒÑ¹Ø±Õ ²Å¿ÉÒÔÉ¾³ı
+			//åˆ¤æ–­ä»»åŠ¡ æ˜¯å¦å·²å…³é—­ æ‰å¯ä»¥åˆ é™¤
 			RenWu renwu = renWuService.findById(Integer.parseInt(idsStr[i]));
 			if(renwu.getState()!=1){
 				renWuService.delete(Integer.parseInt(idsStr[i]));
@@ -440,7 +440,7 @@ public class RenWuAdminController {
 				Gson g = new Gson();
 				Result result=new Result();
 				result.setSuccess(false);
-				result.setMsg("ÈÎÎñÕıÔÚ½øĞĞÖĞ£¬²»ÄÜÉ¾³ı£¬Çë¹Ø±ÕÈÎÎñ¡£ÔÙÉ¾³ı£¡£¡£¡£¡£¡£¡£¡£¡");
+				result.setMsg("ä»»åŠ¡æ­£åœ¨è¿›è¡Œä¸­ï¼Œä¸èƒ½åˆ é™¤ï¼Œè¯·å…³é—­ä»»åŠ¡ã€‚å†åˆ é™¤ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼");
 				ResponseUtil.write(response, g.toJson(result));
 				return null;
 			}
@@ -448,7 +448,7 @@ public class RenWuAdminController {
 		Gson g = new Gson();
 		Result result=new Result();
 		result.setSuccess(true);
-		result.setMsg("É¾³ı³É¹¦");
+		result.setMsg("åˆ é™¤æˆåŠŸ");
 		ResponseUtil.write(response, g.toJson(result));
 		return null;
 	}

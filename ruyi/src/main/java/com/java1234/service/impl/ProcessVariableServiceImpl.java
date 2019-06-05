@@ -43,15 +43,15 @@ public class ProcessVariableServiceImpl implements ProcessVariableService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("procdefId", processDefinitionId);
 		map.put("taskName", taskName);
-		//²éµ±Ç°½Úµã ĞèÒª²»ĞèÒªÉèÖÃÁ÷³Ì±äÁ¿
+		//æŸ¥å½“å‰èŠ‚ç‚¹ éœ€è¦ä¸éœ€è¦è®¾ç½®æµç¨‹å˜é‡
 		List<ProcessVariable> list = this.list(map);
 		for (ProcessVariable pv : list) {
 			switch (pv.getVariableValue()) {
-			//ÅĞ¶ÏvalueÓÃÄÄÒ»¸ö   nameÊÇ¹Ì¶¨µÄ
-			case "µ±Ç°ÓÃ»§":
+			//åˆ¤æ–­valueç”¨å“ªä¸€ä¸ª   nameæ˜¯å›ºå®šçš„
+			case "å½“å‰ç”¨æˆ·":
 				variables.put(pv.getVariableName(), currentUser.getId_());
 				break;
-			case "ÊÇ·ñ°²×°":
+			case "æ˜¯å¦å®‰è£…":
 				variables.put(pv.getVariableName(), renwu.getXiaoshou().getInstall_());
 				break;
 			}

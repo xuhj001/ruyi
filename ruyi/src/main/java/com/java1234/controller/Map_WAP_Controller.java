@@ -13,7 +13,7 @@ import com.java1234.entity.User;
 public class Map_WAP_Controller {
 	
 	/**
-	 * Ìø×ªµ½Ñ¡ÔñµØÀí×ø±êµÄÒ³Ãæ¡£°Ù¶ÈµØÍ¼
+	 * è·³è½¬åˆ°é€‰æ‹©åœ°ç†åæ ‡çš„é¡µé¢ã€‚ç™¾åº¦åœ°å›¾
 	 * 
 	 *    /map/wap/select_point
 	 * @param request
@@ -23,7 +23,7 @@ public class Map_WAP_Controller {
 	@RequestMapping("/select_point")
 	public ModelAndView select_point(HttpServletRequest request) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mui_title", "µØÍ¼Ñ¡µã");
+		mav.addObject("mui_title", "åœ°å›¾é€‰ç‚¹");
 		mav.setViewName("/foreground/map/select_point_page");
 		return mav;
 	}

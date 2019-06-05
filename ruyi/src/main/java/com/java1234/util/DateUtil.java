@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * ÈÕÆÚ¹¤¾ßÀà
+ * æ—¥æœŸå·¥å…·ç±»
  * @author Administrator
  *
  */
@@ -19,7 +19,7 @@ public class DateUtil {
 	
 	/**
 	 * yyyyMMdd hhmmssSSS
-	 * ÈÕÆÚ¶ÔÏó×ª×Ö·û´®
+	 * æ—¥æœŸå¯¹è±¡è½¬å­—ç¬¦ä¸²
 	 */
 	public static String formatDate(Date date,String format){
 		String result="";
@@ -32,7 +32,7 @@ public class DateUtil {
 	
 	
 	/**
-	 * ×Ö·û´®×ªÈÕÆÚ¶ÔÏó
+	 * å­—ç¬¦ä¸²è½¬æ—¥æœŸå¯¹è±¡
 	 * @param str
 	 * @param format
 	 * @return
@@ -48,7 +48,7 @@ public class DateUtil {
 	
 	/**
 	 * yyyyMMddHHmmss
-	 * @param formart ÔÚÍâÃæ¶¨Òå
+	 * @param formart åœ¨å¤–é¢å®šä¹‰
 	 * @return
 	 * @throws Exception
 	 */
@@ -61,9 +61,9 @@ public class DateUtil {
 	
 	/**
 	 * 
-	 * @param dateFormart ÈÕÆÚµÄ¸ñÊ½ "yyyy-MM-dd HH:mm"
-	 * @param dateStr  ÈÕÆÚµÄ×Ö·û´®
-	 * @param n  ¼Ó¼¸Ìì  ¼õµÄ»°ÊÇ -1 -5 -10
+	 * @param dateFormart æ—¥æœŸçš„æ ¼å¼ "yyyy-MM-dd HH:mm"
+	 * @param dateStr  æ—¥æœŸçš„å­—ç¬¦ä¸²
+	 * @param n  åŠ å‡ å¤©  å‡çš„è¯æ˜¯ -1 -5 -10
 	 * @return
 	 */
 	public static String addDay(String dateFormart,String dateStr, int n) {
@@ -72,8 +72,8 @@ public class DateUtil {
 			Calendar cd = Calendar.getInstance();
 			cd.setTime(sdf.parse(dateStr));
 
-			cd.add(Calendar.DATE, n);// Ôö¼ÓÒ»Ìì
-			// cd.add(Calendar.MONTH, n);//Ôö¼ÓÒ»¸öÔÂ
+			cd.add(Calendar.DATE, n);// å¢åŠ ä¸€å¤©
+			// cd.add(Calendar.MONTH, n);//å¢åŠ ä¸€ä¸ªæœˆ
 			return sdf.format(cd.getTime());
 
 		} catch (Exception e) {

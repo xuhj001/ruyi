@@ -20,7 +20,7 @@ public class MemberShipAdminController {
 	private MemberShipService memberShipService;
 	
 	/**
-	 * ¸üĞÂÓÃ»§È¨ÏŞ ÏÈÉ¾³ı ºóÅúÁ¿Ìí¼Ó
+	 * æ›´æ–°ç”¨æˆ·æƒé™ å…ˆåˆ é™¤ åæ‰¹é‡æ·»åŠ 
 	 * @param userId
 	 * @param groupsIds
 	 * @param response
@@ -35,10 +35,10 @@ public class MemberShipAdminController {
 		
 		if(i>0){
 			result.setSuccess(true);
-			result.setMsg("È¨ÏŞ¸üĞÂ³É¹¦");
+			result.setMsg("æƒé™æ›´æ–°æˆåŠŸ");
 		}else{
 			result.setSuccess(false);
-			result.setMsg("È¨ÏŞ¸üĞÂÊ§°Ü");
+			result.setMsg("æƒé™æ›´æ–°å¤±è´¥");
 		}
 	
 		ResponseUtil.write(response, gson.toJson(result));

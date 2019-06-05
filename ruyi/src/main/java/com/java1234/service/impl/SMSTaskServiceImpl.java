@@ -45,7 +45,7 @@ public class SMSTaskServiceImpl implements SMSTaskService {
 	public void completeAfterSendSMS(String taskName, String msg, String procdefId, String type, RenWu renwu,
 			User currentUser) {
 		
-		//²éÑ¯·¢°õ¶ÌĞÅÈÎÎñ  ¸ù¾İ taskNameºÍ procdefId ²éÑ¯
+		//æŸ¥è¯¢å‘ç£…çŸ­ä¿¡ä»»åŠ¡  æ ¹æ® taskNameå’Œ procdefId æŸ¥è¯¢
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("taskName", taskName);
 		map.put("procdefId", renwu.getProcessDefinitionId());
@@ -54,25 +54,25 @@ public class SMSTaskServiceImpl implements SMSTaskService {
 		List<SMSTask> TaskList = this.list(map);
 		for(SMSTask smsTask :TaskList){
 			if(smsTask.getPhone_sms().equals("1")){
-				//ÄÃ³ö¶ÌĞÅÄ£°å£¬Ìî³äÄÚÈİ
+				//æ‹¿å‡ºçŸ­ä¿¡æ¨¡æ¿ï¼Œå¡«å……å†…å®¹
 				String smsModel=smsTask.getSmsModel();
-				List<String> worldList = new ArrayList<String>();//ĞèÒª¸ü»»µÄ´Ê
+				List<String> worldList = new ArrayList<String>();//éœ€è¦æ›´æ¢çš„è¯
 				Pattern pat =  Pattern.compile("#(.*?)#");
 		        Matcher m= pat.matcher(smsModel);  
 		        while(m.find()){
 		             String var = m.group(1);
-		             worldList.add(var);//ÊÕ¼¯´Ê
+		             worldList.add(var);//æ”¶é›†è¯
 		        }
-		        //´«Èë  worldList     smsModel renwu  current user   Ìí¼Ósmstask È¡groupname
+		        //ä¼ å…¥  worldList     smsModel renwu  current user   æ·»åŠ smstask å–groupname
 		        smsModel =  SMSTaskUtil.replace(smsModel,worldList,renwu,currentUser,smsTask);
-		        //ÄÃËùÓĞµÄ ÈËÔ±Ãûµ¥ 
+		        //æ‹¿æ‰€æœ‰çš„ äººå‘˜åå• 
 		        Map<String,Object> queryMP  = new HashMap<String,Object>();
 		        queryMP.put("groupId", smsTask.getGroupId());
 		        List<String> persons = publicService.getPerson(queryMP);
 		        
 		        for(String i:persons){
 		        	try {
-		        		System.out.println("ºÅÂë"+ i+"-------ÄÚÈİ:"+smsModel);
+		        		System.out.println("å·ç "+ i+"-------å†…å®¹:"+smsModel);
 						//YunPianUtil.sendMsg(smsModel, i);
 					} catch (Exception e) {
 						e.printStackTrace();

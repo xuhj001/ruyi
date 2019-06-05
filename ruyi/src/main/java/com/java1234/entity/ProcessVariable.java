@@ -3,11 +3,11 @@ package com.java1234.entity;
 public class ProcessVariable {
 
 	private Integer id;
-	private String procdefId;//Á÷³Ì¶¨Òåid
-	private  String taskName;//ÈÎÎñÃû³Æ
+	private String procdefId;//æµç¨‹å®šä¹‰id
+	private  String taskName;//ä»»åŠ¡åç§°
 	 
-	private String variableName;//±äÁ¿name
-	private String variableValue;//±äÁ¿Öµ
+	private String variableName;//å˜é‡name
+	private String variableValue;//å˜é‡å€¼
 	
 	
 	
