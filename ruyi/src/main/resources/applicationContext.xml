@@ -35,7 +35,7 @@
 
 	<!-- 配置数据源 本地 数据库  db_mayikeji  -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-		<property name="url" value="jdbc:mysql://192.168.120.220:3306/db_ruyi?useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="url" value="jdbc:mysql://39.100.108.229:3306/db_ruyi?useUnicode=true&amp;characterEncoding=UTF-8"/>
 		<property name="username" value="test"/>
 		<property name="password" value="test"/>
 		<property name="initialSize" value="5"/>

@@ -147,17 +147,27 @@ public class IndexContrller {
 	 * 后台主页
 	 */
 	@RequestMapping("/admin/main")
-	public ModelAndView admin_main() throws Exception {
+//	public ModelAndView admin_main() throws Exception {
+	public ModelAndView admin_main(HttpServletResponse responce) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("pageTitle", "汝一净水  后台");
-		mav.addObject("title", "汝一净水  后台");
+//		mav.addObject("pageTitle", "汝一净水  后台");
+//		mav.addObject("title", "汝一净水  后台");
+
+		mav.addObject("pageTitle", "hello 1");
+
+		String t = "汝一净水  后台";
+//		t = new String(t.getBytes("iso-8859-1"),"utf-8");
+//		t = new String(t.getBytes("GB2312"),"utf-8");
+//		mav.addObject("title", t);
+		mav.addObject("title", t);
 		publicService.addLeftMenu(mav);
 		
 		mav.setViewName("/admin/main");
+
+		responce.setCharacterEncoding("utf-8");
+
 		return mav;
 	}
-	
-	
 	
 	@RequestMapping("/fail")
 	public ModelAndView fail() throws Exception {

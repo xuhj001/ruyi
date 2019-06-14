@@ -30,7 +30,8 @@
 <!--添加 layui  支持加载-->
 
 <script>
-var save_url = '${save_url}';
+<%--var save_url = '${save_url}';--%>
+var save_url = '${pageContext.request.contextPath}/${save_url}';
 
 function save(){
 	//loading

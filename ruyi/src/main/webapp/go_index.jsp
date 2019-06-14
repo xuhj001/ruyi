@@ -15,7 +15,8 @@
 </head>
 <body>
 
-<% response.sendRedirect("/index.html"); %>
+<%--<% response.sendRedirect("/index.html"); %>--%>
+<% response.sendRedirect(request.getContextPath()+"/PC_login.jsp"); %>
 
 </body>
 </html>

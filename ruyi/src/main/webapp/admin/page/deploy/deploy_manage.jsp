@@ -48,7 +48,8 @@
 <script>
 var page = 1 ; 
 var rows = 100 ;
-var url = '/admin/deploy/list';
+// var url = '/admin/deploy/list';
+var url = '${pageContext.request.contextPath}/admin/deploy/list';
 
 var total = 0 ;//总数据数
 var result_json ;//拿到的 具体数据
@@ -183,7 +184,8 @@ function deploy(){
 	  shadeClose: true,
 	  shade: 0.8,
 	  area: ['700px', '300px'],
-	  content: '/deploy/pc/deploy' //iframe的url
+	  // content: '/deploy/pc/deploy' //iframe的url
+	  content: '${pageContext.request.contextPath}/deploy/pc/deploy' //iframe的url
 	});
 }
 
@@ -196,7 +198,8 @@ function open_edit(id){
 	  shadeClose: true,
 	  shade: 0.8,
 	  area: ['700px', '300px'],
-	  content: '/group/pc/edit?id='+id //iframe的url
+	  // content: '/group/pc/edit?id='+id //iframe的url
+	  content: '${pageContext.request.contextPath}/group/pc/edit?id='+id //iframe的url
 	});
 }
 
@@ -249,7 +252,8 @@ function del(ids){
 	var index = layer.load(1, {
 		  shade: [0.1,'#fff'] //0.1透明度的白色背景
 	});
-	$.post('/admin/deploy/delete',{ids:ids},function(result){
+	// $.post('/admin/deploy/delete',{ids:ids},function(result){
+	$.post('${pageContext.request.contextPath}/admin/deploy/delete',{ids:ids},function(result){
 		if(result.success){
 			layer.closeAll();
 			layer.msg('删除成功');
@@ -281,8 +285,9 @@ function set_persm(id){
 		  shadeClose: true,
 		  shade: 0.8,
 		  area: ['250px', '400px'],
-		  content: '/user/setPersm.html?id='+id //iframe的url
-	}); 
+		  // content: '/user/setPersm.html?id='+id //iframe的url
+		  content: '${pageContext.request.contextPath}/user/setPersm.html?id='+id //iframe的url
+	});
 	
 }
 

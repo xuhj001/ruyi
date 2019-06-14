@@ -50,7 +50,8 @@
 
 var page = 1 ; 
 var rows = 100 ;
-var url = '/admin/group/list';
+// var url = '/admin/group/list';
+var url = '${pageContext.request.contextPath}/admin/group/list';
 var q ; //模糊查询
 var rev_ = 2 ;//定义内部人2  客户1
 

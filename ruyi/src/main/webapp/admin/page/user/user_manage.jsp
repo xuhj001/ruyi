@@ -48,7 +48,8 @@
 <script>
 var page = 1 ; 
 var rows = 100 ;
-var url = '/admin/user/listWithGroups';
+// var url = '/admin/user/listWithGroups';
+var url = '${pageContext.request.contextPath}/admin/user/listWithGroups';
 var q ; //模糊查询
 var rev_ = 2 ;//定义内部人2  客户1
 
@@ -236,7 +237,8 @@ function add(){
 	  shadeClose: true,
 	  shade: 0.8,
 	  area: ['700px', '400px'],
-	  content: '/user/pc/add' //iframe的url
+	  // content: '/user/pc/add' //iframe的url
+	  content: '${pageContext.request.contextPath}/user/pc/add' //iframe的url
 	});
 }
 
@@ -251,7 +253,8 @@ function open_edit(noteId){
 	  shadeClose: true,
 	  shade: 0.8,
 	  area: ['700px', '400px'],
-	  content: '/user/pc/edit?id='+noteId //iframe的url
+	  // content: '/user/pc/edit?id='+noteId //iframe的url
+	  content: '${pageContext.request.contextPath}/user/pc/edit?id='+noteId //iframe的url
 	});
 }
 
@@ -304,7 +307,8 @@ function del(ids){
 	var index = layer.load(1, {
 		  shade: [0.1,'#fff'] //0.1透明度的白色背景
 	});
-	$.post('/admin/user/delete',{ids:ids},function(result){
+	// $.post('/admin/user/delete',{ids:ids},function(result){
+	$.post('${pageContext.request.contextPath}/admin/user/delete',{ids:ids},function(result){
 		if(result.success){
 			layer.closeAll();
 			layer.msg('删除成功');
@@ -336,8 +340,9 @@ function set_group(id){
 		  shadeClose: true,
 		  shade: 0.8,
 		  area: ['600px', '250px'],
-		  content: '/user/pc/setGroup?id='+id //iframe的url
-	}); 
+		  // content: '/user/pc/setGroup?id='+id //iframe的url
+		  content: '${pageContext.request.contextPath}/user/pc/setGroup?id='+id //iframe的url
+	});
 }
 
 function set_fendian(id){
@@ -347,8 +352,9 @@ function set_fendian(id){
 		  shadeClose: true,
 		  shade: 0.8,
 		  area: ['600px', '400px'],
-		  content: '/user/pc/set_fendian?id='+id //iframe的url
-	}); 
+		  // content: '/user/pc/set_fendian?id='+id //iframe的url
+		  content: '${pageContext.request.contextPath}/user/pc/set_fendian?id='+id //iframe的url
+	});
 	
 }
 
@@ -363,8 +369,9 @@ function set_persm(id){
 		  shadeClose: true,
 		  shade: 0.8,
 		  area: ['250px', '400px'],
-		  content: '/user/pc/setPersm?id='+id //iframe的url
-	}); 
+		  // content: '/user/pc/setPersm?id='+id //iframe的url
+		  content: '${pageContext.request.contextPath}/user/pc/setPersm?id='+id //iframe的url
+	});
 	
 }
 
@@ -396,7 +403,8 @@ function push_templt_sms(ids){
 		  shadeClose: true,
 		  shade: 0.8,
 		  area: ['600px', '400px'],
-		  content: '/pushmsg/pc/push?ids='+ids
+		  // content: '/pushmsg/pc/push?ids='+ids
+		  content: '${pageContext.request.contextPath}/pushmsg/pc/push?ids='+ids
 	});
 	
 }
@@ -409,8 +417,9 @@ function modify_ps(id){
 		  shadeClose: true,
 		  shade: 0.8,
 		  area: ['600px', '350px'],
-		  content:'/user/pc/modify_ps?id='+id //iframe的url
-		}); 
+		  // content:'/user/pc/modify_ps?id='+id //iframe的url
+		  content:'${pageContext.request.contextPath}/user/pc/modify_ps?id='+id //iframe的url
+		});
 }
 
 

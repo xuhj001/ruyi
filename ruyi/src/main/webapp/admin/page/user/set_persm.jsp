@@ -39,7 +39,8 @@
 var userId = '${userId}';
 //shouquantree
 
-var url = '/tree/getCheckedTreeMenu.do?userId='+userId;
+// var url = '/tree/getCheckedTreeMenu.do?userId='+userId;
+var url = '${pageContext.request.contextPath}/tree/getCheckedTreeMenu.do?userId='+userId;
 
 $(function(){
 	$.post(url,{},function(result){ 
@@ -69,7 +70,8 @@ function save(){
 	}
 	var str = ids.join(",");
 	
-	$.post('/admin/wxuser/update',{openid:userId,treeIds:str},function(result){
+	// $.post('/admin/wxuser/update',{openid:userId,treeIds:str},function(result){
+	$.post('${pageContext.request.contextPath}/admin/wxuser/update',{openid:userId,treeIds:str},function(result){
 		if(result.success){
 			//调用 父窗口的  关闭所有窗口 并且刷新 页面
 			window.parent.closeDlg(result.msg);
