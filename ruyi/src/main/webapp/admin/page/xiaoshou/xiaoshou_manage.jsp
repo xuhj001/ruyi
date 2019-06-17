@@ -46,7 +46,8 @@
 <script>
 var page = 1 ; 
 var rows = 100 ;
-var url = '/admin/renwu/list';
+// var url = '/admin/renwu/list';
+var url = '${pageContext.request.contextPath}/admin/renwu/list';
 var q ; //模糊查询
 var rev_ = 2 ;//定义内部人2  客户1
 var date1 ;//大于

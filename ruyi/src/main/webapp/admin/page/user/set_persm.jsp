@@ -27,6 +27,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/locale/easyui-lang-zh_CN.js"></script>
+
+<%--xuhj add	--%>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/easy-ui/plugins/jquery.treegrid.js"></script>
 <!-- 引入easyui支持 -->
 
 <!--添加 layui  支持加载-->
@@ -50,9 +53,10 @@ $(function(){
 			  onLoadSuccess:function(){
 				   $("#shouquantree").tree('expandAll');
 			  },
-			  onCheck:function(node,checked){
+			  onCheck:function(node, checked){
 			  		if(checked){
-						checkNode($('#shouquantree').tree('getParent',node.target));
+						// checkNode($('#shouquantree').tree('getParent', node.target));
+						$('#shouquantree').tree('getParent', node.target);
 					}
 			  }
 		  });	

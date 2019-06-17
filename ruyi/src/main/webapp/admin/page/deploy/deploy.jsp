@@ -37,7 +37,8 @@
 
 <script>
 
-var url = '${url}';
+<%--var url = '${url}';--%>
+var url = '${pageContext.request.contextPath}/${url}';
 
 
 function save(){

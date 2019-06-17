@@ -48,7 +48,8 @@
 <script>
 var page = 1 ; 
 var rows = 100 ;
-var url = '/admin/procedef/list';
+// var url = '/admin/procedef/list';
+var url = '${pageContext.request.contextPath}/admin/procedef/list';
 
 var total = 0 ;//总数据数
 var result_json ;//拿到的 具体数据

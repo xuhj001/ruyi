@@ -9,6 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${title}</title>
+	<%--<title>你好</title>--%>
 
 <!-- JSTL -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

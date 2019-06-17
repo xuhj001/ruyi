@@ -114,7 +114,8 @@ function loadData(){
 	var index = layer.load(1, {
 		  shade: [0.1,'#fff'] //0.1透明度的白色背景
 	});
-	$.post("/admin/config/findById",{id:1},function(result){
+	// $.post("/admin/config/findById",{id:1},function(result){
+	$.post("${pageContext.request.contextPath}/admin/config/findById",{id:1},function(result){
 		$("#dg").empty();
 		 
 			$("#dg").append(
@@ -181,7 +182,8 @@ function open_edit(id){
 	  shadeClose: true,
 	  shade: 0.8,
 	  area: ['700px', '300px'],
-	  content: '/config/pc/edit?id='+id //iframe的url
+	  // content: '/config/pc/edit?id='+id //iframe的url
+	  content: '${pageContext.request.contextPath}/config/pc/edit?id='+id //iframe的url
 	});
 }
 
